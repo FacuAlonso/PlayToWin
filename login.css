@@ -1,0 +1,78 @@
+body{
+   overflow: hidden;
+   width: 100vw;
+   height: 100vh;
+   margin: 0px;
+   padding-bottom: 5vh;
+   background: rgb(1,36,64);
+   background: linear-gradient(180deg, rgba(1,36,64,1) 0%, rgba(16,51,113,1) 35%, rgba(34,71,175,1) 100%);
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   ;
+   
+}
+
+#logo{
+    width: 15vw;
+}
+
+#encabezado{
+    background-color: #001b30;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+
+#box-login{
+    background-color: #1d1f5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30vw;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    margin-top: 10vh;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    margin-bottom: 10vh;
+}
+.titulo{
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+.datos-titulo{
+    color: white;
+    font-family: 'Lato', sans-serif;display: flex;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.datos-caja{
+    background-color: rgb(23, 22, 22);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15vw;
+}
+.datos-registro{
+    color: white;
+    background: rgb(0,141,214);
+    background: linear-gradient(180deg, rgba(0,141,214,1) 16%, rgba(0,77,134,1) 84%);
+     /* background: linear-gradient(rgb(131, 175, 175) , rgb(115, 115, 150) ) */ 
+}
+
+#boton-submit{
+    width: 15vw;
+    height: 7vh;
+    font-size: 1.5vw;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}

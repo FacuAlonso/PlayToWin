@@ -1,0 +1,36 @@
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding-bottom: 5vh;
+    background: rgb(1,36,64);
+    background: linear-gradient(180deg, rgba(1,36,64,1) 0%, rgba(16,51,113,1) 35%, rgba(34,71,175,1) 100%);
+ 
+    display: flex;
+    flex-direction: column;
+    
+    ;
+    
+ }
+#marca{
+    display: flex;
+    flex-direction: row;
+    margin-right: 0%;
+    width: 30vw;
+}
+ #logo{
+    width: 15vw;
+}
+
+#encabezado{
+    background:linear-gradient(180deg, rgba(0,141,214,1) 16%, rgba(0,77,134,1) 84%);
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+
+.datos{color: blue;}

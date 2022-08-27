@@ -33,6 +33,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 50vh;
     width: 30vw;
     align-items: center;
     font-family: 'Lato', sans-serif;
@@ -51,9 +52,8 @@ body{
     font-family: 'Lato', sans-serif;display: flex;
     display: flex;
     flex-direction: column;
-    
-
 }
+
 .datos-caja{
     background-color: rgb(23, 22, 22);
     color: white;

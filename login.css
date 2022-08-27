@@ -5,8 +5,7 @@ body{
    margin: 0px;
    padding-bottom: 5vh;
    background: rgb(1,36,64);
-   background: linear-gradient(180deg, rgba(1,36,64,1) 0%, rgba(16,51,113,1) 35%, rgba(34,71,175,1) 100%);
-
+   background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -15,7 +14,8 @@ body{
 }
 
 #logo{
-    width: 15vw;
+    width: 25vw;
+    object-fit: contain;
 }
 
 #encabezado{
@@ -25,6 +25,7 @@ body{
     width: 100vw;
     padding-top: 3vh;
     padding-bottom: 3vh;
+    object-fit: contain;
 }
 
 
@@ -39,7 +40,7 @@ body{
     align-items: center;
     font-family: 'Lato', sans-serif;
     margin-top: 10vh;
-    padding-top: 4vh;
+    padding-top: 2vh;
     padding-bottom: 4vh;
     margin-bottom: 10vh;
 }
@@ -55,6 +56,7 @@ body{
     display: flex;
     flex-direction: column;
     font-size: 1.2vw;
+    
 }
 
 .datos-caja{
@@ -74,8 +76,9 @@ body{
 }
 
 #boton-submit{
+    margin-top: 2vh;
     width: 15vw;
-    height: 7vh;
+    height: 15vh;
     font-size: 1.5vw;
     font-family: 'Lato', sans-serif;
     font-weight: 900;

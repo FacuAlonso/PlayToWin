@@ -107,11 +107,19 @@ body{
 #yatienecuenta{
     color: rgb(115, 190, 255);
     font-family: 'Lato', sans-serif;
-    margin-top: 5vh;
+    margin-top: 2vh;
     font-size: 0.7vw;
     text-decoration: none;
 }
 
-#yatienecuenta:hover{
+#olvidocuenta{
+    color: rgb(115, 190, 255);
+    font-family: 'Lato', sans-serif;
+    margin-top: 3vh;
+    font-size: 0.7vw;
+    text-decoration: none;
+}
+
+#yatienecuenta:hover,#olvidocuenta:hover{
     color: white;
 }

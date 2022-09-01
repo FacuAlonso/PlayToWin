@@ -71,3 +71,7 @@ body{
     cursor: pointer;
     width: 3vw;
 }
+
+#evento_01{
+    background: linear-gradient(rgb(7, 7, 144), rgb(104, 104, 209));
+}

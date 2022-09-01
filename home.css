@@ -79,8 +79,8 @@ body{
 .imagenes_logo{
     display: flex;
     flex-wrap: wrap;
-    width: 50vw;
-    height: 50vw;
+    width: 20vw;
+    height: 20vw;
 }
 .evento_01{
     display: flex;

@@ -78,17 +78,20 @@ body{
 
 .boton_participa{
     display: flex;
-    flex-direction: row;
-    width: 20vw;
-    height: 10vw;
+    flex-wrap: wrap;
+    border:none;
+    border-radius: 2vw;
 }
 .imagenes_logo{
     display: flex;
     flex-wrap: wrap;
-    width: 20vw;
-    height: 20vw;
+    width: auto;
+    height: 10vw;
+    border-radius: 2vw;
 }
 .evento_01{
+    width: 30vw;
+    height: 30vh;
     background-color: #171842;
     display: flex;
     flex-wrap: nowrap;

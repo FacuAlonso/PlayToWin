@@ -76,8 +76,13 @@ body{
     width: 3vw;
 }
 
+.boton_participa{
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    height: 10vw;
+}
 .imagenes_logo{
-    margin: 10vw;
     display: flex;
     flex-wrap: wrap;
     width: 20vw;

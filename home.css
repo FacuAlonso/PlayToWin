@@ -75,11 +75,11 @@ body{
     cursor: pointer;
     width: 3vw;
 }
-#imagenes_logo{
+.imagenes_logo{
     width: 2%;
     height: 3%;
 }
-#evento_01{
+.evento_01{
     display: flex;
     flex-direction: column;
     background: linear-gradient(rgb(7, 7, 144), rgb(104, 104, 209));

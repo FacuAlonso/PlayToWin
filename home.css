@@ -77,6 +77,7 @@ body{
 }
 
 .imagenes_logo{
+    margin: 10vw;
     display: flex;
     flex-wrap: wrap;
     width: 20vw;

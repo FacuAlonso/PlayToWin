@@ -71,7 +71,13 @@ body{
     cursor: pointer;
     width: 3vw;
 }
+.evento_logo{
+    display: flex;
+    width: 10vw;
+}
 
 #evento_01{
+    display: flex;
+    flex-direction: ;
     background: linear-gradient(rgb(7, 7, 144), rgb(104, 104, 209));
 }

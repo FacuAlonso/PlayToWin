@@ -65,6 +65,10 @@ body{
     cursor: pointer;
     width: 2.5vw;
 }
+#Eventos{
+    display: flex;
+    flex-direction: row;
+}
 
 #logout-icono{
     margin-left: 2vw;

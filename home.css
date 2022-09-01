@@ -76,13 +76,10 @@ body{
     width: 3vw;
 }
 #imagenes_logo{
-<<<<<<< HEAD
+    display: flex;
+    flex-wrap: wrap;
     width: 1vw;
     height: 2vw;
-=======
-    width: 2%;
-    height: 3%;
->>>>>>> 3d791b1701771896fbd475fe08600cc84c1a3984
 }
 #evento_01{
     display: flex;

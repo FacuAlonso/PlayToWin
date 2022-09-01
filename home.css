@@ -89,12 +89,10 @@ body{
     height: 20vw;
 }
 .evento_01{
-    background-color: #1d1f5c;
+    background-color: #171842;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
-    height: 20vh;
-    width: 20vw;
     border-radius: 2vw;
 }

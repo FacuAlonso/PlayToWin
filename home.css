@@ -76,15 +76,23 @@ body{
     width: 3vw;
 }
 
+.boton_participa{
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    height: 10vw;
+}
 .imagenes_logo{
-    margin: 10vw;
     display: flex;
     flex-wrap: wrap;
     width: 20vw;
     height: 20vw;
 }
 .evento_01{
+    background-color: #171842;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
-    background: linear-gradient(rgb(7, 7, 144), rgb(104, 104, 209));
+    justify-content: center;
+    border-radius: 2vw;
 }

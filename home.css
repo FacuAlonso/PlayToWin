@@ -77,5 +77,6 @@ body{
 
 #evento_01{
     display: flex;
+    width: 10vw;
     background: linear-gradient(rgb(7, 7, 144), rgb(104, 104, 209));
 }

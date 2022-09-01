@@ -65,18 +65,24 @@ body{
     cursor: pointer;
     width: 2.5vw;
 }
+#Eventos{
+    display: flex;
+    flex-direction: row;
+}
 
 #logout-icono{
     margin-left: 2vw;
     cursor: pointer;
     width: 3vw;
 }
-#imagenes_logo{
-    width: 1vw;
-    height: 2vw;
-}
 
-#evento_01{
+.imagenes_logo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 20vw;
+    height: 20vw;
+}
+.evento_01{
     display: flex;
     flex-direction: row;
     background: linear-gradient(rgb(7, 7, 144), rgb(104, 104, 209));

@@ -75,6 +75,7 @@ body{
     cursor: pointer;
     width: 3vw;
 }
+<<<<<<< HEAD
 #imagenes_logo{
     display: flex;
     flex-wrap: wrap;
@@ -82,6 +83,9 @@ body{
     height: 2vw;
 }
 #evento_01{
+=======
+.evento_01{
+>>>>>>> 349b0d81da1df766ab542bfe4dd24972ab32ca20
     display: flex;
     flex-direction: column;
     background: linear-gradient(rgb(7, 7, 144), rgb(104, 104, 209));

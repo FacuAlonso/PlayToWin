@@ -95,7 +95,7 @@ body{
     background-color: #171842;
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     border-radius: 2vw;
 }

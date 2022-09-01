@@ -71,12 +71,6 @@ body{
     cursor: pointer;
     width: 3vw;
 }
-#imagenes_logo{
-    display: flex;
-    flex-direction: row;
-    width: 1vw;
-    height: 2vw;
-}
 
 #evento_01{
     display: flex;

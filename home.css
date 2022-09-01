@@ -17,6 +17,13 @@ body{
     margin-right: 1vw;
     width: 30vw;
 }
+.contenedor{
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+}
+
  #logo{
     width: 22vw;
     object-fit: contain;
@@ -65,9 +72,10 @@ body{
     cursor: pointer;
     width: 2.5vw;
 }
-#Eventos{
+.contenedor_eventos{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 #logout-icono{
@@ -75,29 +83,40 @@ body{
     cursor: pointer;
     width: 3vw;
 }
-
-.boton_participa{
-    background: linear-gradient(180deg, rgba(0,141,214,1) 16%, rgba(0,77,134,1) 84%);
-    cursor: pointer;
-    width: 20vw;
-    height: 5vh;
-    border:none;
-    border-radius: 2vw;
+#ev_01{
+    background-size: 100% 100%;
+    background-image: url("./assets/portadas/1658185258615.jpg");
 }
-.imagenes_logo{
+#ev_02{
+    background-size: 100% 100%;
+    background-image: url("./assets/portadas/44980880602077790.jpg");
+}
+.link_evento{
     display: flex;
     flex-wrap: wrap;
     width: 20vw;
     height: 20vh;
-    border-radius: 2vw;
+	border-radius: 5vmin;
+	min-height: 200px;
+	padding: 20px;
+    cursor: pointer;
 }
-.evento_01{
-    width: 30vw;
-    height: 30vh;
-    background-color: #171842;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
+.contendor_Titulo{
     justify-content: center;
-    border-radius: 2vw;
+}
+#ev_03{
+    background-size: 100% 100%;
+    background-image: url("./assets/portadas/61871253266266940.jpg");
+}
+.textos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10vh;
+    color: aliceblue;
+}
+
+.eventos{
+    display: flex;
+    flex-wrap: wrap;
 }

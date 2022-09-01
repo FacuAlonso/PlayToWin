@@ -76,7 +76,7 @@ body{
     width: 3vw;
 }
 
-#imagenes_logo{
+.imagenes_logo{
     display: flex;
     flex-wrap: wrap;
     width: 1vw;

@@ -96,6 +96,5 @@ body{
     justify-content: center;
     height: 20vh;
     width: 20vw;
-    overflow-y: auto;
     border-radius: 2vw;
 }

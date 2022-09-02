@@ -22,12 +22,13 @@ body{
 #logo{
     width: 20vw;
     object-fit: contain;
+    min-width: 150px;
 }
 
 #encabezado{
     background-color: #00070c;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100vw;
     padding-top: 3vh;
@@ -63,10 +64,11 @@ body{
 .titulo{
     color: white;
     font-family: 'Lato', sans-serif;
-    font-size: 2vw;
+    font-size: calc(12px + 1.2vw);
     cursor: default;
     margin-left: 10vw;
     margin-right: 10vw;
+    text-align: center;
 }
 
 
@@ -92,19 +94,23 @@ body{
 
 #bot-new{
     display: flex;
-
+    height: 7vh;
+    width: 20vw;
     border-radius: 0.8vw;
     background: rgb(255,226,0);
     background: linear-gradient(180deg, rgba(255,226,0,1) 47%, rgba(110,101,0,1) 100%);
     justify-items: center;
+    align-items: center;
+    padding-right: 1vw;
+    min-width: 150px;
 }
 
 .titulo-boton{
     color: rgb(0, 0, 0);
     font-family: 'Lato', sans-serif;
     font-weight: bold;
-    font-size: 2vw;
-    cursor: default;
     cursor: pointer;
     margin: 1vh auto 1vh 2vh;
+    font-size: calc(9px + 1.2vw);
+    text-align: center;
 }

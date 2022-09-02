@@ -24,7 +24,7 @@ body{
 	padding: 40px 0;
 }
 
- #logo{
+#logo{
     width: 22vw;
     object-fit: contain;
 }
@@ -58,10 +58,6 @@ body{
     margin-right: 6vw;
 }
 
-#perfil-div{
-    display: flex;
-    flex-direction: row;
-}
 
 #perfil-logo{
     margin-right: -0.5vw;
@@ -72,17 +68,19 @@ body{
     cursor: pointer;
     width: 2.5vw;
 }
-.contenedor_eventos{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
 #logout-icono{
     margin-left: 2vw;
     cursor: pointer;
     width: 3vw;
 }
+
+.contenedor_eventos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 #ev_01{
     background-size: 100% 100%;
     background-image: url("./assets/portadas/1658185258615.jpg");
@@ -104,6 +102,8 @@ body{
 .contendor_Titulo{
     justify-content: center;
 }
+
+
 #ev_03{
     background-size: 100% 100%;
     background-image: url("./assets/portadas/61871253266266940.jpg");
@@ -119,4 +119,8 @@ body{
 .eventos{
     display: flex;
     flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
 }

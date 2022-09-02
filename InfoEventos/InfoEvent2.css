@@ -1,0 +1,67 @@
+body{
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding-bottom: 5vh;
+    background: rgb(1,36,64);
+    background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
+    display: flex;
+    flex-direction: column;
+}
+#Info{
+    margin-top: 5vw;
+    margin-left: 4vw;
+
+}
+.div-titulo{
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: bold 
+}
+.div-subtitulo{
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: bold 
+}
+.box-descripcion{
+    background-color: rgb(20, 20, 51);
+    line-height: 1.08vw;
+    width:35vw;
+    height: 7vw;
+    text-align: justify;
+    right: 10vw;
+    padding: 1vw;
+    margin-bottom: 2vw;
+
+}
+.Descripcion-datos{
+    
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: bold;
+    width: 10vw;
+    line-height: 1.08vw;
+    ;
+}
+
+#Reglas{
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: bold;
+    width: 35vw;
+    text-align: justify;
+    line-height: 1.08vw;
+}
+
+.box-reglas{
+    background-color: rgb(20, 20, 51);
+    line-height: 1.08vw;
+    width:35vw;
+    height: 7vw; 
+    text-align: justify;
+    right: 10vw;
+    padding: 1vw;
+    margin: 0vw;
+
+}

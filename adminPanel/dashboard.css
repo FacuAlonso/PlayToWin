@@ -12,7 +12,7 @@ body{
    display: flex;
    flex-direction: column;
    align-items: center; 
-   overflow-y: scroll;
+   overflow-y: show;
 }
 
 #logo{
@@ -30,10 +30,13 @@ body{
     object-fit: contain;
 }
 
-#contEventos{
+#cont-eventos{
     display: flex;
-    overflow: show;
+    overflow-y: scroll;
     flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
 }
 
 .box-evento{
@@ -42,15 +45,13 @@ body{
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    height: 20vh;
     width: 80vw;
     align-items: center;
     font-family: 'Lato', sans-serif;
-    padding-top: 2vh;
+    padding-top: 20vh;
     padding-bottom: 4vh;
     margin-top: 4vh;
     margin-bottom: 4vh;
-    overflow-y: auto;
 }
 
 .titulo{

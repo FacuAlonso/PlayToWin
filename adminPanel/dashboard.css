@@ -19,11 +19,6 @@ body{
    overflow-y: show;
 }
 
-#logo{
-    width: 20vw;
-    object-fit: contain;
-    min-width: 300px;
-}
 
 #encabezado{
     background-color: #00070c;
@@ -34,7 +29,15 @@ body{
     padding-top: 3vh;
     padding-bottom: 3vh;
     object-fit: contain;
-    align-items: center
+    align-items: center;
+    padding-right: 10px;
+}
+
+
+#logo{
+    width: 20vw;
+    object-fit: contain;
+    min-width: 300px;
 }
 
 #logout-icono{
@@ -172,7 +175,7 @@ body{
     font-family: 'Lato', sans-serif;
     font-weight: lighter;
     margin-right: 0.5vw;
-    font-size: calc(9px + 0.7vw);
+    font-size: calc(12px + 0.7vw);
 }
 .icono-jugadores{
     width: 2vw;
@@ -253,3 +256,17 @@ body{
     cursor: pointer;
     min-width: 150px;
 }
+
+@media only screen and (max-width: 1322px) {
+    #logo{
+        order: 1;
+    }
+
+    #header-div1{
+        order: 3;
+    }
+
+    #logoutDiv{
+        order: 2;
+    }
+  }

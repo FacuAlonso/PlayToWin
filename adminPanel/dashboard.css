@@ -1,3 +1,7 @@
+html{
+    overflow: hidden;
+}
+
 a:hover{
     color: white;
 }
@@ -11,13 +15,13 @@ body{
    width: 100vw;
    height: 100vh;
    margin: 0px;
-   padding-bottom: 5vh;
    background: #00070c;
    display: flex;
    flex-direction: column;
    align-items: center; 
-   overflow-y: show;
 }
+
+
 
 
 #encabezado{

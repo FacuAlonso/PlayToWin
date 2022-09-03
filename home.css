@@ -83,11 +83,11 @@ body{
 
 #ev_01{
     background-size: 100% 100%;
-    background-image: url("./assets/portadas/1658185258615.jpg");
+    background-image: url("assets/portadas/FortnitePortada1.jpg");
 }
 #ev_02{
     background-size: 100% 100%;
-    background-image: url("./assets/portadas/44980880602077790.jpg");
+    background-image: url("assets/portadas/ValorantPortada1.png");
 }
 .link_evento{
     display: flex;
@@ -106,7 +106,7 @@ body{
 
 #ev_03{
     background-size: 100% 100%;
-    background-image: url("./assets/portadas/61871253266266940.jpg");
+    background-image: url("assets/portadas/FFPortada1.jpg");
 }
 .textos{
     display: flex;

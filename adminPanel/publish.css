@@ -135,6 +135,14 @@ body{
     margin-top: 4vh;
 }
 
+.puntaje{
+    color: white;
+    font-family: 'Lato', sans-serif;display: flex;
+    font-size: calc(9px + 0.7vw);
+    font-weight: 500;
+    align-self:center;
+}
+
 .datos-caja{
     background-color: transparent;
     color: white;
@@ -191,12 +199,13 @@ body{
     margin-top: 3vh;
 }
 
-#selecJuego{
+.selecPuntaje{
     background-color: aliceblue;
     border-radius: 1vw;
     border-color: black;
     border-width: 0.2vw;
-    width: 15vw;
+    width: 20vw;
+    min-width: 200px;
     height: 5vh;
     color: rgb(13, 16, 69);
     cursor: pointer;

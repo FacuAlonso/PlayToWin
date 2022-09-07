@@ -68,7 +68,6 @@ html{
     right: 10vw;
     padding: 1vw;
     margin: 0vw;
-
 }
 
 #marca{
@@ -140,7 +139,7 @@ html{
     min-width: 30px;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 867px) {
     #logo{
         order: 1;
     }
@@ -153,7 +152,10 @@ html{
         order: 2;
         margin-left: 6vw;
     }
+
 }
+
+
 
 .logo-evento{
     width: 40vw;

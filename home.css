@@ -79,7 +79,7 @@ body{
     min-width: 30px;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 867px) {
     #logo{
         order: 1;
     }
@@ -100,11 +100,12 @@ body{
     align-self: center;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 	margin: auto;
     justify-content: flex-start;
     padding-left: 6vw;
     padding-right: 6vw;
+    overflow-y: scroll;
 }
 
 .titulo-principal{
@@ -122,6 +123,7 @@ body{
     flex-wrap: wrap;
     gap: 10vw;
     justify-content: center;
+    column-gap: 10vw;
 }
 
 .tarjeta-evento{
@@ -131,7 +133,15 @@ body{
     height: 20vh;
     justify-content: center;
     min-width: 300px;
+}
 
+@media only screen and (max-width: 821px) {
+    .tarjeta-evento{margin-top: 1vh;
+    }
+
+    .contenedor_eventos{
+        gap: 15vh;
+    }
 }
 
 .info-tarjeta{

@@ -73,26 +73,21 @@ body{
     margin-right: 1vw;
     width: 30vw;
 }
-.contenedor{
-	width: 90%;
-	max-width: 1200px;
-	margin: auto;
-	padding: 40px 0;
-}
-
 #logo{
     width: 22vw;
     object-fit: contain;
+    min-width: 150px;
 }
 
 #encabezado{
     background-color: #001b30;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
+    align-items: center;
     width: 100vw;
-    height: 10vh;
-    padding-top: 5vh;
-    padding-bottom: 6vh;
+    height: 20vh;
     overflow: hidden;
 }
 
@@ -101,32 +96,56 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-right: 5vw;
 }
 
 .navegador_boton{
     width: 20vw;
+    min-width: 200px;
+    justify-self: center;
+    align-self: center;
 }
 
 #datos{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    margin-right: 6vw;
+    justify-items: center;
+    justify-content: center;
 }
 
 
 #perfil-logo{
     margin-right: -0.5vw;
     width: 3vw;
+    min-width: 30px;
 }
 
 #open-menu-perfil{
     cursor: pointer;
     width: 2.5vw;
+    min-width: 30px;
 }
 
 #logout-icono{
     margin-left: 2vw;
     cursor: pointer;
     width: 3vw;
+    min-width: 30px;
+}
+
+@media only screen and (max-width: 960px) {
+    #logo{
+        order: 1;
+    }
+
+    #datos{
+        order: 3;
+    }
+
+    #perfil-div{
+        order: 2;
+        margin-left: 6vw;
+    }
 }

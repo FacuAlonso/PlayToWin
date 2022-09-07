@@ -7,9 +7,17 @@ body{
     background: rgb(1,36,64);
     background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
 }
+
+html{
+    overflow: hidden;
+}
+
 .box_contenedor{
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    height: 100%;
+    padding: 5vh 10vw 5vh 10vw;
 }
 .div-titulo{
     color: white;
@@ -148,6 +156,12 @@ body{
 }
 
 .logo-evento{
-    width: 50vw;
+    width: 40vw;
     object-fit: contain;
+}
+
+.box_izq{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
 }

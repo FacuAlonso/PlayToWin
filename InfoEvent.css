@@ -11,11 +11,6 @@ body{
     display: flex;
     flex-direction: row;
 }
-#Info{
-    margin-top: 5vw;
-    margin-left: 4vw;
-
-}
 .div-titulo{
     color: white;
     font-family:'Lato', sans-serif ;

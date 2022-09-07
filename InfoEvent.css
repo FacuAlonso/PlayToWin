@@ -3,7 +3,6 @@ body{
     width: 100vw;
     height: 100vh;
     margin: 0px;
-    padding-bottom: 5vh;
     background: rgb(1,36,64);
     background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
 }
@@ -116,10 +115,7 @@ html{
 
 #datos{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
+    text-align: center;
     justify-content: center;
 }
 

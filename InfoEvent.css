@@ -170,9 +170,14 @@ html{
     object-fit: contain;
 }
 .box_derecha{
+    align-content: center;
     width: 30vw;
     display: flex;
     flex-wrap: wrap;
+}
+
+.box_logo_evento{
+    height: 20vh;
 }
 
 .box_izq{

@@ -1,22 +1,25 @@
 body{
-    width: auto;
+    width: 100vw;
     height: auto;
     margin: 0px;
     background: rgb(1,36,64);
     background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
+    
 }
 
 html{
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .box_contenedor{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 100vw;
-    height: auto;
-    padding: 5vh 5vw 5vh 5vw;
+    height: 100vh;
+    width: auto;
+    margin-left: 5vw;
+    
 }
 .div-titulo{
     color: white;
@@ -33,12 +36,11 @@ html{
     flex-direction: column;
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
-    width:35vw;
+    width: 80%;
     height: auto;
     text-align: justify;
     padding: 1vw;
     margin-bottom: 2vw;
-
 }
 .Descripcion-datos{
     color: white;
@@ -58,8 +60,6 @@ html{
     color: white;
     font-family:'Lato', sans-serif ;
     font-weight: bold;
-    width: auto;
-    height: 100%;
     line-height: calc(6px + 1vw);
     font-size: calc(6px + 1vw);
 }
@@ -67,8 +67,8 @@ html{
 .box-reglas{
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
-    max-width:35vw;
-    height: 20vh;
+    width: 80%;
+    height: auto;
     text-align: justify;
     right: 10vw;
     padding: 1vw;
@@ -201,8 +201,9 @@ html{
     display: flex;
     flex-direction: column;
     width: 50vw;
-    min-width: 200px;
+    min-width: 600px;
 }
+
 
 .box_logo_evento{
     overflow: hidden;

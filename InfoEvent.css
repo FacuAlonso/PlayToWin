@@ -163,10 +163,13 @@ html{
     }
 }
 .logo-evento{
+    display: flex;
+    flex-wrap: wrap;
     width: 30vw;
-    object-fit: contain;
+    min-width: 3vw;
 }
 .box_derecha{
+    gap: 1vh;
     align-content: center;
     width: 30vw;
     display: flex;
@@ -183,4 +186,11 @@ html{
 
 .box_logo_evento{
     height: 20vh;
+}
+
+.logo_participantes{
+    margin-left: 13vw;
+}
+.boton_resultados{
+    padding: 1vw;
 }

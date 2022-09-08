@@ -164,9 +164,11 @@ html{
     }
 }
 .logo-evento{
-    display: flex;
-    flex-wrap: wrap;
-    width: 30vw;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border-radius: 1vw;
     min-width: 3vw;
 }
 .box_derecha{
@@ -174,10 +176,27 @@ html{
     align-content: center;
     width: 30vw;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     min-width: 200px;
 }
-
+.jugadores-evento{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    margin-right: 0.5vw;
+    font-size: calc(12px + 0.7vw);
+}
+.box-evento-b-2-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 20vw;
+    min-width: 200px;
+}
+.box-botones{
+    width: 20vw;
+}
 .box_izq{
     display: flex;
     flex-direction: column;
@@ -186,11 +205,13 @@ html{
 }
 
 .box_logo_evento{
-    height: 20vh;
+    overflow: hidden;
 }
 
 .logo_participantes{
-    margin-left: 13vw;
+    width: 2vw;
+    min-width: 20px;
+    object-fit: contain;
 }
 .boton_resultados{
     padding: 1vw;

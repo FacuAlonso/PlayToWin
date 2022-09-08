@@ -136,6 +136,7 @@ body{
     gap: 10vw;
     justify-content: center;
     column-gap: 10vw;
+    row-gap: 20vmin;
 }
 
 .tarjeta-evento{

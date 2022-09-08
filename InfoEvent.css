@@ -7,17 +7,16 @@ body{
 }
 
 html{
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .box_contenedor{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
-    height: 100%;
-    padding: 5vh 10vw 5vh 10vw;
-    overflow-y: scroll;
+    max-width: 100vw;
+    height: auto;
+    padding: 5vh 5vw 5vh 5vw;
 }
 .div-titulo{
     color: white;
@@ -30,24 +29,25 @@ html{
     font-weight: bold 
 }
 .box-descripcion{
+    display: flex;
+    flex-direction: column;
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
     width:35vw;
-    height: 20vh;
+    height: auto;
     text-align: justify;
-    right: 10vw;
     padding: 1vw;
     margin-bottom: 2vw;
 
 }
 .Descripcion-datos{
-    
     color: white;
     font-family:'Lato', sans-serif ;
-    font-weight: bold;
-    width: 10vw;
-    line-height: 1.08vw;
-    ;
+    font-weight: normal;
+    width: auto;
+    height: 100%;
+    line-height: calc(6px + 1vw);
+    font-size: calc(6px + 1vw);
 }
 .logo_participantes{
     width: 2vw;
@@ -58,15 +58,16 @@ html{
     color: white;
     font-family:'Lato', sans-serif ;
     font-weight: bold;
-    width: 35vw;
-    text-align: justify;
-    line-height: 1.08vw;
+    width: auto;
+    height: 100%;
+    line-height: calc(6px + 1vw);
+    font-size: calc(6px + 1vw);
 }
 
 .box-reglas{
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
-    width:35vw;
+    max-width:35vw;
     height: 20vh;
     text-align: justify;
     right: 10vw;

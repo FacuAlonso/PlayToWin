@@ -75,6 +75,14 @@ body{
     margin-left: 10vw;
 }
 
+#slogan1Img{
+    width: 30vw;
+    object-fit: contain;
+    align-self: center;
+    justify-self: center;
+
+}
+
 
 #slogan2{
     display: flex;
@@ -95,10 +103,7 @@ body{
     text-align: center;
 }
 
-#slogan1Img{
-    width: 30vw;
-    object-fit: contain;
-    align-self: center;
-    justify-self: center;
-
-}
+#backvid {
+    position:fixed;
+    z-index: -1;
+  }

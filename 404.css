@@ -1,0 +1,90 @@
+a:hover{
+    color: white;
+}
+
+html{
+    overflow: hidden;
+}
+
+body{
+   overflow: hidden;
+   width: 100vw;
+   height: 100vh;
+   margin: 0px;
+   padding-bottom: 5vh;
+   background: rgb(1,36,64);
+   background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
+   display: flex;
+   flex-direction: column;
+   align-items: center; 
+   justify-content: center;
+}
+
+#logo{
+    width: 15vw;
+    object-fit: contain;
+    min-width: 180px;
+}
+
+
+@media only screen and (max-width: 700px) {
+
+}
+
+#encabezado{
+    background-color: #001829;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    width: 100vw;
+    object-fit: contain;
+    align-items: center;
+    padding: 3vh 200px 3vh 200px;
+}
+
+.boton-editar{
+    border: none;
+    border-radius: 0.5vw;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );    width: 12vw;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: calc(9px + 0.7vw);
+    cursor: pointer;
+    min-width: 150px;
+    margin: auto 2vw;
+}
+
+.titulo1{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 30vw;
+    height: 10vh;
+    margin-top: 0px;
+}
+
+.titulo2{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: calc(17px + 1vw);
+    margin-left: 1vw;
+    cursor: default;
+    text-align: center;
+}
+
+#contenedor{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    border-radius: 2vw;
+    align-self: center;
+    justify-self: center;
+}

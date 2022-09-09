@@ -23,16 +23,6 @@ body{
     margin-left: 10vh;
 }
 
-#encabezado{
-    background-color: #001b30;
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
-    object-fit: contain;
-}
-
 
 @media only screen and (max-width: 700px) {
 

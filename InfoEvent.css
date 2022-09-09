@@ -24,12 +24,16 @@ html{
 .div-titulo{
     color: white;
     font-family:'Lato', sans-serif ;
-    font-weight: bold 
+    font-weight: bold;
+    font-size: 2vw;
+    margin-bottom: 1vw;
 }
 .div-subtitulo{
     color: white;
     font-family:'Lato', sans-serif ;
-    font-weight: bold 
+    font-weight: bold;
+    font-size: 1vw;
+    margin-bottom: 2vw;
 }
 .box-descripcion{
     display: flex;

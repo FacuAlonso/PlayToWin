@@ -185,7 +185,6 @@ html{
     display: flex;
     flex-flow: row wrap;
     min-width: 200px;
-    margin-bottom: 22vw;
     width: 30vw;
 }
 .jugadores-evento{

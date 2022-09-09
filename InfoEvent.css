@@ -42,6 +42,10 @@ html{
     padding: 1vw;
     margin-bottom: 2vw;
 }
+#t1{
+    font-weight: bold;
+    font-size: 1.65vw;
+}
 .Descripcion-datos{
     color: white;
     font-family:'Lato', sans-serif ;
@@ -59,7 +63,7 @@ html{
 #Reglas{
     color: white;
     font-family:'Lato', sans-serif ;
-    font-weight: bold;
+    font-weight: normal;
     line-height: calc(6px + 1vw);
     font-size: calc(6px + 1vw);
 }
@@ -204,6 +208,7 @@ html{
     flex-direction: column;
     width: 50vw;
     min-width: 600px;
+    margin-bottom: 2vw
 }
 
 
@@ -218,24 +223,43 @@ html{
     
 }
 .boton_participantes{
+    color: white;
     cursor: pointer;
     font-weight: bold;
     font-size: 1vw;
     padding: 0.6vw;
     border-radius: 0.4vw;
     border: none;
-    background: linear-gradient(180deg, rgb(117, 128, 138) 0%, rgb(109, 113, 121) 35%, rgb(48, 49, 51) 100%);
+    background: linear-gradient(180deg, rgb(79, 142, 202) 0%, rgb(62, 99, 173) 35%, rgb(23, 29, 41) 100%);
     width: 12vw;
 }
 
 
 .boton_resultados{
+    color: white;
     cursor: pointer;
     font-weight: bold;
     font-size: 1.6vw;
     padding: 1vw;
     border-radius: 0.4vw;
     border: none;
-    background: linear-gradient(180deg, rgb(117, 128, 138) 0%, rgb(109, 113, 121) 35%, rgb(48, 49, 51) 100%);
+    background: linear-gradient(180deg, rgb(79, 142, 202) 0%, rgb(62, 99, 173) 35%, rgb(23, 29, 41) 100%);
     width: 18vw;
+}
+
+.box-fecha{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1.2vw;
+    background-color: rgb(20, 20, 51);
+    line-height: 1.08vw;
+    width: 1000%;
+    height: auto;
+    text-align: justify;
+    right: 10vw;
+    padding: 1vw;
+    margin: vw;
 }

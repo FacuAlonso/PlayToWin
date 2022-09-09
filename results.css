@@ -1,0 +1,21 @@
+body{
+    width: 100vw;
+    height: auto;
+    margin: 0px;
+    background: rgb(1,36,64);
+    background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
+    
+}
+
+html{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.box_contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100vh;
+    width: auto;
+    margin-left: 5vw;

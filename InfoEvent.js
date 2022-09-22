@@ -1,8 +1,10 @@
-function abrir() {
-    var element = document.getElementById("popup-caja");
+
+function abrir(id) {
+    var element = document.getElementById(id);
     element.classList.add("visibilidad");
 }
-function cerrar() {
-    var element = document.getElementById("popup-caja");
+function cerrar(id) {
+    var element = document.getElementById(id);
     element.classList.remove("visibilidad");
 }
+

@@ -60,7 +60,7 @@ html{
 #titulo-popup{
     display: flex;
     height: 10vh;
-    font-size: 36px;
+    font-size: calc(12px + 1vw);
     font-weight: 600;
     margin:0;
     font-family:'Lato', sans-serif;
@@ -73,7 +73,7 @@ html{
 }
 
 .dato-input{
-    font-size: 26px;
+    font-size: calc(6px + 1vw);
     margin-bottom: 40px;
     font-weight: 300;
     color: white;
@@ -81,11 +81,18 @@ html{
 }
 
 .caja-input{
+    background-color: transparent;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    border-bottom: 1px solid #1890ff;
     width: 100%;
     margin-bottom: 20px;
     height: 52px;
     line-height: 52px;
-    font-size: 18px;
+    font-size: calc(6px + 1vw);
     text-align: center;
 }
 
@@ -105,7 +112,7 @@ html{
     color: white;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.6vw;
+    font-size: calc(12px + 1vw);
     padding: 1vw;
     border-radius: 0.4vw;
     border: none;
@@ -114,13 +121,13 @@ html{
 }
 
 .popup{
-    background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
+    background: #1d1f5c;
     box-shadow: 0xp 0xp 5xp 0xp rgba(0,0,0,.3);
     border-radius: 1vw;
     padding: 8vw;
     text-align: center;
     width: 15vw;
-    min-width: 30px;
+    min-width: 120px;
 
 }
 #t1{

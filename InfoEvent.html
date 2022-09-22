@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="InfoEvent.css" rel="stylesheet">
+    <script language="javascript" type="text/javascript" src="InfoEvent.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +31,7 @@
     </div>
 
     <div class="box_contenedor">
-        <div class="overlay visibilidad-oculta">
+        <div class="overlay visibilidad-oculta" id="popup-caja">
             <div class="popup">
                 <h1 id="titulo-popup">Participa:</h1>
                 <form>
@@ -42,7 +43,7 @@
                     </div>
                     <input type="submit" class="boton-popup" value="Enviar">
                 </form>
-                <button class="boton-popup" id="cerrar">Cerrar</button>
+                <button class="boton-popup" id="cerrar" onclick="cerrar()">Cerrar</button>
             </div>
         </div>
         <div id="Info" class="box_izq">
@@ -70,7 +71,7 @@
                 <img class="logo-evento" src="assets\portadas\CRPortada1.png">
             </div>
             <div class="box-botones">
-            <button class="boton_resultados" href="#">PARTICIPA</button></a>
+            <button class="boton_resultados" onclick="abrir()">PARTICIPA</button></a>
             </div>
             <div class="box-evento-b-2-2">
                 <div>

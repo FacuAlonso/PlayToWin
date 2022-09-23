@@ -34,14 +34,14 @@
         <div class="overlay visibilidad-oculta" id="popup-caja">
             <div class="popup">
                 <h1 id="titulo-popup">Participa:</h1>
-                <form>
-                    <div class="contenedor-input">
+                <form onsubmit="return validardatos()" name="Datos" id="Datos-forms"  method="post">
+                    <div class="contenedor-input" name="001" id="nom02">
                         <label for="nom01" class="dato-input">Usuario:</label>
-                        <input type="email" class="caja-input" name="nombre" id="nom01" placeholder="usuario@email.com">
+                        <input type="email" class="caja-input"  name="nom01" placeholder="usuario@email.com">
                         <label for="datos01" class="dato-input">Puntaje:</label>
-                        <input type="text" class="caja-input" name="puntaje" id="datos01" placeholder="ej: 20,3, ect">
+                        <input type="text" class="caja-input" name="datos01" id="puntaje" placeholder="ej: 20,3, ect" onblur="validarNum(this.id)">
                     </div>
-                    <input type="submit" class="boton-popup" value="Enviar">
+                    <input type="submit"  name= 'hola' class="boton-popup" value="Enviar">
                 </form>
                 <button class="boton-popup" id="cerrar" onclick="cerrar('popup-caja')">Cerrar</button>
             </div>

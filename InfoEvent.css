@@ -62,7 +62,6 @@ html{
     height: 10vh;
     font-size: calc(12px + 1vw);
     font-weight: 600;
-    margin:0;
     font-family:'Lato', sans-serif;
     color: white;
 }
@@ -70,6 +69,7 @@ html{
 .popup{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .dato-input{
@@ -125,9 +125,13 @@ html{
     box-shadow: 0xp 0xp 5xp 0xp rgba(0,0,0,.3);
     border-radius: 1vw;
     padding: 8vw;
+    column-gap: 2vh;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
     text-align: center;
     width: 15vw;
-    min-width: 120px;
 
 }
 #t1{
@@ -253,6 +257,10 @@ html{
     #perfil-div{
         order: 2;
         margin-left: 6vw;
+    }
+    .popup{
+        width: 90vw;
+        padding: 0px 0px 20px 0px;
     }
 }
 .logo-evento{

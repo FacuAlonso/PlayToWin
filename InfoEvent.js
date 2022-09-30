@@ -55,3 +55,20 @@ function agregarClase(id, nomClase){
     return res 
 }
 
+function ValidarSingUp(id, id2, id3, id4){
+    res = true
+    var num03 = document.forms[id][id2].value;
+    var num01 = document.forms[id][id3].value;
+    var num02 = document.forms[id][id4].value;
+
+    if ((num03 == null || num03 == "") || (num01 == null || num01 == "")) {
+        alert("Falta completar campos");
+        res = false;
+    }
+    if (num02 != num01){
+        alert("La contraseña no coincide");
+        res = false;
+    }
+
+    return res 
+}

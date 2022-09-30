@@ -54,6 +54,15 @@ function agregarClase(id, nomClase){
      nodo = document.getElementById(id);
      agregarClase(id, "visibilidad");
  }
+
+ function comprobar(param){
+    for (let i in param){
+        if (i==False) {
+            onsubmit= disable
+        }
+    }
+}
+
  function cerrar(id){
      nodo = document.getElementById(id);
      eliminarClase(id, "visibilidad");

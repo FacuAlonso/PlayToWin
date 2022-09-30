@@ -46,6 +46,18 @@
                 <button class="boton-popup" id="cerrar" onclick="cerrar('popup-caja')">Cerrar</button>
             </div>
         </div>
+        <div class="overlay visibilidad-oculta" id="popup-caja-2"> <!-- pop up de ver participantes -->
+            <div class="popup">
+                <h1 id="titulo-popup-2">Participantes:</h1>
+                <div class="datos-popup">
+                    <p>Jugador 1</p>
+                    <p>Jugador 2</p>
+                    <p>Jugador 3</p>
+                </div>
+                
+                <button class="boton-popup" id="cerrar" onclick="cerrar('popup-caja-2')">Cerrar</button>
+            </div>
+        </div>
         <div id="Info" class="box_izq">
             <div>
                 <p class="div-titulo">"Logra la mayor cantidad de elixir Quemado!"</p>
@@ -85,7 +97,7 @@
                 Puedes participar hasta el dia: 
             </div>
             <div>
-                <button class="boton_participantes" href="#">Ver participantes</button>
+                <button class="boton_participantes" onclick="abrir('popup-caja-2')" href="#">Ver participantes</button>
                 <a href="results.html" ><button class="boton_participantes" href="#">Resultados</button></a>
             </div>
         </div>

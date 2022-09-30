@@ -176,9 +176,10 @@ html{
 }
 
 .logo_participantes{
-    width: 5vw;
+    width: 3vw;
     min-width: 20px;
     object-fit: contain;
+    justify-items: right;
 }
 
 .box_izq{

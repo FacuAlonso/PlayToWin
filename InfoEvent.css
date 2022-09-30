@@ -358,3 +358,24 @@ html{
     padding: 1vw;
     margin: vw;
 }
+
+.datos-popup{
+    font-size: 1.5vw;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    
+    
+
+}
+
+#titulo-popup-2{
+    display: flex;
+    height: 10vh;
+    font-size: calc(12px + 1vw);
+    font-weight: 600;
+    font-family:'Lato', sans-serif;
+    color: white;
+    margin-top: 0vw;
+
+}

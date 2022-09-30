@@ -40,13 +40,12 @@ html{
     flex-direction: column;
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
-    width: 50vw;
-    height:auto;
+    width: 80%;
+    height: auto;
     text-align: justify;
     padding: 1vw;
     margin-bottom: 2vw;
     max-width: 50vw;
-    min-width: 25vw;
     
 }
 

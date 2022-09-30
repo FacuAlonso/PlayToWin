@@ -1,31 +1,3 @@
-const RE_NUM_ENTERO= /^\d*\.\d+$/;
-const RE_VACIO = /^\s*$/;
-
-function es2Ent2Dec(miID) {
-    var patron = RE_NUM_ENTERO;
-    var contenido = document.getElementById(miID).value;
-    return esVacio(miID) || patron.test(contenido);
-}
-
-function esVacio(miID) {
-    var patron = RE_VACIO;
-    var contenido = document.getElementById(miID).value;
-    return patron.test(contenido);
-  }
-
-function validarNum(miID) {
-    var valido;
-  
-    if (es2Ent2Dec(miID)) {
-      valido = true;
-    }
-    else {
-      valido = false;
-    }
-    return valido;
-  }
-  
-
 /**
 function abrir(id) {
     var element = document.getElementById(id);
@@ -69,10 +41,10 @@ function agregarClase(id, nomClase){
  }
 
 
- function validardatos() {
+ function validardatos(id, id2, id3) {
     res = true
-    var num03 = document.forms["Datos"]["nom01"].value;
-    var num01 = document.forms["Datos"]["datos01"].value;
+    var num03 = document.forms[id][id2].value;
+    var num01 = document.forms[id][id3].value;
    
 
     if ((num03 == null || num03 == "") || (num01 == null || num01 == "")) {

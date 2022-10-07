@@ -1,0 +1,231 @@
+body{
+    width: 100vw;
+    height: auto;
+    margin: 0px;
+    background: rgb(1,36,64);
+    background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
+    
+}
+
+html{
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.box_contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100vh;
+    width: auto;
+    margin-left: 5vw;
+    
+}
+.div-titulo{
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: bold;
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+.div-subtitulo{
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: bold;
+    font-size: 1vw;
+    margin-bottom: 2vw;
+}
+.box-ranking{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(20, 20, 51);
+    line-height: 1.08vw;
+    width: 80%;
+    height: auto;
+    text-align: justify;
+    padding: 1vw;
+    margin-bottom: 2vw;
+    max-width: 50vw;
+    
+}
+
+#marca{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 1vw;
+    width: 30vw;
+}
+#logo{
+    width: 22vw;
+    object-fit: contain;
+    min-width: 150px;
+}
+
+#encabezado{
+    background-color: #001b30;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 20vh;
+    overflow: hidden;
+    min-height: 10vmax;
+    min-width: 350px;
+    min-height: 150px;
+    padding-top: 2vh;
+}
+
+
+#perfil-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 5vw;
+    margin-left: 2vw;
+}
+
+.navegador_boton{
+    width: 20vw;
+    min-width: 200px;
+    justify-self: center;
+    align-self: center;
+}
+
+#datos{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+
+#perfil-logo{
+    margin-right: -0.5vw;
+    width: 3vw;
+    min-width: 30px;
+}
+
+#open-menu-perfil{
+    cursor: pointer;
+    width: 2.5vw;
+    min-width: 30px;
+}
+
+#logout-icono{
+    margin-left: 2vw;
+    cursor: pointer;
+    width: 3vw;
+    min-width: 30px;
+}
+
+@media only screen and (max-width: 867px) {
+    #marca{
+        order: 1;
+        margin-right: 10vw;
+    }
+
+    #datos{
+        order: 3;
+        width: 100%;
+    }
+
+    #perfil-div{
+        order: 2;
+        margin-left: 6vw;
+    }
+}
+.logo-evento{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 8vw;
+    border-radius: 1vw;
+    min-width: 3vw;
+}
+.box_derecha{
+    gap: 1vh;
+    align-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    min-width: 200px;
+    margin-bottom: 30vw;
+    width: 30vw;
+}
+
+
+.box-evento-b-2-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    width: 3vw;
+    min-width: 00px;
+}
+.jugadores-evento{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    margin-left: 4vw;
+    font-size: calc(12px + 0.7vw);
+}
+
+.logo_participantes{
+    width: 3vw;
+    min-width: 20px;
+    object-fit: contain;
+    justify-items: right;
+}
+
+.box_izq{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    min-width: 600px;
+    margin-bottom: 2vw
+}
+.tabla-titulo{
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: bold;
+    font-size: 1.8vw;
+    margin-bottom: 1vw;
+    text-align:center;
+}
+.tabla-info{
+    color: white;
+    font-family:'Lato', sans-serif ;
+    font-weight: normal;
+    font-size: 1vw;
+    margin-bottom: 1vw;
+    text-align:left;
+    
+}
+
+.column-positions{
+    background: rgb(221, 207, 79);
+    background: linear-gradient(180deg, rgb(122, 122, 89) 0%, rgb(229, 228, 128) 35%, rgb(236, 180, 107) 100%);
+    display: flex;
+    flex-direction: row;
+    min-height: none;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin-top: 0.5vw;
+    max-width: 50vw
+    ;
+}
+.conteiner-info{
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family:'Lato', sans-serif;
+    font-size: calc(0.3vw + 1vw);
+    
+}
+

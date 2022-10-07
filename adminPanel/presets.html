@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="presets.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Work+Sans:wght@900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../assets/JoystickFAVICON64.png">
-    <title>Dashboard | Admin Panel</title>
+    <title>presets | Admin Panel</title>
 </head>
 <body>
     <div id="encabezado">
         <a href="../home.html" id="logo"><img id="logo" src="../assets/playtowinICONO.png"></a>
         <div id="header-div1">
-            <h1 class="titulo">PANEL DE CONTROL DE ADMINISTRADOR</h1>
-            <button id="bot-new" onclick="window.location.href = 'new.html';">+ AÑADIR EVENTO</button>
-            <button id="bot-presets" onclick="window.location.href = 'presets.html';">MENÚ DE PRESETS</button>
+            <h1 class="titulo">MENÚ DE PRESETS DE EVENTOS</h1>
+            <button id="bot-new" onclick="window.location.href = 'new.html';">+ AÑADIR PRESET</button>
+            <button id="bot-presets" onclick="window.location.href = 'dashboard.html';">REGRESAR AL ADMIN PANEL</button>
         </div>
         <a href="../login.html" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
         <p class="cerrarsesion">CERRAR SESIÓN</p></a>
@@ -30,29 +30,22 @@
             </div>
             <div class="box-evento-b">
                 <div class="box-evento-b-1">
-                    <p class="titulo-evento">¡Logra la menor cantidad de Elixir Quemado!</p>
+                    <p class="titulo-evento">Clash Royale</p>
                 </div>
                 <div class="box-evento-b-2">
                     <div class="box-evento-b-2-1">
-                        <p class="juego-evento">Clash Royale</p>
-                    </div>
-                    <div class="box-evento-b-2-2">
-                        <p class="jugadores-evento">25</p>
-                        <img class="icono-jugadores" src="../assets\usuariosIcono.png">
+                        
                     </div>
                 </div>
             </div>
             <div class="box-evento-c">
                 <div class="box-evento-c-1">
                     <div class="box-evento-c-1-1">
-                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR EVENTO</button>  
+                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR PRESET</button>  
                     </div>
                     <div class="box-evento-c-1-2">
-                        <button class="boton-eliminar" onclick="fun()">ELIMINAR EVENTO</button> 
+                        <button class="boton-eliminar" onclick="fun()">ELIMINAR PRESET</button> 
                     </div>
-                </div>
-                <div class="box-evento-c-2">
-                    <button class="boton-publicarRes" onclick="window.location.href = 'publish.html';">PUBLICAR RESULTADOS</button> 
                 </div>
             </div>
         </div>
@@ -62,29 +55,22 @@
             </div>
             <div class="box-evento-b">
                 <div class="box-evento-b-1">
-                    <p class="titulo-evento">¡Recorre la mayor distancia en Battle Royale!</p>
+                    <p class="titulo-evento">Call of Duty: Mobile</p>
                 </div>
                 <div class="box-evento-b-2">
                     <div class="box-evento-b-2-1">
-                        <p class="juego-evento">Call Of Duty: Mobile</p>
-                    </div>
-                    <div class="box-evento-b-2-2">
-                        <p class="jugadores-evento">32</p>
-                        <img class="icono-jugadores" src="../assets\usuariosIcono.png">
+                        
                     </div>
                 </div>
             </div>
             <div class="box-evento-c">
                 <div class="box-evento-c-1">
                     <div class="box-evento-c-1-1">
-                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR EVENTO</button>  
+                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR PRESET</button>  
                     </div>
                     <div class="box-evento-c-1-2">
-                        <button class="boton-eliminar" onclick="fun()">ELIMINAR EVENTO</button> 
+                        <button class="boton-eliminar" onclick="fun()">ELIMINAR PRESET</button> 
                     </div>
-                </div>
-                <div class="box-evento-c-2">
-                    <button class="boton-publicarRes" onclick="window.location.href = 'publish.html';">PUBLICAR RESULTADOS</button> 
                 </div>
             </div>
         </div>
@@ -94,66 +80,50 @@
             </div>
             <div class="box-evento-b">
                 <div class="box-evento-b-1">
-                    <p class="titulo-evento">¡Obtén la mayor cantidad de Kills!</p>
+                    <p class="titulo-evento">Valorant</p>
                 </div>
                 <div class="box-evento-b-2">
                     <div class="box-evento-b-2-1">
-                        <p class="juego-evento">Valorant</p>
-                    </div>
-                    <div class="box-evento-b-2-2">
-                        <p class="jugadores-evento">48</p>
-                        <img class="icono-jugadores" src="../assets\usuariosIcono.png">
+                        
                     </div>
                 </div>
             </div>
             <div class="box-evento-c">
                 <div class="box-evento-c-1">
                     <div class="box-evento-c-1-1">
-                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR EVENTO</button>  
+                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR PRESET</button>  
                     </div>
                     <div class="box-evento-c-1-2">
-                        <button class="boton-eliminar" onclick="fun()">ELIMINAR EVENTO</button> 
+                        <button class="boton-eliminar" onclick="fun()">ELIMINAR PRESET</button> 
                     </div>
-                </div>
-                <div class="box-evento-c-2">
-                    <button class="boton-publicarRes" onclick="window.location.href = 'publish.html';">PUBLICAR RESULTADOS</button> 
                 </div>
             </div>
         </div>
-        
         <div class="box-evento">
             <div class="box-evento-a">
-                <img class="portada-evento" src="../assets\portadas\FortnitePortada1.png">
+                <img class="portada-evento" src="../assets/portadas/FortnitePortada1.png">
             </div>
             <div class="box-evento-b">
                 <div class="box-evento-b-1">
-                    <p class="titulo-evento">¡Obtén la mayor cantidad de Kills!</p>
+                    <p class="titulo-evento">Fortnite</p>
                 </div>
                 <div class="box-evento-b-2">
                     <div class="box-evento-b-2-1">
-                        <p class="juego-evento">Fortnite</p>
-                    </div>
-                    <div class="box-evento-b-2-2">
-                        <p class="jugadores-evento">18</p>
-                        <img class="icono-jugadores" src="../assets\usuariosIcono.png">
+                        
                     </div>
                 </div>
             </div>
             <div class="box-evento-c">
                 <div class="box-evento-c-1">
                     <div class="box-evento-c-1-1">
-                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR EVENTO</button>  
+                        <button class="boton-editar" onclick="window.location.href = 'edit.html';">EDITAR PRESET</button>  
                     </div>
                     <div class="box-evento-c-1-2">
-                        <button class="boton-eliminar" onclick="fun()">ELIMINAR EVENTO</button> 
+                        <button class="boton-eliminar" onclick="fun()">ELIMINAR PRESET</button> 
                     </div>
-                </div>
-                <div class="box-evento-c-2">
-                    <button class="boton-publicarRes" onclick="window.location.href = 'publish.html';">PUBLICAR RESULTADOS</button> 
                 </div>
             </div>
         </div>
-        
     </div>
     
 </body>

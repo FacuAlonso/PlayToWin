@@ -1,10 +1,10 @@
 body{
     width: 100vw;
-    height: auto;
+    height: 100vh;
     margin: 0px;
     background: rgb(1,36,64);
     background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
-    
+    padding-bottom: 10vh;
 }
 
 html{
@@ -16,31 +16,33 @@ html{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    height: 100vh;
-    width: auto;
-    margin-left: 5vw;
-    
+    height: auto;
+    width: 100%;
+    justify-content: space-around;
+    gap: 5vw;
 }
 .div-titulo{
     color: white;
     font-family:'Lato', sans-serif ;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: calc(20px + 1vw);
     margin-bottom: 1vw;
+    width: 80%;
 }
 .div-subtitulo{
     color: white;
     font-family:'Lato', sans-serif ;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: calc(20px + 0.5vw);
     margin-bottom: 2vw;
+    width: 80%;
 }
 .box-descripcion{
     display: flex;
     flex-direction: column;
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
-    width: 80%;
+    width: auto;
     height: auto;
     text-align: justify;
     padding: 1vw;
@@ -98,6 +100,10 @@ html{
 
 .visibilidad-oculta{
     visibility: hidden;
+}
+
+.no-mostrar{
+    display: none;
 }
 
 .visibilidad{
@@ -163,7 +169,7 @@ html{
 .box-reglas{
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
-    width: 80%;
+    width: auto;
     height: auto;
     text-align: justify;
     right: 10vw;
@@ -243,26 +249,6 @@ html{
     min-width: 30px;
 }
 
-@media only screen and (max-width: 867px) {
-    #marca{
-        order: 1;
-        margin-right: 10vw;
-    }
-
-    #datos{
-        order: 3;
-        width: 100%;
-    }
-
-    #perfil-div{
-        order: 2;
-        margin-left: 6vw;
-    }
-    .popup{
-        width: 90vw;
-        padding: 0px 0px 20px 0px;
-    }
-}
 .logo-evento{
     display: block;
     width: 100%;
@@ -276,8 +262,9 @@ html{
     align-content: center;
     display: flex;
     flex-flow: row wrap;
-    min-width: 200px;
+    min-width: 400px;
     width: 30vw;
+    order: 2;
 }
 .jugadores-evento{
     color: white;
@@ -301,9 +288,11 @@ html{
 .box_izq{
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    min-width: 600px;
-    margin-bottom: 2vw
+    flex-wrap: nowrap;
+    width: 50%;
+    min-width: 500px;
+    align-self: center;
+    order: 1;
 }
 
 
@@ -344,7 +333,8 @@ html{
 
 .box-fecha{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: normal;
@@ -357,6 +347,11 @@ html{
     right: 10vw;
     padding: 1vw;
     margin: vw;
+}
+
+.centrarTXT{
+    text-align: center;
+
 }
 
 .datos-popup{
@@ -378,4 +373,26 @@ html{
     color: white;
     margin-top: 0vw;
 
+}
+
+
+@media only screen and (max-width: 1000px) {
+    #marca{
+        order: 1;
+        margin-right: 10vw;
+    }
+
+    #datos{
+        order: 3;
+        width: 100%;
+    }
+
+    #perfil-div{
+        order: 2;
+        margin-left: 6vw;
+    }
+    .popup{
+        width: 90vw;
+        padding: 0px 0px 20px 0px;
+    }
 }

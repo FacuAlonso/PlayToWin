@@ -72,3 +72,33 @@ function ValidarSingUp(id, id2, id3, id4){
 
     return res 
 }
+
+// Establecer la fecha de cierre de evento
+var countDownDate = new Date("Oct 7, 2022 10:13:40").getTime();
+
+// Actualizar el contador cada 1 segundo
+var x = setInterval(function() {
+
+  // Tomar la fecha actual (FALTA RESOLVER ZONAS HORARIAS)
+  var now = new Date().getTime();
+
+  // Hallar la diferencia de tiempo entre la fecha límite y el presente
+  var distance = countDownDate - now;
+
+  // Cálculos de tiempo para cada unidad
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Muestra el resultado del cálculo en el texto id="contador-cierre"
+  document.getElementById("contador-cierre").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // Si la cuenta regresiva finalizó, se indica que el evento finalizó.
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("contador-cierre").innerHTML = "Evento Finalizado";
+    agregarClase("titulo-contador", "no-mostrar")
+  }
+}, 1000);

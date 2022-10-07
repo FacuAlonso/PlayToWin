@@ -74,7 +74,7 @@ function ValidarSingUp(id, id2, id3, id4){
 }
 
 // Establecer la fecha de cierre de evento
-var countDownDate = new Date("Oct 7, 2022 10:13:40").getTime();
+var countDownDate = new Date('2022-10-17T00:00:00').getTime();
 
 // Actualizar el contador cada 1 segundo
 var x = setInterval(function() {

@@ -104,7 +104,7 @@ html{
 }
 
 .no-mostrar{
-    display: none;
+    display: none !important;
 }
 
 .visibilidad{
@@ -269,6 +269,7 @@ html{
     min-width: 400px;
     width: 30vw;
     order: 2;
+    justify-content: center;
 }
 .jugadores-evento{
     color: white;
@@ -336,6 +337,7 @@ html{
     border: none;
     background: linear-gradient(180deg, rgb(79, 142, 202) 0%, rgb(62, 99, 173) 35%, rgb(23, 29, 41) 100%);
     width: auto;
+    margin-right: 2vw;
 }
 
 .box-fecha{

@@ -74,7 +74,7 @@ function ValidarSingUp(id, id2, id3, id4){
 }
 
 // Establecer la fecha de cierre de evento
-var countDownDate = new Date('2022-10-17T00:00:00').getTime();
+var countDownDate = new Date('2022-11-07T00:00:00').getTime();
 
 // Actualizar el contador cada 1 segundo
 var x = setInterval(function() {
@@ -99,6 +99,8 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("contador-cierre").innerHTML = "Evento Finalizado";
-    agregarClase("titulo-contador", "no-mostrar")
+    agregarClase("titulo-contador", "no-mostrar");
+    agregarClase("bot-participar", "no-mostrar");
+    agregarClase("cont-cant-jugadores", "no-mostrar");
   }
 }, 1000);

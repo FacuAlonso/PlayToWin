@@ -1,3 +1,19 @@
+<?php include 'database.php'; 
+
+// Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
+
+$buscaEvent = "SELECT * FROM eventos WHERE id = '".$_GET['id']."'";
+$result = mysqli_query($conn, $buscaEvent);
+$infoEvento = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Ahora busca las propiedades del preset del evento hallado
+
+$buscaPreset = "SELECT * FROM presets WHERE id = '".$infoEvento[0]["preset"]."' ";
+$result = mysqli_query($conn, $buscaPreset);
+$infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +22,15 @@
     <script language="javascript" type="text/javascript" src="InfoEvent.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Work+Sans:wght@900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/JoystickFAVICON64.png">
-    <title>Evento | PlayToWin</title>
+    <title><?php echo $infoEvento[0]["nomEvento"];?> | PlayToWin</title>
 </head>
 
-<body>
+<body onload="contador('<?php echo $infoEvento[0]["fechaFinal"];?>');">
 
     <div id="encabezado">
         <div id="marca">
-            <a href="home.html"><img id="logo" src="assets\playtowinICONO.png"></a>
+            <a href="home.php"><img id="logo" src="assets\playtowinICONO.png"></a>
         </div>
         <div id="datos">
             <a href="#"><img class="navegador_boton" src="assets\Resultados.png"></a>
@@ -59,22 +72,21 @@
             </div>
         </div>
         <div id="Info" class="box_izq">
-            <p class="div-titulo">"Logra la mayor cantidad de elixir Quemado!"</p>
-            <p class="div-subtitulo"> Clash Royale </p>
+            <p class="div-titulo"><?php echo $infoEvento[0]["nomEvento"];?></p>
+            <p class="div-subtitulo"><?php echo $infoPreset[0]["nomJuego"];?></p>
 
             <div id= Descripcion class="box-descripcion" >
                 <p id= "t1" class="Descripcion-datos" >Descripción</p>
-                <p class="Descripcion-datos">Juega una partida normal de Clash Royale intentando quemar la mayor cantidad de elixir. </p>
-                <p class="Descripcion-datos">Cuando estes conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados, asi como deberas aportar la captura de pantalla.</p>
+                <p class="Descripcion-datos"><?php echo $infoEvento[0]["descEvento"];?></p>
             </div>
             <div id="Reglas" class=box-reglas >
                 <p id="t1">Reglas</p>
-                <p class="Descripcion-datos">No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.</p>
+                <p class="Descripcion-datos"><?php echo $infoEvento[0]["reglasEvento"];?></p>
             </div>
         </div>
         <div class="box_derecha">
             <div class="box_logo_evento">
-                <img class="logo-evento" src="assets\portadas\CRPortada1.png">
+                <img class="logo-evento" src="<?php echo $infoPreset[0]["portada"];?>">
             </div>
             <div class="box-botones">
             <button id="bot-participar" class="boton_resultados" onclick="abrir('popup-caja')">PARTICIPAR</button>
@@ -84,20 +96,19 @@
                     <img class="logo_participantes" src="assets\usuariosIcono.png">
                 </div>
                 <div class="jugadores-evento">
-                    <p>25</p>
+                    <p><?php echo $infoEvento[0]["cantUsuarios"];?></p>
                 </div>
             </div>
             <div class="box-fecha">
                 <p class="centrarTXT" id="titulo-contador">El evento finaliza en: </p>
-                <p class="centrarTXT" id="contador-cierre"> Cargando... </p>
+                <p class="centrarTXT" id="contador-cierre">Cargando...</p>
             </div>
             <div>
                 <button class="boton_participantes" onclick="abrir('popup-caja-2')" href="#">Ver participantes</button>
-                <a href="results.html" ><button class="boton_participantes" href="#">Resultados</button></a>
+                <a href="<?php echo 'results.php?id='.$infoEvento[0]["id"];?>" ><button class="boton_participantes" href="#">Resultados</button></a>
             </div>
         </div>
     </div>
 
 </body>
-
 </html>

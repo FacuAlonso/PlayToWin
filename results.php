@@ -1,3 +1,18 @@
+<?php include 'database.php'; 
+
+// Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
+
+$buscaEvent = "SELECT * FROM eventos WHERE id = '".$_GET['id']."'";
+$result = mysqli_query($conn, $buscaEvent);
+$infoEvento = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Ahora busca las propiedades del preset del evento hallado
+
+$buscaPreset = "SELECT * FROM presets WHERE id = '".$infoEvento[0]["preset"]."' ";
+$result = mysqli_query($conn, $buscaPreset);
+$infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +31,7 @@
 
     <div id="encabezado">
         <div id="marca">
-            <a href="home.html"><img id="logo" src="assets\playtowinICONO.png"></a>
+            <a href="home.php"><img id="logo" src="assets\playtowinICONO.png"></a>
         </div>
         <div id="datos">
             <a href="#"><img class="navegador_boton" src="assets\Resultados.png"></a>
@@ -32,8 +47,8 @@
     <div class="box_contenedor">
         <div id="Info" class="box_izq">
             <div>
-                <p class="div-titulo">"Logra la mayor cantidad de elixir Quemado!</h1>
-                <p class="div-subtitulo"> Clash Royale </h2>
+                <p class="div-titulo"><?php echo $infoEvento[0]["nomEvento"];?></h1>
+                <p class="div-subtitulo"><?php echo $infoPreset[0]["nomJuego"];?></h2>
             </div>
             <div id= Tabla class="box-ranking" >
                 <p class="tabla-titulo">GANADORES</p>
@@ -58,14 +73,14 @@
         </div>
         <div class="box_derecha">
             <div class="box_logo_evento">
-                <img class="logo-evento" src="assets\portadas\CRPortada1.png">
+                <img class="logo-evento" src="<?php echo $infoPreset[0]["portada"];?>">
             </div>
             <div class="box-evento-b-2-2">
                 <div>
                     <img class="logo_participantes" src="assets\usuariosIcono.png">
                 </div>
                 <div class="jugadores-evento">
-                    <p>25</p>
+                    <p><?php echo $infoEvento[0]["cantUsuarios"];?></p>
                 </div>
             </div>
 

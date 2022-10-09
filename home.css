@@ -4,7 +4,7 @@ html{
 }
 
 body{
-    overflow: hidden;
+    overflow: scroll;
     width: 100vw;
     height: 100vh;
     margin: 0px;
@@ -118,7 +118,7 @@ body{
     padding-left: 6vw;
     padding-right: 6vw;
     padding-bottom: 20vh;
-    overflow-y: scroll;
+    overflow-y: visible;
 }
 
 .titulo-principal{

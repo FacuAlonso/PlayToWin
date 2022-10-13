@@ -2,13 +2,9 @@
 
 // Generar un array que contenga todos los eventos activos
 
-$buscaEvent = "SELECT * FROM eventos WHERE estado = 'activo'";
+$buscaEvent = "SELECT * FROM eventos WHERE estado = 'activo' ORDER BY fechaFinal";
 $result = mysqli_query($conn, $buscaEvent);
 $eventosActivos = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-// Ahora se ordena el array por fecha ascendiente
-$fechasCierre = array_column($eventosActivos, 'fechaFinal');
-array_multisort($fechasCierre, SORT_ASC, $eventosActivos);
 ?>
 
 <!DOCTYPE html>

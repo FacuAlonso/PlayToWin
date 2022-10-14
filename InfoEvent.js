@@ -104,3 +104,23 @@ var x = setInterval(function() {
     agregarClase("cont-cant-jugadores", "no-mostrar");
   }
 }, 1000);
+
+
+
+    // funcion leer mas para preguntas (sobrenos.html)
+
+    function myFunction() {
+        var respuesta = document.getElementById("hidden_info");
+        var moreText = document.getElementById("mostrar");
+        var btnText = document.getElementById("myBtn");
+      
+        if (respuesta.style.display === "none") {
+          respuesta.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+        } else {
+          respuesta.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+        }
+      }

@@ -1,0 +1,111 @@
+a:hover{
+    color: white;
+}
+
+
+body{
+   width: auto;
+   height: auto;
+   margin: 0px;
+   padding-bottom: 5vh;
+   background: rgb(1,36,64);
+   background: linear-gradient(180deg, rgb(0, 13, 23) 0%, rgba(16,51,113,1) 35%, rgb(58, 95, 200) 100%);
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+   padding-bottom: 5vh;
+}
+
+#logo{
+    width: 20vw;
+    object-fit: contain;
+    min-width: 180px;
+    margin-left: 10vh;
+}
+.boton-editar{
+    border: none;
+    border-radius: 0.5vw;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );    width: 12vw;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: calc(9px + 0.7vw);
+    cursor: pointer;
+    min-width: 150px;
+    margin: auto 2vw;
+}
+
+@media only screen and (max-width: 700px) {
+
+}
+
+#encabezado{
+    background-color: #001829;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    object-fit: contain;
+    align-items: center;
+    padding-top: 2vh;
+}
+
+
+#slogan1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vw;
+  }
+  
+  .titulo1 {
+    color:white;
+    font-family: 'Lato', sans-serif;
+  
+  }
+  
+  span {
+   font-size: 1vw;
+   color: white;
+   font-family: 'Lato', sans-serif;
+   width: 70%;
+   padding-bottom: 1vw;
+  }
+  
+  .readMore_btn {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+    border: none;
+    border-radius: 40px;
+    color:white ;
+    padding: 15px 32px;
+    font-size: 1vw;
+    box-shadow: 0px 0px 5px 0px #070c11;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .readMore_btn:hover {
+    box-shadow: none;
+    background-color: black;
+    color:rgb(173, 170, 170);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 3.05s;
+  }
+  
+
+  #mostrar {display: none;}

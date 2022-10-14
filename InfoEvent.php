@@ -57,8 +57,8 @@ $cantJugadores = count($lstJugadores);
                     <div class="contenedor-input" name="001" id="nom02">
                         <label for="nom01" class="dato-input">Jugador:</label>
                         <input type="email" class="caja-input"  name="nom01" placeholder="Tu nombre dentro del juego">
-                        <label for="datos01" class="dato-input">Puntaje:</label>
-                        <input type="text" class="caja-input" name="datos01" id="puntaje" placeholder="ej: 20,3, ect" pattern="^[1-9]\d*$">
+                        <label for="datos01" class="dato-input">Puntaje (sólo números):</label>
+                        <input type="text" class="caja-input" name="datos01" id="puntaje" placeholder="Ej: 20" pattern="^[1-9]\d*$">
                     </div>
                     <input type="submit"  name= 'hola' class="boton-popup" value="Enviar">
                 </form>

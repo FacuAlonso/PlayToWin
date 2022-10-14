@@ -69,12 +69,6 @@ html{
     color: white;
 }
 
-.popup{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
 .dato-input{
     font-size: calc(6px + 1vw);
     margin-bottom: 40px;
@@ -129,18 +123,20 @@ html{
 
 .popup{
     background: #1d1f5c;
+
     box-shadow: 0xp 0xp 5xp 0xp rgba(0,0,0,.3);
     border-radius: 1vw;
-    padding: 8vw;
+    padding: 5vw;
     column-gap: 2vh;
     justify-items: center;
     align-items: center;
     justify-content: center;
     align-content: center;
     text-align: center;
-    width: 15vw;
-
+    width: 30vw;
+    height: 60vh;
 }
+
 #t1{
     font-weight: bold;
     font-size: calc(20px + 0.8vw);
@@ -326,8 +322,19 @@ html{
     width: auto;
 }
 
-
 .boton_resultados{
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: calc(20px + 0.3vw);
+    padding: 0.6vw;
+    border-radius: 0.4vw;
+    border: none;
+    background: linear-gradient(180deg, rgb(79, 142, 202) 0%, rgb(62, 99, 173) 35%, rgb(23, 29, 41) 100%);
+    width: auto;
+}
+
+.boton_participar{
     color: white;
     cursor: pointer;
     font-weight: bold;
@@ -365,13 +372,15 @@ html{
 }
 
 .datos-popup{
-    font-size: 1.5vw;
+    font-size: calc(15px + 0.7vw);
+    height: 70%;
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: normal;
-    
-    
-
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 #titulo-popup-2{

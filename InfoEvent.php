@@ -3,14 +3,22 @@
 // Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
 
 $buscaEvent = "SELECT * FROM eventos WHERE id = '".$_GET['id']."'";
-$result = mysqli_query($conn, $buscaEvent);
-$infoEvento = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$result1 = mysqli_query($conn, $buscaEvent);
+$infoEvento = mysqli_fetch_all($result1, MYSQLI_ASSOC);
 
 // Ahora busca las propiedades del preset del evento hallado
 
 $buscaPreset = "SELECT * FROM presets WHERE id = '".$infoEvento[0]["preset"]."' ";
-$result = mysqli_query($conn, $buscaPreset);
-$infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$result2 = mysqli_query($conn, $buscaPreset);
+$infoPreset = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+
+// Retornar lista de participantes
+
+$buscaJugadores = "SELECT * FROM participaciones WHERE evento = '".$_GET['id']."' ORDER BY puntaje DESC";
+$resultJugadores = mysqli_query($conn, $buscaJugadores);
+$lstJugadores = mysqli_fetch_all($resultJugadores, MYSQLI_ASSOC);
+
+$cantJugadores = count($lstJugadores);
 
 ?>
 
@@ -27,7 +35,6 @@ $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body onload="contador('<?php echo $infoEvento[0]["fechaFinal"];?>');">
-
     <div id="encabezado">
         <div id="marca">
             <a href="home.php"><img id="logo" src="assets\playtowinICONO.png"></a>
@@ -42,15 +49,14 @@ $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <a href="login.html"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
         </div>
     </div>
-
     <div class="box_contenedor">
         <div class="overlay visibilidad-oculta" id="popup-caja">
             <div class="popup">
                 <h1 id="titulo-popup">Participa:</h1>
                 <form onsubmit="return validardatos('Datos', 'nom01', 'datos01')" name="Datos" id="Datos-forms"  method="post">
                     <div class="contenedor-input" name="001" id="nom02">
-                        <label for="nom01" class="dato-input">Usuario:</label>
-                        <input type="email" class="caja-input"  name="nom01" placeholder="usuario@email.com">
+                        <label for="nom01" class="dato-input">Jugador:</label>
+                        <input type="email" class="caja-input"  name="nom01" placeholder="Tu nombre dentro del juego">
                         <label for="datos01" class="dato-input">Puntaje:</label>
                         <input type="text" class="caja-input" name="datos01" id="puntaje" placeholder="ej: 20,3, ect" pattern="^[1-9]\d*$">
                     </div>
@@ -63,11 +69,10 @@ $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <div class="popup">
                 <h1 id="titulo-popup-2">Participantes:</h1>
                 <div class="datos-popup">
-                    <p>Jugador 1</p>
-                    <p>Jugador 2</p>
-                    <p>Jugador 3</p>
+                    <?php foreach($lstJugadores as $jugador): ?>
+                    <p><?php echo $jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos";?></p>
+                    <?php endforeach;?>
                 </div>
-                
                 <button class="boton-popup" id="cerrar" onclick="cerrar('popup-caja-2')">Cerrar</button>
             </div>
         </div>
@@ -89,14 +94,14 @@ $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <img class="logo-evento" src="<?php echo $infoPreset[0]["portada"];?>">
             </div>
             <div class="box-botones">
-            <button id="bot-participar" class="boton_resultados" onclick="abrir('popup-caja')">PARTICIPAR</button>
+            <button id="bot-participar" class="boton_participar" onclick="abrir('popup-caja')">PARTICIPAR</button>
             </div>
             <div class="box-evento-b-2-2" id="cont-cant-jugadores">
                 <div>
                     <img class="logo_participantes" src="assets\usuariosIcono.png">
                 </div>
                 <div class="jugadores-evento">
-                    <p><?php echo $infoEvento[0]["cantUsuarios"];?></p>
+                    <p><?php echo $cantJugadores;?></p>
                 </div>
             </div>
             <div class="box-fecha">
@@ -105,7 +110,7 @@ $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </div>
             <div>
                 <button class="boton_participantes" onclick="abrir('popup-caja-2')" href="#">Ver participantes</button>
-                <a href="<?php echo 'results.php?id='.$infoEvento[0]["id"];?>" ><button class="boton_participantes" href="#">Resultados</button></a>
+                <a href="<?php echo 'results.php?id='.$infoEvento[0]["id"];?>" ><button id="bot-res" class="boton_resultados no-mostrar" href="#">Resultados</button></a>
             </div>
         </div>
     </div>

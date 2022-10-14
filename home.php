@@ -50,9 +50,7 @@ $eventosActivos = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <div class="back-portada"><img class="portada-evento" src=<?php echo $infoPreset[0]["portada"];?>></div>
             </div>
             <?php endforeach;?>
-
         </div>
-
     </div>
 </body>
 </html>

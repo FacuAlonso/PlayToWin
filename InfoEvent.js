@@ -103,6 +103,7 @@ function contador(fechaCierre){
         agregarClase("titulo-contador", "no-mostrar");
         agregarClase("bot-participar", "no-mostrar");
         agregarClase("cont-cant-jugadores", "no-mostrar");
+        eliminarClase("bot-res", "no-mostrar");
     }
     }, 1000);
 }

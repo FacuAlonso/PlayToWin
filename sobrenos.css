@@ -15,6 +15,7 @@ body{
    flex-wrap: wrap;
    align-items: center;
    padding-bottom: 5vh;
+   
 }
 
 #logo{
@@ -79,6 +80,14 @@ body{
     font-family: 'Lato', sans-serif;
   
   }
+  .titulo2 {
+    color:white;
+    font-family: 'Lato', sans-serif;
+    font-weight: none;
+    font-size: 1.1vw
+    ;
+  
+  }
   
   span {
    font-size: 1vw;
@@ -88,19 +97,19 @@ body{
    padding-bottom: 1vw;
   }
   
-  .readMore_btn {
+  .boton {
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
     border: none;
     border-radius: 40px;
     color:white ;
-    padding: 15px 32px;
+    padding: 10px 25px;
     font-size: 1vw;
-    box-shadow: 0px 0px 5px 0px #070c11;
+    box-shadow: 0px 0px 10px 0px #070c11;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
   }
   
-  .readMore_btn:hover {
+  .boton:hover {
     box-shadow: none;
     background-color: black;
     color:rgb(173, 170, 170);

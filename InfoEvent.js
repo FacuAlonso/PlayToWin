@@ -107,20 +107,20 @@ var x = setInterval(function() {
 
 
 
-    // funcion leer mas para preguntas (sobrenos.html)
+// funcion leer mas para preguntas (sobrenos.html)
 
-    function myFunction(id,id2,id3) {
-        var respuesta = document.getElementById(id); //hidden info
-        var moreText = document.getElementById(id2); //mostrar
-        var btnText = document.getElementById(id3); //boton
-      
-        if (respuesta.style.display === "none") {
-          respuesta.style.display = "inline";
-          btnText.innerHTML = "↓";
-          moreText.style.display = "none";
-        } else {
-          respuesta.style.display = "none";
-          btnText.innerHTML = "↑";
-          moreText.style.display = "inline";
-        }
-      }
+function myFunction(id,id2,id3) {
+    var respuesta = document.getElementById(id); //hidden info
+    var moreText = document.getElementById(id2); //mostrar
+    var btnText = document.getElementById(id3); //boton
+    
+    if (respuesta.style.display === "none") {
+        respuesta.style.display = "inline";
+        btnText.innerHTML = "↓";
+        moreText.style.display = "none";
+    } else {
+        respuesta.style.display = "none";
+        btnText.innerHTML = "↑";
+        moreText.style.display = "inline";
+    }
+}

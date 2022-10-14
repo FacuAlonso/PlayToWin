@@ -209,6 +209,15 @@ body{
     min-width: 200px;
 }
 
+.fecha{
+    height: 3vw;
+    width: 15vw;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    font-size: calc(9px + 0.7vw);
+    margin-top: 20px;
+}
+
 
 @media only screen and (max-width: 950px) {
     #logo{

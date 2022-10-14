@@ -5,9 +5,6 @@
     <link href="new.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Work+Sans:wght@900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../assets/JoystickFAVICON64.png">
     <title>Crear Evento | Admin Panel</title>
 </head>
@@ -37,6 +34,8 @@
             <textarea class="datos-caja" name="desc" placeholder="Ingresa la descripción del evento"></textarea>
             <label for="nom01" class="datos-titulo">Reglas:</label>
             <textarea class="datos-caja" name="reglas" placeholder="Ingresa las reglas del evento"></textarea>
+            <label for="nom01" class="datos-titulo">Fecha de finalización:</label>
+            <input type="datetime-local" class="fecha" name="fecha"/>
             <input type="submit" class="boton-publicarRes" value="PUBLICAR EVENTO" id="boton-submit">
         </form>
     </div>

@@ -210,8 +210,8 @@ body{
 }
 
 .fecha{
-    height: 5vw;
-    width: 20vw;
+    height: 3vw;
+    width: 15vw;
     color: black;
     background-color: rgb(255, 255, 255);
     font-size: calc(9px + 0.7vw);

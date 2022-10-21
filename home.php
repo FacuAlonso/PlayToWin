@@ -1,10 +1,5 @@
 <?php include 'database.php'; 
-
-// Generar un array que contenga todos los eventos activos
-
-$buscaEvent = "SELECT * FROM eventos WHERE estado = 'activo' ORDER BY fechaFinal";
-$result = mysqli_query($conn, $buscaEvent);
-$eventosActivos = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$eventosActivos = listaEventos();
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +32,7 @@ $eventosActivos = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="contenedor_eventos">
             <?php foreach($eventosActivos as $evento): ?>
             <?php
-            $buscaPreset = "SELECT * FROM presets WHERE id = '".$evento["preset"]."' ";
-            $result = mysqli_query($conn, $buscaPreset);
-            $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $infoPreset = buscaPreset($evento["preset"]);
             ?>
             <div class="tarjeta-evento" id="ev_01" onclick="window.location.href = '<?php echo 'InfoEvent.php?id='.$evento["id"];?>';">
                 <div class="info-tarjeta">

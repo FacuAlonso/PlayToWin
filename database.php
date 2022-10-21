@@ -56,6 +56,7 @@ function buscaEvento($id){
     return $infoEvento;
 }
 
+// Busca la información del preset del evento correspondiente
 function buscaPreset($idPres){
     $infoPreset=NULL;
     if ($idPres!=""){
@@ -63,6 +64,17 @@ function buscaPreset($idPres){
         $infoPreset=consultarBD($sql);
     }
     return $infoPreset;
+}
+
+// Retornar lista de participantes del evento 
+
+function listaJugadores($id){
+    $res=NULL;
+    if ($id!=""){
+        $sql = "SELECT * FROM participaciones WHERE evento = '".$id."' ORDER BY puntaje DESC";
+        $res=consultarBD($sql);
+    }
+    return $res;
 }
 
 ?>

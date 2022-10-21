@@ -1,23 +1,8 @@
 <?php include 'database.php'; 
 
-// Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
-
-$buscaEvent = "SELECT * FROM eventos WHERE id = '".$_GET['id']."'";
-$result = mysqli_query($conn, $buscaEvent);
-$infoEvento = mysqli_fetch_all($result1, MYSQLI_ASSOC);
-
-// Ahora busca las propiedades del preset del evento hallado
-
-$buscaPreset = "SELECT * FROM presets WHERE id = '".$infoEvento[0]["preset"]."' ";
-$result = mysqli_query($conn, $buscaPreset);
-$infoPreset = mysqli_fetch_all($result2, MYSQLI_ASSOC);
-
-// Retornar lista de participantes
-
-$buscaJugadores = "SELECT * FROM participaciones WHERE evento = '".$_GET['id']."' ORDER BY puntaje DESC";
-$resultJugadores = mysqli_query($conn, $buscaJugadores);
-$lstJugadores = mysqli_fetch_all($resultJugadores, MYSQLI_ASSOC);
-
+$infoEvento = buscaEvento($_GET['id']);
+$infoPreset = buscaPreset($infoEvento[0]["preset"]);
+$lstJugadores = listaJugadores($_GET['id']);
 $cantJugadores = count($lstJugadores);
 
 ?>

@@ -31,7 +31,7 @@ $cantJugadores = count($lstJugadores);
         <div id="perfil-div">
             <img id="perfil-logo" src="assets\profileCircle.svg">
             <img id="open-menu-perfil" src="assets\dropDownArrow.svg">
-            <a href="login.html"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
+            <a href="login.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
         </div>
     </div>
     <div class="box_contenedor">

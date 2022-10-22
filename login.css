@@ -140,3 +140,11 @@ body{
 
 
 }
+.bad {
+    border-radius: 2vw;
+	text-align: center;
+	width: 40vw;
+	padding: 12px;
+	background-color: #a22;
+	color: #fff
+}

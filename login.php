@@ -10,8 +10,8 @@
     <title>Login | PlayToWin</title>
 </head>
 <body>
-    <a href="home.html" id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
-    <form onsubmit="return validardatos('box-login','nom01', 'ape01')" name="Datos" method="get" id="box-login">
+    <a href="home.php" id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
+    <form action="validarlogin.php" method="post" onsubmit="return validardatos('box-login','nom01', 'ape01')" name="Datos" method="get" id="box-login">
         <p class="titulo">Accede a tu cuenta</p>
         <label for="nom01" class="datos-titulo">Email:</label>
         <input type="email" class="datos-caja" name="nombre" id="nom01" placeholder="usuario@email.com"/>

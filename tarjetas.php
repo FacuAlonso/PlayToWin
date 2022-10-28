@@ -1,5 +1,5 @@
 <?php 
-include 'database.php'; 
+require_once 'database.php'; 
 function genTarjetas($estado){
     if ($estado=="ACTIVOS")
         $eventosActivos = listaEventos(); // Lo busca en database.php 

@@ -1,8 +1,9 @@
 <?php 
     include 'database.php'; 
     include 'header.php';
+    include 'tarjetas.php';
     $head = genHeader("Home | Play to Win");
-
+    $tarjetas = genTarjetas("ACTIVO");
     $body = <<<BODY
 
     <body>
@@ -23,14 +24,14 @@
         <div class="contenedor">
             <p class="titulo-principal">COMPETENCIAS</p>
             <div class="contenedor_eventos">
-                RENDERIZAR CONTENIDO
+                $tarjetas
             </div>
         </div>
     </body>
-
     BODY;
+
+    print("<html>");
+    echo($head);
+    echo($body);
+    print("</html>");
 ?>
-
-
-
-</html>

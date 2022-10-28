@@ -12,6 +12,6 @@ function genHeader($titulo){
         <title>$titulo</title>
     </head>
     HEAD;
+    echo($header);
 }
-echo($header);
 ?>

@@ -23,7 +23,7 @@
         <div class="contenedor">
             <p class="titulo-principal">COMPETENCIAS</p>
             <div class="contenedor_eventos">
-                
+                RENDERIZAR CONTENIDO
             </div>
         </div>
     </body>

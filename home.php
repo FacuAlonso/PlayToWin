@@ -3,7 +3,7 @@
     require_once 'header.php';
     require_once 'tarjetas.php';
     $head = genHeader("Home | Play to Win","home.css");
-    $tarjetas = genTarjetas("ACTIVOS");
+    $tarjetas = genTarjetas("ACTIVOS"); // Función de tarjetas.php
     $body = <<<BODY
     <body>
         <div id="encabezado">

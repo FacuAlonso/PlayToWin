@@ -76,20 +76,4 @@ function listaJugadores($id){
     }
     return $res;
 }
-
-function Validarpass($sql){
-	##############################################
-	#### C O N S U L T A
-	$preresult=NULL;
-    $result=NULL;
-	if ($sql!=""){
-		$conn  = conectarBD();               # conectar a base de datos
-		$preresult = mysqli_query($conn, $sql);  # enviar la consulta a BD y recibir el resultado
-        $result = mysqli_fetch_all($preresult, MYSQLI_ASSOC);
-		desconectarBD($conn);                # desconectar la base de datos
-	}	
-	# var_dump($dataTable);
-	# die();
-	return  $result;
-}
 ?>

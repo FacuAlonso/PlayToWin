@@ -2,7 +2,7 @@
     require_once 'database.php'; 
     require_once 'header.php';
     require_once 'tarjetas.php';
-    $head = genHeader("Home | Play to Win");
+    $head = genHeader("Home | Play to Win","home.css");
     $tarjetas = genTarjetas("ACTIVOS");
     $body = <<<BODY
     <body>

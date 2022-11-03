@@ -1,4 +1,4 @@
-<?php include 'database.php'; 
+<?php require_once 'database.php'; 
 
 $infoEvento = buscaEvento($_GET['id']);
 $infoPreset = buscaPreset($infoEvento[0]["preset"]);

@@ -1,11 +1,10 @@
 <?php 
-    include 'database.php'; 
-    include 'header.php';
-    include 'tarjetas.php';
+    require_once 'database.php'; 
+    require_once 'header.php';
+    require_once 'tarjetas.php';
     $head = genHeader("Home | Play to Win");
-    $tarjetas = genTarjetas("ACTIVO");
+    $tarjetas = genTarjetas("ACTIVOS");
     $body = <<<BODY
-
     <body>
         <div id="encabezado">
             <div id="marca">
@@ -31,7 +30,7 @@
     BODY;
 
     print("<html>");
-    echo($head);
-    echo($body);
+    print($head);
+    print($body);
     print("</html>");
 ?>

@@ -1,10 +1,10 @@
 <?php 
-    require_once 'database.php'; 
-    require_once 'header.php';
-    require_once 'tarjetas.php';
-    $head = genHeader("Home | Play to Win","home.css");
-    $tarjetas = genTarjetas("ACTIVOS"); // Función de tarjetas.php
+    include 'database.php'; 
+    include 'header.php';
+    $head = genHeader("Home | Play to Win");
+
     $body = <<<BODY
+
     <body>
         <div id="encabezado">
             <div id="marca">
@@ -23,14 +23,14 @@
         <div class="contenedor">
             <p class="titulo-principal">COMPETENCIAS</p>
             <div class="contenedor_eventos">
-                $tarjetas
+                RENDERIZAR CONTENIDO
             </div>
         </div>
     </body>
-    BODY;
 
-    print("<html>");
-    print($head);
-    print($body);
-    print("</html>");
+    BODY;
 ?>
+
+
+
+</html>

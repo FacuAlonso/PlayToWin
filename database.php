@@ -76,16 +76,15 @@ function listaJugadores($id){
     }
     return $res;
 }
-function Validarpass($usuario,$contraseña){
+function Validarpass($usuario){
 	##############################################
-	#### C O N S U L T A
-	$preresult=NULL;
+    $preresult=NULL;
     $result=NULL;
-	if ($usuario!="" && $contraseña!=""){
+	if ($usuario!=""){
 		$conn  = conectarBD();
-        $sql="SELECT*FROM usuarios where email='$usuario' and pass='$contraseña'";               # conectar a base de datos
+        $sql="SELECT*FROM usuarios where email='$usuario'";               # conectar a base de datos
 		$preresult = mysqli_query($conn, $sql);  # enviar la consulta a BD y recibir el resultado
-        $result = mysqli_fetch_all($preresult, MYSQLI_ASSOC);
+        $result = mysqli_fetch_array($preresult);
 		desconectarBD($conn);                # desconectar la base de datos
 	}	
 	# var_dump($dataTable);

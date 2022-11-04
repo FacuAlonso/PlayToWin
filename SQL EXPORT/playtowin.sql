@@ -5,6 +5,7 @@
 -- Servidor: 127.0.0.1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
 -- Tiempo de generación: 21-10-2022 a las 13:00:37
@@ -12,6 +13,9 @@
 -- Versión de PHP: 8.1.10
 =======
 -- Tiempo de generación: 04-11-2022 a las 02:26:16
+=======
+-- Tiempo de generación: 03-11-2022 a las 22:07:46
+>>>>>>> parent of 70f80c5 (sql)
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 >>>>>>> parent of 0f6bd69 (sql)
@@ -29,6 +33,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `playtowin`
 --
+<<<<<<< HEAD
 CREATE DATABASE IF NOT EXISTS `playtowin` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `playtowin`;
 
@@ -104,6 +109,8 @@ INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaj
 >>>>>>> parent of 0f6bd69 (sql)
 =======
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
+=======
+>>>>>>> parent of 70f80c5 (sql)
 
 -- --------------------------------------------------------
 
@@ -142,45 +149,9 @@ INSERT INTO `presets` (`id`, `nomJuego`, `portada`) VALUES
 =======
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `email` varchar(30) COLLATE utf8_bin NOT NULL,
-  `pass` varchar(30) COLLATE utf8_bin NOT NULL,
-  `isAdmin` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES
-(1, 'user1@mail.com', 'pass@123', 0),
-(2, 'user2@mail.com', 'pass@123', 0);
-
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `eventos`
---
-ALTER TABLE `eventos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `conectarPresets` (`preset`);
-
---
--- Indices de la tabla `participaciones`
---
-ALTER TABLE `participaciones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `conectarEventos` (`evento`),
-  ADD KEY `conectarUsuarios` (`usuario`);
 
 --
 -- Indices de la tabla `presets`
@@ -190,17 +161,11 @@ ALTER TABLE `presets`
   ADD UNIQUE KEY `nomJuego` (`nomJuego`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+<<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
@@ -221,33 +186,12 @@ ALTER TABLE `participaciones`
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
 
 --
+=======
+>>>>>>> parent of 70f80c5 (sql)
 -- AUTO_INCREMENT de la tabla `presets`
 --
 ALTER TABLE `presets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `eventos`
---
-ALTER TABLE `eventos`
-  ADD CONSTRAINT `conectarPresets` FOREIGN KEY (`preset`) REFERENCES `presets` (`id`);
-
---
--- Filtros para la tabla `participaciones`
---
-ALTER TABLE `participaciones`
-  ADD CONSTRAINT `conectarEventos` FOREIGN KEY (`evento`) REFERENCES `eventos` (`id`),
-  ADD CONSTRAINT `conectarUsuarios` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

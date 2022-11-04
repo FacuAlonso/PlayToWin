@@ -35,7 +35,7 @@ function loguear (){
 }
 function main(){
     session_start();
-    if(False/**isset($_SESSION['usuario'])*/){
+    if(isset($_SESSION['usuario'])){
         header("Location: principal.php");
     }
     

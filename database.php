@@ -76,4 +76,20 @@ function listaJugadores($id){
     }
     return $res;
 }
+function Validarpass($usuario,$contraseña){
+	##############################################
+	#### C O N S U L T A
+	$preresult=NULL;
+    $result=NULL;
+	if ($usuario!="" && $contraseña!=""){
+		$conn  = conectarBD();
+        $sql="SELECT*FROM usuarios where email='$usuario' and pass='$contraseña'";               # conectar a base de datos
+		$preresult = mysqli_query($conn, $sql);  # enviar la consulta a BD y recibir el resultado
+        $result = mysqli_fetch_all($preresult, MYSQLI_ASSOC);
+		desconectarBD($conn);                # desconectar la base de datos
+	}	
+	# var_dump($dataTable);
+	# die();
+	return  $result;
+}
 ?>

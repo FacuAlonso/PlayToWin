@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
 -- Tiempo de generación: 21-10-2022 a las 13:00:37
@@ -13,6 +14,9 @@
 -- Versión de PHP: 8.1.10
 =======
 -- Tiempo de generación: 04-11-2022 a las 02:26:16
+=======
+-- Tiempo de generación: 03-11-2022 a las 22:07:46
+>>>>>>> parent of 70f80c5 (sql)
 =======
 -- Tiempo de generación: 03-11-2022 a las 22:07:46
 >>>>>>> parent of 70f80c5 (sql)
@@ -33,6 +37,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `playtowin`
 --
+<<<<<<< HEAD
 <<<<<<< HEAD
 CREATE DATABASE IF NOT EXISTS `playtowin` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `playtowin`;
@@ -111,6 +116,8 @@ INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaj
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
 =======
 >>>>>>> parent of 70f80c5 (sql)
+=======
+>>>>>>> parent of 70f80c5 (sql)
 
 -- --------------------------------------------------------
 
@@ -145,9 +152,12 @@ INSERT INTO `presets` (`id`, `nomJuego`, `portada`) VALUES
 (3, 'Clash Royale', 'portadas\\RXwBOXf.png'),
 (4, 'Free Fire', 'portadas\\3mAiEpV.png'),
 (5, 'Fortnite', 'portadas\\JXpzXpt.png');
+<<<<<<< HEAD
 >>>>>>> parent of 0f6bd69 (sql)
 =======
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
+=======
+>>>>>>> parent of 70f80c5 (sql)
 
 --
 -- Índices para tablas volcadas
@@ -165,6 +175,7 @@ ALTER TABLE `presets`
 --
 
 --
+<<<<<<< HEAD
 <<<<<<< HEAD
 -- AUTO_INCREMENT de la tabla `eventos`
 --
@@ -186,6 +197,8 @@ ALTER TABLE `participaciones`
 >>>>>>> 1341200d8e7137a7f8ee948dbe9d88fb21001fac
 
 --
+=======
+>>>>>>> parent of 70f80c5 (sql)
 =======
 >>>>>>> parent of 70f80c5 (sql)
 -- AUTO_INCREMENT de la tabla `presets`

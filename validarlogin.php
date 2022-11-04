@@ -1,21 +1,23 @@
 <?php
 include('database.php');
-$usuario=$_POST['nombre'];
-$contraseña=$_POST['apellido'];
+function Validacion($usuario,$contraseña){
+  $resultado=Validarpass($usuario,$contraseña);
 
-$sql="SELECT*FROM usuarios where email='$usuario' and pass='$contraseña'";
-$resultado=Validarpass($sql);
+  if($resultado!=NUll){
+    
+      header("location:home.php");
 
-if($resultado){
-  
-    header("location:home.php");
+  }else{
+      ?>
+      <?php
+      include("login.php");
 
-}else{
-    ?>
-    <?php
-    include("login.php");
-
-  ?>
-  <h1 class="bad">ERROR DE AUTENTIFICACION</h1>
-  <?php
+    echo('<h1 class="bad">ERROR DE AUTENTIFICACION</h1>');
+  }
 }
+function main(){
+  $usuario=$_POST['nombre'];
+  $contraseña=$_POST['apellido'];
+  Validacion($usuario,$contraseña);
+}
+main();

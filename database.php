@@ -77,13 +77,14 @@ function listaJugadores($id){
     return $res;
 }
 
-function Validarpass($sql){
+function Validarpass($usuario,$contraseña){
 	##############################################
 	#### C O N S U L T A
 	$preresult=NULL;
     $result=NULL;
-	if ($sql!=""){
-		$conn  = conectarBD();               # conectar a base de datos
+	if ($usuario!="" && $contraseña!=""){
+		$conn  = conectarBD();
+        $sql="SELECT*FROM usuarios where email='$usuario' and pass='$contraseña'";               # conectar a base de datos
 		$preresult = mysqli_query($conn, $sql);  # enviar la consulta a BD y recibir el resultado
         $result = mysqli_fetch_all($preresult, MYSQLI_ASSOC);
 		desconectarBD($conn);                # desconectar la base de datos
@@ -91,32 +92,5 @@ function Validarpass($sql){
 	# var_dump($dataTable);
 	# die();
 	return  $result;
-}
-
-function ValidarForm(){
-    if isset($_POST['nombre']) && isset($_POST['apellido']){
-        
-    }
-    else{
-        $usuario=$_POST['nombre'];
-        $contraseña=$_POST['apellido'];
-
-        $sql="SELECT*FROM usuarios where email='$usuario' and pass='$contraseña'";
-        $resultado=Validarpass($sql);
-
-        if($resultado){
-        
-            header("location:home.php");
-
-        }else{
-            ?>
-            <?php
-            include("login.php");
-
-        ?>
-        <h1 class="bad">ERROR DE AUTENTIFICACION</h1>
-        <?php
-        }
-    }
 }
 ?>

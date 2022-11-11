@@ -12,7 +12,7 @@
                 <label for="ape01" class="datos-titulo">Contraseña:</label>
                 <input type="password" class="datos-caja" name="pass" id="ape01" placeholder="Ingresa tu contraseña aquí"/>
                 <input type="submit" class="datos-registro" value="INICIAR SESIÓN" id="boton-submit">
-                <a href="signup.html" id="yatienecuenta">¿No tienes una cuenta aún? <b>CREA TU CUENTA AQUÍ</b></a>
+                <a href="signup.php" id="yatienecuenta">¿No tienes una cuenta aún? <b>CREA TU CUENTA AQUÍ</b></a>
             </form>
         </body>
     BODY;

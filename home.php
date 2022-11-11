@@ -2,7 +2,7 @@
     require_once 'database.php'; 
     require_once 'header.php';
     require_once 'tarjetas.php';
-    $head = genHeader("Home | Play to Win","home.css");
+    $head = genHeader("Home | Play to Win","home.css",NULL); //Titulo,CSS,JS
     $tarjetas = genTarjetas("ACTIVOS"); // Función de tarjetas.php
     $body = <<<BODY
     <body>
@@ -29,8 +29,13 @@
     </body>
     BODY;
 
-    print("<html>");
-    print($head);
-    print($body);
-    print("</html>");
+    $sitio = <<<SITIO
+    <!DOCTYPE html>
+    <html lang="es">
+        $head
+        $body
+    </html>
+    SITIO;
+
+    print($sitio);
 ?>

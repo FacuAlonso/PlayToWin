@@ -93,12 +93,13 @@ function Validarpass($usuario){
 }
 function Crearcuenta($usuario, $pass){
 $conn=conectarBD();
-$sql = "INSERT INTO usuarios (email,pass) VALUES ($usuario, $pass)";
+$sql = "INSERT INTO usuarios (email,pass) VALUES ('$usuario', $pass)";
 if (mysqli_query($conn,$sql)) {
-  echo "Se ha creado correctamente";
+    echo '<script language="javascript">alert("Se ha creado correctamente");</script>';
 }
 else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo '<script language="javascript">alert(""Error: " . $sql . "<br>" . $conn->error;");</script>';
 }
+desconectarBD($conn); 
 }
 ?>

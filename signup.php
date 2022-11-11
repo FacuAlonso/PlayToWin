@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-$head = genHeader("Login | Play to Win",'signup.css');
+$head = genHeader("Login | Play to Win",'signup.css',NULL);
 
 $body = <<<BODY
         <body>
@@ -14,7 +14,7 @@ $body = <<<BODY
                 <label for="clv01" class="datos-titulo">Confirma tu contraseña:</label>
                 <input type="password" class="datos-caja" name="clave" id="clv01" placeholder="Confirma la contraseña ingresada"/>
                 <input type="submit" class="datos-registro" value="REGISTRARSE" id="boton-submit">
-                <a href="login.html" id="yatienecuenta">¿Ya tienes una cuenta? <b>INICIA SESIÓN</b></a>
+                <a href="login.php" id="yatienecuenta">¿Ya tienes una cuenta? <b>INICIA SESIÓN</b></a>
             </form>
         </body>
     BODY;

@@ -6,6 +6,7 @@ function validacion(){
     $resultado= Validarpass($usuario);
     if (empty($resultado)){
         Crearcuenta($usuario,$pass);
+        header("Location: login.php");
     }
     else{
         header("Location: login.php");

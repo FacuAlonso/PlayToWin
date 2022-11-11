@@ -29,8 +29,13 @@
     </body>
     BODY;
 
-    print("<html>");
-    print($head);
-    print($body);
-    print("</html>");
+    $sitio = <<<SITIO
+    <!DOCTYPE html>
+    <html lang="es">
+        $head
+        $body
+    </html>
+    SITIO;
+
+    print($sitio);
 ?>

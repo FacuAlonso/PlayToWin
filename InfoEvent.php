@@ -1,25 +1,31 @@
-<?php require_once 'database.php'; 
+<?php 
+require_once 'database.php'; 
+require_once 'header.php';
 
 $infoEvento = buscaEvento($_GET['id']);
 $infoPreset = buscaPreset($infoEvento[0]["preset"]);
 $lstJugadores = listaJugadores($_GET['id']);
 $cantJugadores = count($lstJugadores);
+$nomEvento = $infoEvento[0]["nomEvento"];
+$fechaFinal = $infoEvento[0]["fechaFinal"];
+$nomJuego = $infoPreset[0]["nomJuego"];
+$idEvento = $infoEvento[0]["id"];
+$descripcion = $infoEvento[0]["descEvento"];
+$reglas= $infoEvento[0]["reglasEvento"];;
+$portada = $infoPreset[0]["portada"];
 
-?>
+$head = genHeader("$nomEvento | Play to Win","InfoEvent.css");
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="InfoEvent.css" rel="stylesheet">
-    <script language="javascript" type="text/javascript" src="InfoEvent.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/JoystickFAVICON64.png">
-    <title><?php echo $infoEvento[0]["nomEvento"];?> | PlayToWin</title>
-</head>
+function puntajes(){
+    foreach ($GLOBALS['lstJugadores'] as $jugador):;
+        echo $jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos";
+    endforeach;
+}
 
-<body onload="contador('<?php echo $infoEvento[0]["fechaFinal"];?>');">
+$lstPuntajes = puntajes();
+
+$body = <<<BODY
+<body onload="contador('$fechaFinal');">
     <div id="encabezado">
         <div id="marca">
             <a href="home.php"><img id="logo" src="assets\playtowinICONO.png"></a>
@@ -54,29 +60,27 @@ $cantJugadores = count($lstJugadores);
             <div class="popup">
                 <h1 id="titulo-popup-2">Participantes:</h1>
                 <div class="datos-popup">
-                    <?php foreach($lstJugadores as $jugador): ?>
-                    <p><?php echo $jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos";?></p>
-                    <?php endforeach;?>
+                    $lstPuntajes
                 </div>
                 <button class="boton-popup" id="cerrar" onclick="cerrar('popup-caja-2')">Cerrar</button>
             </div>
         </div>
         <div id="Info" class="box_izq">
-            <p class="div-titulo"><?php echo $infoEvento[0]["nomEvento"];?></p>
-            <p class="div-subtitulo"><?php echo $infoPreset[0]["nomJuego"];?></p>
+            <p class="div-titulo">$nomEvento</p>
+            <p class="div-subtitulo">$nomJuego</p>
 
             <div id= Descripcion class="box-descripcion" >
                 <p id= "t1" class="Descripcion-datos" >Descripción</p>
-                <p class="Descripcion-datos"><?php echo $infoEvento[0]["descEvento"];?></p>
+                <p class="Descripcion-datos">$descripcion</p>
             </div>
             <div id="Reglas" class=box-reglas >
                 <p id="t1">Reglas</p>
-                <p class="Descripcion-datos"><?php echo $infoEvento[0]["reglasEvento"];?></p>
+                <p class="Descripcion-datos">$reglas</p>
             </div>
         </div>
         <div class="box_derecha">
             <div class="box_logo_evento">
-                <img class="logo-evento" src="<?php echo $infoPreset[0]["portada"];?>">
+                <img class="logo-evento" src="$portada">
             </div>
             <div class="box-botones">
             <button id="bot-participar" class="boton_participar" onclick="abrir('popup-caja')">PARTICIPAR</button>
@@ -86,7 +90,7 @@ $cantJugadores = count($lstJugadores);
                     <img class="logo_participantes" src="assets\usuariosIcono.png">
                 </div>
                 <div class="jugadores-evento">
-                    <p><?php echo $cantJugadores;?></p>
+                    <p>$cantJugadores</p>
                 </div>
             </div>
             <div class="box-fecha">
@@ -95,10 +99,23 @@ $cantJugadores = count($lstJugadores);
             </div>
             <div>
                 <button class="boton_participantes" onclick="abrir('popup-caja-2')" href="#">Ver participantes</button>
-                <a href="<?php echo 'results.php?id='.$infoEvento[0]["id"];?>" ><button id="bot-res" class="boton_resultados no-mostrar" href="#">Resultados</button></a>
+                <a href="$idEvento" ><button id="bot-res" class="boton_resultados no-mostrar" href="#">Resultados</button></a>
             </div>
         </div>
     </div>
-
 </body>
-</html>
+BODY;
+
+$sitio = <<<SITIO
+    <!DOCTYPE html>
+    <html lang="es">
+        $head
+        $body
+    </html>
+    SITIO;
+
+print($sitio);
+?>
+
+
+

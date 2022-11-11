@@ -14,7 +14,7 @@ $descripcion = $infoEvento[0]["descEvento"];
 $reglas= $infoEvento[0]["reglasEvento"];;
 $portada = $infoPreset[0]["portada"];
 
-$head = genHeader("$nomEvento | Play to Win","InfoEvent.css");
+$head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");
 
 function puntajes(){
     foreach ($GLOBALS['lstJugadores'] as $jugador):;

@@ -16,5 +16,12 @@
             </form>
         </body>
     BODY;
-    echo($body);
+    $paginalog= <<<Sitio
+    <!DOCTYPE html>
+    <html lang="es">
+    $head
+    $body
+    </html>
+    Sitio;
+    echo($paginalog);
 ?>

@@ -91,4 +91,14 @@ function Validarpass($usuario){
 	# die();
 	return  $result;
 }
+function Crearcuenta($usuario, $pass){
+$conn=conectarBD();
+$sql = "INSERT INTO usuarios (email,pass) VALUES ($usuario, $pass)";
+if (mysqli_query($conn,$sql)) {
+  echo "Se ha creado correctamente";
+}
+else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+}
 ?>

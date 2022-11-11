@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-$head = genHeader("Login | Play to Win",'signup.css');
+$head = genHeader("Login | Play to Win",'signup.css',NULL);
 
 $body = <<<BODY
         <body>

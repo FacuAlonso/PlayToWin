@@ -10,10 +10,10 @@
         <a href="../home.php" id="logo"><img id="logo" src="../assets/playtowinICONO.png"></a>
         <div id="header-div1">
             <h1 class="titulo">PANEL DE CONTROL DE ADMINISTRADOR</h1>
-            <button id="bot-new" onclick="window.location.href = 'new.html';">+ AÑADIR EVENTO</button>
-            <button id="bot-presets" onclick="window.location.href = 'presets.html';">MENÚ DE PRESETS</button>
+            <button id="bot-new" onclick="window.location.href = 'new.php';">+ AÑADIR EVENTO</button>
+            <button id="bot-presets" onclick="window.location.href = 'presets.php';">MENÚ DE PRESETS</button>
         </div>
-        <a href="../login.html" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+        <a href="../login.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
         <p class="cerrarsesion">CERRAR SESIÓN</p></a>
     </div>
     <div id="cont-eventos">

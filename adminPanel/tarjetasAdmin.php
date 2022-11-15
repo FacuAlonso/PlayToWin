@@ -15,7 +15,7 @@ function genTarjetasAdmin(){
         $tarjeta = <<<TARJETA
         <div class="box-evento">
             <div class="box-evento-a">
-                <img class="portada-evento" src="$portada">
+                <img class="portada-evento" src="../$portada">
             </div>
             <div class="box-evento-b">
                 <div class="box-evento-b-1">

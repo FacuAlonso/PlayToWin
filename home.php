@@ -16,7 +16,7 @@
             </div>
             <div id="perfil-div">
                 <img id="perfil-logo" src="assets\profileCircle.svg">
-                <a href="adminPanel/dashboard.html"> <img id="open-menu-perfil" src="assets\dropDownArrow.svg"></a>
+                <a href="adminPanel/dashboard.php"> <img id="open-menu-perfil" src="assets\dropDownArrow.svg"></a>
                 <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>

@@ -3,6 +3,12 @@ require_once 'database.php';
 require_once 'header.php';
 
 $infoEvento = buscaEvento($_GET['id']);
+
+if($infoEvento[0] === NULL){
+    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.html");
+    die;
+}
+
 $infoPreset = buscaPreset($infoEvento[0]["preset"]);
 $lstJugadores = listaJugadores($_GET['id']);
 $cantJugadores = count($lstJugadores);
@@ -11,7 +17,7 @@ $fechaFinal = $infoEvento[0]["fechaFinal"];
 $nomJuego = $infoPreset[0]["nomJuego"];
 $idEvento = $infoEvento[0]["id"];
 $descripcion = $infoEvento[0]["descEvento"];
-$reglas= $infoEvento[0]["reglasEvento"];;
+$reglas= $infoEvento[0]["reglasEvento"];
 $portada = $infoPreset[0]["portada"];
 
 $head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");

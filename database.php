@@ -66,6 +66,14 @@ function buscaPreset($idPres){
     return $infoPreset;
 }
 
+// Busca todos los presets
+function listaPresets(){
+    $lstPresets=NULL;
+    $sql = "SELECT * FROM presets";
+    $lstPresets=consultarBD($sql);
+    return $lstPresets;
+}
+
 // Retornar lista de participantes del evento 
 
 function listaJugadores($id){

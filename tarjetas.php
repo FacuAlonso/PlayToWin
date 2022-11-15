@@ -18,7 +18,7 @@ function genTarjetas($estado){
                     <p class="label-juego">$nomJuego</p>
                     <p class="participa-boton">Participa</p>
                 </div>
-                <div class="back-portada"><img class="portada-evento" src=$portada></div>
+                <div class="back-portada"><img class="portada-evento" src="$portada"></div>
             </div>
             TARJETA;
             $tarjetas.=$tarjeta;

@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="new.css" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../assets/JoystickFAVICON64.png">
-    <title>Crear Evento | Admin Panel</title>
-</head>
-<body>
+<?php 
+    require_once '../database.php'; 
+    require_once '../header.php';
+    
+    $head = genHeader("Crear evento | Admin Panel","new.css",NULL); //Titulo,CSS,JS
+    $body = <<<BODY
+    <body>
     <div id="encabezado">
-        <a href="../home.html" id="logo"><img id="logo" src="../assets/playtowinICONO.png"></a>
+        <a href="../home.php" id="logo"><img id="logo" src="../assets/playtowinICONO.png"></a>
         <div id="header-div1">
             <h1 class="titulo">CREAR UN NUEVO EVENTO</h1>
-            <button id="bot-cancel" onclick="window.location.href = 'dashboard.html';">CANCELAR CREACIÓN</button>
+            <button id="bot-cancel" onclick="window.location.href = 'dashboard.php';">CANCELAR CREACIÓN</button>
         </div>
-        <a href="../login.html" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+        <a href="../login.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
         <p class="cerrarsesion">CERRAR SESIÓN</p></a>
     </div>
     <div id="cont-eventos">
@@ -23,7 +19,7 @@
             <h1 class="titulo">INTRODUCE LOS DETALLES DEL EVENTO</h1>
             <label for="nom01" class="datos-titulo">Selecciona el preset de juego del evento:</label>
             <select name="select" id="selecJuego">
-                <option value="clash" selected>Clash Royale</option>
+                <option value="clash">Clash Royale</option>
                 <option value="fortnite">Fortnite</option>
                 <option value="codm">COD:Mobile</option>
                 <option value="valorant">Valorant</option>
@@ -39,6 +35,16 @@
             <input type="submit" class="boton-publicarRes" value="PUBLICAR EVENTO" id="boton-submit">
         </form>
     </div>
-    
-</body>
-</html>
+    </body>
+    BODY;
+
+    $sitio = <<<SITIO
+    <!DOCTYPE html>
+    <html lang="es">
+        $head
+        $body
+    </html>
+    SITIO;
+
+    print($sitio);
+?>

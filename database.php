@@ -84,6 +84,15 @@ function listaJugadores($id){
     }
     return $res;
 }
+
+// Busca el mail de un usuario
+function getUsrMail($id){
+    $mail=NULL;
+    $sql = "SELECT * FROM usuarios WHERE id = '".$id."'";
+    $mails=consultarBD($sql);
+    return $mail;
+}
+
 function Validarpass($usuario){
 	##############################################
     $preresult=NULL;

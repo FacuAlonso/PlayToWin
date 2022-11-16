@@ -10,6 +10,10 @@ a{
     text-decoration: none;
 }
 
+.no-mostrar{
+    display: none !important;
+}
+
 body{
    overflow: hidden;
    width: 100vw;

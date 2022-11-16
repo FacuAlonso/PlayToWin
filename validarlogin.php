@@ -30,7 +30,7 @@ function loguear (){
       <?php
       include("login.php");
 
-      echo('<h1 class="bad">ERROR DE AUTENTIFICACION</h1>');
+      echo('<p class="bad">EL USUARIO O CONTRASEÑA SON INCORRECTOS</p>');
     }
 }
 function main(){

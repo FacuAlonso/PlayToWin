@@ -141,10 +141,13 @@ body{
 
 }
 .bad {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     border-radius: 2vw;
 	text-align: center;
 	width: 40vw;
 	padding: 12px;
 	background-color: #a22;
-	color: #fff
+	color: #fff;
+    font-size: calc(10px + 1vmin);
 }

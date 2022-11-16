@@ -37,7 +37,10 @@ function genTarjetasAdmin(){
                         <button class="boton-editar" onclick="window.location.href = 'edit.php?id=$idEvento';">EDITAR EVENTO</button>  
                     </div>
                     <div class="box-evento-c-1-2">
-                        <button class="boton-eliminar" onclick="fun()">ELIMINAR EVENTO</button> 
+                        <form method="post" action="cargaDatosAdmin/eliminarEvento.php">
+                            <input type="text" class="no-mostrar" value="$idEvento" name="id">
+                            <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR EVENTO"/>
+                        </form>
                     </div>
                 </div>
                 <div class="box-evento-c-2">

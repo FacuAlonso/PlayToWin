@@ -1,6 +1,9 @@
 <?php 
     require_once '../database.php'; 
     require_once '../header.php';
+    require_once 'lstPresets.php';
+
+    $presets = genlstPresets();
     
     $head = genHeader("Crear evento | Admin Panel","new.css",NULL); //Titulo,CSS,JS
     $body = <<<BODY
@@ -15,14 +18,11 @@
         <p class="cerrarsesion">CERRAR SESIÓN</p></a>
     </div>
     <div id="cont-eventos">
-        <form action="" method="get" class="box-evento">
+        <form action="cargaDatosAdmin\insertEvento.php" method="post" class="box-evento">
             <h1 class="titulo">INTRODUCE LOS DETALLES DEL EVENTO</h1>
             <label for="nom01" class="datos-titulo">Selecciona el preset de juego del evento:</label>
-            <select name="select" id="selecJuego">
-                <option value="clash">Clash Royale</option>
-                <option value="fortnite">Fortnite</option>
-                <option value="codm">COD:Mobile</option>
-                <option value="valorant">Valorant</option>
+            <select name="preset" id="selecJuego">
+            $presets
             </select>
             <label for="nom01" class="datos-titulo">Título del evento:</label>
             <input type="text" class="datos-caja" name="nombre" id="nom01" placeholder="Ej.: Obtén la mayor cantidad de kills"/>

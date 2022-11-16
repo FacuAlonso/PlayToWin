@@ -21,8 +21,8 @@ function genlstPresets(){
     $lista="";
     $presets=listaPresets();
     foreach($presets as $preset):
-        $nomJuego = $preset[0]['nomJuego'];
-        $idPres = $preset[0]['id'];
+        $nomJuego = $preset['nomJuego'];
+        $idPres = $preset['id'];
         $lista.= "<option value='$idPres'>$nomJuego</option>";
     endforeach;
     return($lista);

@@ -18,7 +18,7 @@
     $descripcion = $infoEvento[0]["descEvento"];
     $reglas = $infoEvento[0]["reglasEvento"];
     $presets = genlstPresetsEdit($infoEvento[0]["preset"]);
-    $head = genHeader("Editar evento | Admin Panel","new.css",NULL); //Titulo,CSS,JS
+    $head = genHeader("Editar evento | Admin Panel","edit.css",NULL); //Titulo,CSS,JS
     $body = <<<BODY
     <body>
     <div id="encabezado">
@@ -31,10 +31,10 @@
         <p class="cerrarsesion">CERRAR SESIÓN</p></a>
     </div>
     <div id="cont-eventos">
-        <form action="" method="get" class="box-evento">
+        <form action="cargaDatosAdmin/editEvento.php" method="post" class="box-evento">
             <h1 class="titulo">INTRODUCE LOS DETALLES DEL EVENTO</h1>
             <label for="nom01" class="datos-titulo">Selecciona el preset de juego del evento:</label>
-            <select name="select" id="selecJuego">
+            <select name="preset" id="selecJuego">
             $presets
             </select>
             <label for="nom01" class="datos-titulo">Título del evento:</label>
@@ -45,6 +45,7 @@
             <textarea class="datos-caja" name="reglas">$reglas</textarea>
             <label for="nom01" class="datos-titulo">Fecha de finalización:</label>
             <input type="datetime-local" class="fecha" name="fecha" value="$fechaFinal"/>
+            <input type="text" class="no-mostrar" value="$idEvento" name="id">
             <input type="submit" class="boton-publicarRes" value="PUBLICAR EVENTO" id="boton-submit">
         </form>
     </div>

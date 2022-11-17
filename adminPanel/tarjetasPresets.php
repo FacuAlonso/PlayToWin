@@ -7,6 +7,7 @@ function genTarjetasPresets(){
     foreach($presets as $preset): 
         $nombre = $preset['nomJuego'];
         $portada = $preset['portada'];
+        $idPreset = $preset['id'];
         
         $tarjeta = <<<TARJETA
         <div class="box-evento">
@@ -28,7 +29,10 @@ function genTarjetasPresets(){
                             <button class="boton-editar" onclick="abrir('popup-caja')">EDITAR PRESET</button>  
                         </div>
                         <div class="box-evento-c-1-2">
-                            <button class="boton-eliminar" onclick="fun()">ELIMINAR PRESET</button> 
+                            <form method="post" action="cargaDatosAdmin/eliminarPreset.php">
+                                <input type="text" class="no-mostrar" value="$idPreset" name="id">
+                                <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR PRESET"/>
+                            </form> 
                         </div>
                     </div>
                 </div>

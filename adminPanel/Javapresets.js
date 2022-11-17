@@ -73,34 +73,178 @@ function ValidarSingUp(id, id2, id3, id4){
    return res 
 }
 
-// Establecer la fecha de cierre de evento
-var countDownDate = new Date('2022-11-07T00:00:00').getTime();
+function CargaPresetAJAX(){
 
-// Actualizar el contador cada 1 segundo
-var x = setInterval(function() {
+}
 
- // Tomar la fecha actual (FALTA RESOLVER ZONAS HORARIAS)
- var now = new Date().getTime();
 
- // Hallar la diferencia de tiempo entre la fecha límite y el presente
- var distance = countDownDate - now;
+/*
+Ready State:
+0: La peticion no se ha inicializado
+1: Conexion con el servidor establecida
+2: Peticion recibida
+3: Procesando Peticion
+4: Peticion finalizada y la respuesta esta lista.
 
- // Cálculos de tiempo para cada unidad
- var days = Math.floor(distance / (1000 * 60 * 60 * 24));
- var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
- var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
- var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+Status:
+200: ok
+404: Pagina no encontrada
 
- // Muestra el resultado del cálculo en el texto id="contador-cierre"
- document.getElementById("contador-cierre").innerHTML = days + "d " + hours + "h "
- + minutes + "m " + seconds + "s ";
+https://developer.mozilla.org/es/docs/Web/Guide/AJAX/Getting_Started
+http://www.saregune.net/ikasi/hezigune/curso.php?curso=ajax&leccion=ajax_xml_intro
 
- // Si la cuenta regresiva finalizó, se indica que el evento finalizó.
- if (distance < 0) {
-   clearInterval(x);
-   document.getElementById("contador-cierre").innerHTML = "Evento Finalizado";
-   agregarClase("titulo-contador", "no-mostrar");
-   agregarClase("bot-participar", "no-mostrar");
-   agregarClase("cont-cant-jugadores", "no-mostrar");
- }
-}, 1000);
+*/
+
+// ============================================================
+// FUNCIONES AJAX
+// ============================================================
+function conectAjax() {
+	var httpRequest = false;        		 //	CREA EL OBJETO "AJAX".Que es una instancia de XMLHttpRequest.
+    										 // Esta funcion es generica para cualquier utilidad 
+    if (window.XMLHttpRequest) {             // -> Mozilla, Safari, ...
+		httpRequest = new XMLHttpRequest();  
+    } else if (window.ActiveXObject) {       // -> IE
+		httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    return httpRequest;
+}
+
+function loadContTextAjax(url,idDest,method="POST") {
+    // url : es la dirección donde se obtiene los datos (el servidor)
+    // idDest: es el id de un elemento html donde se escribirán los datos recibido de la url
+    // console.log(url); 
+    var xhr = conectAjax();                                     // Creo el objeto AJAX     
+    if(xhr) {
+        xhr.open(method, url, true);                  // false = sincro , true = asincro
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState!=1) {
+                document.body.style.cursor = 'wait';            // SET ESPERA Cursor mouse en espera
+                //Otra opción sería: agregar una imagen de espera
+                //  en el div (o elemento) donde serán cargado los datos
+                //  y así liberar el puntero del mouse
+            }
+            if (xhr.readyState==4 && xhr.status==200) {                                                
+                document.body.style.cursor = 'default';        // RESET ESPERA Cursor mouse en normal
+                textHTML = xhr.responseText;                   // recupera la respuesta
+                setDataIntoNode(idDest,textHTML);              // CARGAR HTML EN DESTINO
+            }
+        }
+        xhr.send(null);
+    }
+    else{
+        console.log('No se pudo instanciar el objeto AJAX!');
+    }    
+}
+
+function loadContTextAjaxForm(url,idForm,method="POST"){
+    // Envio de datos desde formulario
+    // Apartir de los datos que se encuentran en el formulario 'idForm'
+    // se obtiene los datos de la 'url' pasandole las claves valor de los input por post o get
+    //https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_forms_through_JavaScript
+    //CARGAR los datos del formulario
+    var formData =getDataForm(idForm);
+    
+    //// formData manual
+    //formData.append('nombre', 'mariano'); // simula ser el name y el valor del input
+    //formData.append('apellido', 'diego'); // simula ser el name y el valor del input 
+    var xhr = conectAjax();   
+    if(xhr) {
+        xhr.open(method, url, true);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                alert("¡Carga existosa, preset creado!");
+                location.reload();
+            }
+        }
+        xhr.send(formData);
+    }
+    else{
+        console.log('No se pudo instanciar el objeto AJAX!');
+    }    
+}
+
+
+// ============================================================
+// FUNCIONES AUXILIARES
+// ============================================================
+
+// ============================================================
+// ==== Funciones Auxiliares que no son ajax pero las utilizamos
+// ==== para cumplir los objetivos
+// ============================================================
+
+function getDataForm(idForm){
+    // obtiene los name y los value de los elementos de un formulario.
+    // y retorna un objeto FormData()
+    var formData = new FormData();
+
+    //alert("XXX");
+    data=document.forms[idForm].getElementsByTagName("input");
+    for (let i=0; i<data.length;i++) {
+        if (data[i].name!=undefined && data[i].value!=undefined)
+            if (data[i].type=='text' || data[i].type=='password'){
+                formData.append(data[i].name, data[i].value);
+            }
+            else if ((data[i].type=='checkbox' || data[i].type=='radio') && data[i].checked){
+                formData.append(data[i].name, data[i].value);
+            }
+            else if (data[i].type=='file'){
+
+                formData.append(data[i].name, data[i].files[0]);
+            }
+    }
+    data=document.forms[idForm].getElementsByTagName("select");
+    for (let i=0; i<data.length;i++) {
+        if(data[i]!=undefined && data[i].type=='select-one' ){                
+            nombre=data[i].name;
+            valor=data[i].options[data[i].selectedIndex].value;
+            formData.append(nombre, valor);
+        }
+        if(data[i]!=undefined && data[i].type=='select-multiple'){                
+            nombre=data[i].name;
+            for(let j=0;j<data[i].selectedOptions.length;j++){
+                formData.append(nombre, data[i].selectedOptions[j].value);
+            }
+        }
+    }
+return formData;
+}
+
+function setDataIntoNode(idDest,textHTML){
+    // Esta función se realiza debido a que hay distintas 
+    // formas de asginar html a un nodo.
+    // idDest: id del nodo que se le cargarán los datos.
+    // textHTML: datos a cargar
+    let oElement; // objeto
+    let sNameTag; // string
+    let elementsReadOnlyInnerHTML; // array donde se almacen los tipos de nodos que no tienen innerHTML
+    elementsReadOnlyInnerHTML = ["INPUT","COL", "COLGROUP", 
+                                 "FRAMESET", "HEAD", "HTML", 
+                                 "STYLE", "TABLE", "TBODY", 
+                                 "TFOOT", "THEAD", "TITLE", 
+                                 "TR"
+                                ];
+    
+    if(document.getElementById(idDest)) {                
+        oElement = document.getElementById(idDest);
+        sNameTag = oElement.tagName.toUpperCase();
+        //console.log("***"+sNameTag);
+        if(elementsReadOnlyInnerHTML.indexOf(sNameTag) == -1) {
+            oElement.innerHTML = textHTML;
+        }
+        else if(sNameTag == 'INPUT') {
+            oElement.value = textHTML;
+        }
+        else if(sNameTag.indexOf("TBODY") != -1) {
+            setTBodyInnerHTML(oElement, textHTML);
+        }
+        else {
+            console.log('El elemento destino, cuyo id="'+idDest+'", no posee propiedad "innerHTML" ni "value"!');
+        }                    
+    }
+    else {
+        console.log('El elemento destino, cuyo id="'+idDest+'", no existe!');
+    }    
+}
+
+

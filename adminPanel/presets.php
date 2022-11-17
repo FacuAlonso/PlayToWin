@@ -22,15 +22,15 @@
     <div id="cont-eventos">
         <div class="overlay visibilidad-oculta" id="popup-caja">
             <div class="popup">
-                <h1 id="titulo-popup">Participa:</h1>
-                <form onsubmit="return validardatos('Datos', 'nom01', 'datos01')" name="Datos" id="Datos-forms"  method="post">
+                <h1 id="titulo-popup">Añadir un preset:</h1>
+                <form id="presets-form" action="" method="">
                     <div class="contenedor-input" name="001" id="nom02">
                         <label for="nom01" class="dato-input">Nombre del juego:</label>
-                        <input type="email" class="caja-input"  name="nom01" placeholder="Valorant, Clash Royale...">
+                        <input type="text" class="caja-input"  name="nombre" placeholder="Valorant, Clash Royale...">
                         <label for="datos01" class="dato-input">Imagen:</label>
-                        <input type="file" class="caja-input" name="datos01" id="imagen-popup" placeholder="url">
+                        <input type="file" class="caja-input" name="fileToUpload" id="fileToUpload" placeholder="url">
                     </div>
-                    <input type="submit"  name= 'hola' class="boton-popup" value="Enviar">
+                    <input type="button" class="boton-popup" value="Enviar" onclick="loadContTextAjaxForm('cargaDatosAdmin/recibirdatos.php','presets-form')">
                 </form>
                 <button class="boton-popup" id="cerrar" onclick="cerrar('popup-caja')">Cerrar</button>
             </div>

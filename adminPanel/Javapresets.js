@@ -35,9 +35,12 @@ function comprobar(param){
    }
 }
 
-function cerrar(id){
+// Cierra el formulario y borra el contenido, para otro uso.
+function cerrarForm(id,idForm){ 
     nodo = document.getElementById(id);
     eliminarClase(id, "visibilidad");
+    nodoForm = document.getElementById(idForm);
+    nodoForm.reset();
 }
 
 
@@ -73,8 +76,9 @@ function ValidarSingUp(id, id2, id3, id4){
    return res 
 }
 
-function CargaPresetAJAX(){
-
+function CargaPresetAJAX($id){
+    loadContTextAjax('cargaDatosAdmin/infoPresetAJAX.php',$id)
+    abrir('popup-caja');
 }
 
 
@@ -109,9 +113,8 @@ function conectAjax() {
     return httpRequest;
 }
 
-function loadContTextAjax(url,idDest,method="POST") {
+function loadContTextAjax(url,idPres,method="POST") {
     // url : es la dirección donde se obtiene los datos (el servidor)
-    // idDest: es el id de un elemento html donde se escribirán los datos recibido de la url
     // console.log(url); 
     var xhr = conectAjax();                                     // Creo el objeto AJAX     
     if(xhr) {
@@ -126,10 +129,14 @@ function loadContTextAjax(url,idDest,method="POST") {
             if (xhr.readyState==4 && xhr.status==200) {                                                
                 document.body.style.cursor = 'default';        // RESET ESPERA Cursor mouse en normal
                 textHTML = xhr.responseText;                   // recupera la respuesta
-                setDataIntoNode(idDest,textHTML);              // CARGAR HTML EN DESTINO
+                console.log(xhr.responseText);             
             }
         }
-        xhr.send(null);
+        if (idPres!=NULL){
+            xhr.send("id=" + toString(idPres));
+        } else{
+            xhr.send(null);
+        }
     }
     else{
         console.log('No se pudo instanciar el objeto AJAX!');
@@ -209,42 +216,3 @@ function getDataForm(idForm){
     }
 return formData;
 }
-
-function setDataIntoNode(idDest,textHTML){
-    // Esta función se realiza debido a que hay distintas 
-    // formas de asginar html a un nodo.
-    // idDest: id del nodo que se le cargarán los datos.
-    // textHTML: datos a cargar
-    let oElement; // objeto
-    let sNameTag; // string
-    let elementsReadOnlyInnerHTML; // array donde se almacen los tipos de nodos que no tienen innerHTML
-    elementsReadOnlyInnerHTML = ["INPUT","COL", "COLGROUP", 
-                                 "FRAMESET", "HEAD", "HTML", 
-                                 "STYLE", "TABLE", "TBODY", 
-                                 "TFOOT", "THEAD", "TITLE", 
-                                 "TR"
-                                ];
-    
-    if(document.getElementById(idDest)) {                
-        oElement = document.getElementById(idDest);
-        sNameTag = oElement.tagName.toUpperCase();
-        //console.log("***"+sNameTag);
-        if(elementsReadOnlyInnerHTML.indexOf(sNameTag) == -1) {
-            oElement.innerHTML = textHTML;
-        }
-        else if(sNameTag == 'INPUT') {
-            oElement.value = textHTML;
-        }
-        else if(sNameTag.indexOf("TBODY") != -1) {
-            setTBodyInnerHTML(oElement, textHTML);
-        }
-        else {
-            console.log('El elemento destino, cuyo id="'+idDest+'", no posee propiedad "innerHTML" ni "value"!');
-        }                    
-    }
-    else {
-        console.log('El elemento destino, cuyo id="'+idDest+'", no existe!');
-    }    
-}
-
-

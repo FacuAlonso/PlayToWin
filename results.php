@@ -1,4 +1,7 @@
-<?php include 'database.php'; 
+<?php 
+    include 'database.php'; 
+    require_once 'header.php';
+
 
 // Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
 

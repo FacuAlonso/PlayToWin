@@ -32,7 +32,7 @@
                     </div>
                     <input type="button" class="boton-popup" value="Enviar" onclick="loadContTextAjaxForm('cargaDatosAdmin/recibirdatos.php','presets-form')">
                 </form>
-                <button class="boton-popup" id="cerrar" onclick="cerrar('popup-caja')">Cerrar</button>
+                <button class="boton-popup" id="cerrar" onclick="cerrarForm('popup-caja','presets-form')">Cerrar</button>
             </div>
         </div>
         <div id="caja-preset-cont">

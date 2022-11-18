@@ -31,7 +31,7 @@ function genTarjetasPresets(){
                         <div class="box-evento-c-1-2">
                             <form method="post" action="cargaDatosAdmin/eliminarPreset.php">
                                 <input type="text" class="no-mostrar" value="$idPreset" name="id">
-                                <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR PRESET"/>
+                                <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR"/>
                             </form> 
                         </div>
                     </div>

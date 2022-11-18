@@ -24,6 +24,13 @@ function loguear (){
       if ( $_REQUEST['pass']==$pass){                
           iniciarSesion($_REQUEST['usuario'],$tipo);
       }     
+      else{
+        ?>
+        <?php
+        include("login.php");
+    
+        echo('<p class="bad">EL USUARIO O CONTRASEÑA SON INCORRECTOS</p>');
+      }
     }
     else{
       ?>

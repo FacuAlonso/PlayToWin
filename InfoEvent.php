@@ -24,7 +24,7 @@ function mostrarPagina(){
     $head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");
 
     function puntajes(){
-        foreach ($GLOBALS['lstJugadores'] as $jugador):;
+        foreach ($GLOBALS['lstJugadores'] as $jugador):
             echo $jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos";
         endforeach;
     }

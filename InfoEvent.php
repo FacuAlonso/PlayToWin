@@ -1,7 +1,8 @@
 <?php 
 require_once 'database.php'; 
 require_once 'header.php';
-if (session_status()==TRUE){
+
+function mostrarPagina(){
     $infoEvento = buscaEvento($_GET['id']);
 
     if($infoEvento[0] === NULL){
@@ -122,9 +123,14 @@ if (session_status()==TRUE){
 
     print($sitio);
 }
-else{
-    header("Location: login.php");
+function main(){
+    session_start(); 
+    if(isset($_SESSION['usuario'])==FALSE){
+        header("Location: login.php");
+    }
+    mostrarPagina();  
 }
+main();
 ?>
 
 

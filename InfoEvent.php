@@ -23,13 +23,18 @@ function mostrarPagina(){
 
     $head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");
 
-    function puntajes(){
-        foreach ($GLOBALS['lstJugadores'] as $jugador):
-            echo $jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos";
+    function puntajes($lstJugadores){
+        $res = "";
+        foreach ($lstJugadores as $jugador):
+            $res.= $jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos";
         endforeach;
+        return $res;
     }
 
-    $lstPuntajes = puntajes();
+    if($cantJugadores!=0){
+        $lstPuntajes = puntajes($lstJugadores);
+    }
+    
 
     $body = <<<BODY
     <body onload="contador('$fechaFinal');">

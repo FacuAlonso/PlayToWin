@@ -2,7 +2,7 @@
 include('database.php');
 function validacion(){
     $usuario=$_REQUEST['usuario'];
-    $pass=$_REQUEST['apellido'];
+    $pass=$_REQUEST['pass'];
     $resultado= Validarpass($usuario);
     if (empty($resultado)){
         Crearcuenta($usuario,$pass);

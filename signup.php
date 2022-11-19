@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-$head = genHeader("Login | Play to Win",'signup.css',NULL);
+$head = genHeader("Login | Play to Win",'signup.css',"InfoEvent");
 
 $body = <<<BODY
         <body>
@@ -10,7 +10,7 @@ $body = <<<BODY
                 <label for="nom01" class="datos-titulo">Email:</label>
                 <input type="email" class="datos-caja" name="usuario" id="nom01" placeholder="usuario@email.com"/>
                 <label for="ape01" class="datos-titulo">Contraseña:</label>
-                <input type="password" class="datos-caja" name="apellido" id="ape01" placeholder="8 caracteres, combinación de números y letras"/>
+                <input type="password" class="datos-caja" name="pass" id="ape01" placeholder="8 caracteres, combinación de números y letras"/>
                 <label for="clv01" class="datos-titulo">Confirma tu contraseña:</label>
                 <input type="password" class="datos-caja" name="clave" id="clv01" placeholder="Confirma la contraseña ingresada"/>
                 <input type="submit" class="datos-registro" value="REGISTRARSE" id="boton-submit">

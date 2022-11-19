@@ -110,7 +110,7 @@ function Validarpass($usuario){
 }
 function Crearcuenta($usuario, $pass){
 $conn=conectarBD();
-$sql = "INSERT INTO usuarios (email,pass) VALUES ('$usuario', $pass)";
+$sql = "INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES (NULL, '$usuario', '$pass', '0')";
 if (mysqli_query($conn,$sql)) {
     echo '<script language="javascript">alert("Se ha creado correctamente");</script>';
 }

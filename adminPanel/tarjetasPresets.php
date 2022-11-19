@@ -26,7 +26,7 @@ function genTarjetasPresets(){
                 <div class="box-evento-c">
                     <div class="box-evento-c-1">
                         <div class="box-evento-c-1-1">
-                            <button class="boton-editar" onclick="abrir('popup-caja')">EDITAR PRESET</button>  
+                            <button class="boton-editar" onclick="CargaPresetAJAX($idPreset,'popup-caja-editar')">EDITAR PRESET</button>  
                         </div>
                         <div class="box-evento-c-1-2">
                             <form method="post" action="cargaDatosAdmin/eliminarPreset.php">

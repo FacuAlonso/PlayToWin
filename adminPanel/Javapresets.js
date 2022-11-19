@@ -76,9 +76,9 @@ function ValidarSingUp(id, id2, id3, id4){
    return res 
 }
 
-function CargaPresetAJAX($id){
-    loadContTextAjax('cargaDatosAdmin/infoPresetAJAX.php',$id)
-    abrir('popup-caja');
+function CargaPresetAJAX(idPres,idDiv){
+    htmlCont = loadContTextAjax('cargaDatosAdmin/infoPresetAJAX.php',idPres,idDiv);
+    abrir(idDiv);
 }
 
 
@@ -113,12 +113,18 @@ function conectAjax() {
     return httpRequest;
 }
 
-function loadContTextAjax(url,idPres,method="POST") {
+function loadContTextAjax(url,id,idDest,method="GET") {
     // url : es la dirección donde se obtiene los datos (el servidor)
     // console.log(url); 
-    var xhr = conectAjax();                                     // Creo el objeto AJAX     
+    var xhr = conectAjax();   
+                                    // Creo el objeto AJAX     
     if(xhr) {
-        xhr.open(method, url, true);                  // false = sincro , true = asincro
+        if (id!=null){
+            console.log(url+"?id="+id)
+            xhr.open(method, url+"?id="+id, true);; // false = sincro , true = asincro
+        } else{
+            xhr.open(method, url, true);
+        }           
         xhr.onreadystatechange = function() {
             if (xhr.readyState!=1) {
                 document.body.style.cursor = 'wait';            // SET ESPERA Cursor mouse en espera
@@ -127,20 +133,16 @@ function loadContTextAjax(url,idPres,method="POST") {
                 //  y así liberar el puntero del mouse
             }
             if (xhr.readyState==4 && xhr.status==200) {                                                
-                document.body.style.cursor = 'default';        // RESET ESPERA Cursor mouse en normal
+                document.body.style.cursor = 'default';        // RESET ESPERA Cursor mouse en normal         
                 textHTML = xhr.responseText;                   // recupera la respuesta
-                console.log(xhr.responseText);             
+                setDataIntoNode(idDest,textHTML);              // CARGAR HTML EN DESTINO          
             }
         }
-        if (idPres!=NULL){
-            xhr.send("id=" + toString(idPres));
-        } else{
-            xhr.send(null);
-        }
+        xhr.send(null);
     }
     else{
         console.log('No se pudo instanciar el objeto AJAX!');
-    }    
+    }   
 }
 
 function loadContTextAjaxForm(url,idForm,method="POST"){
@@ -159,7 +161,7 @@ function loadContTextAjaxForm(url,idForm,method="POST"){
         xhr.open(method, url, true);
         xhr.onreadystatechange = function(){
             if(xhr.readyState == 4 && xhr.status == 200){
-                alert("¡Carga existosa, preset creado!");
+                alert("✅ ¡Carga existosa, preset creado/editado! ✅");
                 location.reload();
             }
         }
@@ -196,7 +198,6 @@ function getDataForm(idForm){
                 formData.append(data[i].name, data[i].value);
             }
             else if (data[i].type=='file'){
-
                 formData.append(data[i].name, data[i].files[0]);
             }
     }
@@ -215,4 +216,48 @@ function getDataForm(idForm){
         }
     }
 return formData;
+}
+
+function setDataIntoNode(idDest,textHTML){
+    // Esta función se realiza debido a que hay distintas 
+    // formas de asginar html a un nodo.
+    // idDest: id del nodo que se le cargarán los datos.
+    // textHTML: datos a cargar
+    let oElement; // objeto
+    let sNameTag; // string
+    let elementsReadOnlyInnerHTML; // array donde se almacen los tipos de nodos que no tienen innerHTML
+    elementsReadOnlyInnerHTML = ["INPUT","COL", "COLGROUP", 
+                                 "FRAMESET", "HEAD", "HTML", 
+                                 "STYLE", "TABLE", "TBODY", 
+                                 "TFOOT", "THEAD", "TITLE", 
+                                 "TR"
+                                ];
+    
+    if(document.getElementById(idDest)) {                
+        oElement = document.getElementById(idDest);
+        sNameTag = oElement.tagName.toUpperCase();
+        //console.log("***"+sNameTag);
+        if(elementsReadOnlyInnerHTML.indexOf(sNameTag) == -1) {
+            oElement.innerHTML = textHTML;
+        }
+        else if(sNameTag == 'INPUT') {
+            oElement.value = textHTML;
+        }
+        else if(sNameTag.indexOf("TBODY") != -1) {
+            setTBodyInnerHTML(oElement, textHTML);
+        }
+        else {
+            console.log('El elemento destino, cuyo id="'+idDest+'", no posee propiedad "innerHTML" ni "value"!');
+        }                    
+    }
+    else {
+        console.log('El elemento destino, cuyo id="'+idDest+'", no existe!');
+    }    
+}
+
+function setTBodyInnerHTML(tbody, html) {
+    // agrega el contenido html en tbody
+    var temp = tbody.ownerDocument.createElement('div');
+    temp.innerHTML = '<table><tbody id="'+tbody.id+'">' + html + '</tbody></table>';
+    tbody.parentNode.replaceChild(temp.firstChild.firstChild, tbody);
 }

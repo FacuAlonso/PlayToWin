@@ -7,7 +7,7 @@ function recibirArchivo(){
 	//
 	$target_dir = "../../portadas/"; 
     $nomArch = preg_replace('/\s+/', '_', basename($_FILES["fileToUpload"]["name"]));
-	$target_file = $target_dir . $nomArch;
+	$target_file = $target_dir . uniqid() . "@" . $nomArch; 
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	$result=null;

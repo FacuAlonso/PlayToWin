@@ -1,5 +1,6 @@
 <?php
-include('database.php');
+require_once 'database.php'; 
+
 function iniciarSesion($usuario,$tipo){  
   if ($tipo!= 1){  
     $_SESSION['usuario']  = $usuario;
@@ -11,7 +12,7 @@ function iniciarSesion($usuario,$tipo){
     $_SESSION['usuario']  = $usuario;
     $_SESSION['tipo'] = $tipo;
     $_SESSION['instante']   = time();
-    header("Location: dashboard.html");
+    header("Location: adminPanel/dashboard.php");
   }  
     
 }

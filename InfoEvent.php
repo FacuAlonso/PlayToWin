@@ -2,6 +2,11 @@
 require_once 'database.php'; 
 require_once 'header.php';
 
+session_start();
+if(!$_SESSION['tipo']){
+    header("Location: ../login.php");
+}
+
 function mostrarPagina(){
     $infoEvento = buscaEvento($_GET['id']);
 
@@ -49,7 +54,7 @@ function mostrarPagina(){
             <div id="perfil-div">
                 <img id="perfil-logo" src="assets\profileCircle.svg">
                 <img id="open-menu-perfil" src="assets\dropDownArrow.svg">
-                <a href="login.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
+                <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>
         <div class="box_contenedor">

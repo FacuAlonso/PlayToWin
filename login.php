@@ -1,10 +1,10 @@
 <?php 
     include 'header.php';
-    $head = genHeader("Login | Play to Win",'login.css',NULL);
+    $head = genHeader("Login | Play to Win",'login.css',"InfoEvent");
 
     $body = <<<BODY
         <body>
-            <a href="home.php" id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
+            <a id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
             <form action='validarlogin.php' method="post" onsubmit="return validardatos('box-login','nom01', 'ape01')" name="Datos" id="box-login">
                 <p class="titulo">Accede a tu cuenta</p>
                 <label for="nom01" class="datos-titulo">Email:</label>

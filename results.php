@@ -1,7 +1,11 @@
 <?php 
-    include 'database.php'; 
-    require_once 'header.php';
+include 'database.php'; 
+require_once 'header.php';
 
+session_start();
+if(!$_SESSION['tipo']){
+    header("Location: ../login.php");
+}
 
 // Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
 
@@ -40,7 +44,7 @@ $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div id="perfil-div">
             <img id="perfil-logo" src="assets\profileCircle.svg">
             <img id="open-menu-perfil" src="assets\dropDownArrow.svg">
-            <a href="login.html"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
+            <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
         </div>
     </div>
 

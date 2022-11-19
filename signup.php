@@ -4,7 +4,7 @@ $head = genHeader("Login | Play to Win",'signup.css',"InfoEvent");
 
 $body = <<<BODY
         <body>
-            <a href="home.html" id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
+            <a id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
             <form  onsubmit="return ValidarSingUp('box-login','nom01', 'ape01', 'clv01')" action='altausuario.php' method="post" id="box-login">
                 <p class="titulo">Crea tu cuenta</p>
                 <label for="nom01" class="datos-titulo">Email:</label>

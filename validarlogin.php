@@ -2,13 +2,13 @@
 require_once 'database.php'; 
 
 function iniciarSesion($usuario,$tipo){  
-  if ($tipo!= 1){  
+  if ($tipo == 0){  
     $_SESSION['usuario']  = $usuario;
     $_SESSION['tipo'] = $tipo;
     $_SESSION['instante']   = time();
     header("Location: home.php");
   }
-  else{
+  elseif($tipo == 1){
     $_SESSION['usuario']  = $usuario;
     $_SESSION['tipo'] = $tipo;
     $_SESSION['instante']   = time();
@@ -26,33 +26,22 @@ function loguear (){
           iniciarSesion($_REQUEST['usuario'],$tipo);
       }     
       else{
-        ?>
-        <?php
-        include("login.php");
-    
         echo('<p class="bad">EL USUARIO O CONTRASEÑA SON INCORRECTOS</p>');
       }
     }
     else{
       ?>
       <?php
-      include("login.php");
 
       echo('<p class="bad">EL USUARIO O CONTRASEÑA SON INCORRECTOS</p>');
     }
 }
 function main(){
     session_start();
-    if(isset($_SESSION['usuario'])){
-        header("Location: home.php");
-    }
-    
-    else{
-        if (isset($_REQUEST['usuario'])&& isset($_REQUEST['pass']) ) {            
-            loguear ();   
-            #header("Location: home.php");  Ejecuta sin hacer validacion
-        }
-    }     
+    if (isset($_REQUEST['usuario'])&& isset($_REQUEST['pass']) ) {            
+      loguear ();   
+      #header("Location: home.php");  Ejecuta sin hacer validacion
+  }   
 }
 main();
 

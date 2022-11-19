@@ -2,8 +2,9 @@
     require_once '../database.php'; 
     require_once '../header.php';
     require_once 'tarjetasResultados.php';
+
     $tarjetas = genTarjetasResultados($_GET['id']);
-    $head = genHeader("Publicar resultados | Admin Panel","publish.css",NULL); //Titulo,CSS,JS
+    $head = genHeaderAdmin("Publicar resultados | Admin Panel","publish.css",NULL); //Titulo,CSS,JS
 
     $body = <<<BODY
     <body>
@@ -13,7 +14,7 @@
             <h1 class="titulo">PUBLICAR RESULTADOS</h1>
             <button id="bot-cancel" onclick="window.location.href = 'dashboard.php';">CANCELAR (REGRESAR)</button>
         </div>
-        <a href="../login.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+        <a href="../cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
         <p class="cerrarsesion">CERRAR SESIÓN</p></a>
     </div>
     <div id="cont-eventos">
@@ -35,4 +36,18 @@
     SITIO;
 
     print($sitio);
+
+    function main(){
+        session_start();
+        if(isset($_SESSION['tipo'])){
+            if($_SESSION['tipo']==0){
+                header("Location: ../home.php");
+            }
+        }
+        else{
+            header("Location: ../login.php");
+        }
+        mostrarPagina();
+    }
+    main();
 ?>

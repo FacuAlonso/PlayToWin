@@ -2,6 +2,7 @@
     require_once 'database.php'; 
     require_once 'header.php';
     require_once 'tarjetas.php';
+
 function mostrarPagina(){
     $head = genHeader("Home | Play to Win","home.css",NULL); //Titulo,CSS,JS
     $tarjetas = genTarjetas("ACTIVOS"); // Función de tarjetas.php
@@ -42,7 +43,7 @@ function mostrarPagina(){
 };
 function main(){
     session_start(); 
-    if(isset($_SESSION['usuario'])==FALSE){
+    if(!isset($_SESSION['tipo'])){
         header("Location: login.php");
     }
     mostrarPagina();  

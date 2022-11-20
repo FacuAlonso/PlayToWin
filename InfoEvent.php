@@ -32,13 +32,13 @@ function mostrarPagina(){
         <button id='bot-participar' class='boton_participar' onclick="abrir('popup-caja')">PARTICIPAR</button> 
         TARJETA; 
     } else{
-        $botParticipar = "<button id='bot-participar' class='boton_participar_2'>YA ESTAS PARTICIPANDO</button>";
+        $botParticipar = "<button id='bot-participar' class='boton_participar_2'>YA ESTÁS PARTICIPANDO</button>";
     }
 
     function puntajes($lstJugadores){
         $res = "";
         foreach ($lstJugadores as $jugador):
-            $res.= $jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos";
+            $res.= "<p>".$jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos </p>";
         endforeach;
         return $res;
     }

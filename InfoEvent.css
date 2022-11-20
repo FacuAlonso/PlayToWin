@@ -355,8 +355,7 @@ html{
     padding: 1vw;
     border-radius: 0.4vw;
     border: none;
-    background: rgb(129,255,78);
-    background: linear-gradient(180deg, rgba(129,255,78,1) 0%, rgba(0,110,15,1) 86%);
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
     width: auto;
     margin-right: 2vw;
 }

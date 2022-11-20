@@ -6,7 +6,7 @@ define("DBCONF", configDB());
 
 function conectarBD(){
     // Crear conexión
-    $conn = new mysqli(DBCONF['servername'], DBCONF['username'],
+    $conn = new \MySQLi(DBCONF['servername'], DBCONF['username'],
                        DBCONF['password'] , DBCONF['dbname']);
     
     // Checkear conexión
@@ -85,13 +85,30 @@ function listaJugadores($id){
     return $res;
 }
 
-// Busca el mail de un usuario
+// Busca el mail de un usuario, sabiendo su ID
 function getUsrMail($id){
     $mail=NULL;
-    $sql = "SELECT * FROM usuarios WHERE id = '".$id."'";
-    $mails=consultarBD($sql);
+    $sql = "SELECT email FROM usuarios WHERE id = '".$id."'";
+    $mail=consultarBD($sql)[0]['email'];
     return $mail;
 }
+
+// Busca el ID de un usuario, sabiendo su mail
+function getUsrID($mail){
+    $id=NULL;
+    $sql = "SELECT id FROM `usuarios` WHERE `email` LIKE '".$mail."'";
+    $id=consultarBD($sql)[0]['id'];
+    return $id;
+}
+
+//Busca si un usuario participa en un evento específico (devuelve entrada completa)
+function buscaParticipante($idEvento,$idUser){
+    $res=NULL;
+    $sql = "SELECT * FROM `participaciones` WHERE `evento` = $idEvento AND `usuario` = $idUser";
+    $res=consultarBD($sql);
+    return $res;
+}
+
 
 function Validarpass($usuario){
 	##############################################

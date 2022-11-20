@@ -347,6 +347,20 @@ html{
     margin-right: 2vw;
 }
 
+.boton_participar_2{
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: calc(20px + 0.5vw);
+    padding: 1vw;
+    border-radius: 0.4vw;
+    border: none;
+    background: rgb(129,255,78);
+    background: linear-gradient(180deg, rgba(129,255,78,1) 0%, rgba(0,110,15,1) 86%);
+    width: auto;
+    margin-right: 2vw;
+}
+
 .box-fecha{
     display: flex;
     flex-direction: column;

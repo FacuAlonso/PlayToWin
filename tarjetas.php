@@ -3,7 +3,10 @@ require_once 'database.php';
 function genTarjetas($estado){
     $tarjetas="";
     $eventosActivos = listaEventos(); // Lo busca en database.php 
-    if ($estado=="ACTIVOS")
+    if ($eventosActivos == NULL){
+        $tarjetas="<p class='nombre-evento'> No hay eventos disponibles en este momento.</p>";
+    } else{
+        if ($estado=="ACTIVOS")
         foreach($eventosActivos as $evento): 
             $infoPreset = buscaPreset($evento["preset"]);
             $nomJuego = $infoPreset[0]["nomJuego"]; // Es el nombre del preset del evento
@@ -23,6 +26,7 @@ function genTarjetas($estado){
             TARJETA;
             $tarjetas.=$tarjeta;
         endforeach;
-        return($tarjetas);
+    }
+    return($tarjetas);
 } 
 ?>

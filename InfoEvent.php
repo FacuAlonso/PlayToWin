@@ -2,12 +2,9 @@
 require_once 'database.php'; 
 require_once 'header.php';
 
-session_start();
-if(!$_SESSION['tipo']){
-    header("Location: ../login.php");
-}
 
 function mostrarPagina(){
+    
     $infoEvento = buscaEvento($_GET['id']);
 
     if($infoEvento[0] === NULL){
@@ -25,8 +22,18 @@ function mostrarPagina(){
     $descripcion = $infoEvento[0]["descEvento"];
     $reglas= $infoEvento[0]["reglasEvento"];
     $portada = $infoPreset[0]["portada"];
+    $idUsuario = getUsrID($_SESSION["usuario"]);
 
     $head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");
+
+    if(buscaParticipante($idEvento,$idUsuario)==NULL){
+        // Se usa HEREDOC para poder utilizar "" en onclick
+        $botParticipar = <<<TARJETA
+        <button id='bot-participar' class='boton_participar' onclick="abrir('popup-caja')">PARTICIPAR</button> 
+        TARJETA; 
+    } else{
+        $botParticipar = "<button id='bot-participar' class='boton_participar_2'>YA ESTAS PARTICIPANDO</button>";
+    }
 
     function puntajes($lstJugadores){
         $res = "";
@@ -38,6 +45,8 @@ function mostrarPagina(){
 
     if($cantJugadores!=0){
         $lstPuntajes = puntajes($lstJugadores);
+    } else{
+        $lstPuntajes = "No hay participantes inscritos en este evento";
     }
     
 
@@ -61,12 +70,14 @@ function mostrarPagina(){
             <div class="overlay visibilidad-oculta" id="popup-caja">
                 <div class="popup">
                     <h1 id="titulo-popup">Participa:</h1>
-                    <form onsubmit="return validardatos('Datos', 'nom01', 'datos01')" name="Datos" id="Datos-forms"  method="post">
+                    <form onsubmit="return validardatos('Datos', 'nom01', 'datos01')" name="Datos" id="Datos-forms" action="adminPanel/cargaDatosAdmin/nuevaParticipacion.php" method="post">
                         <div class="contenedor-input" name="001" id="nom02">
                             <label for="nom01" class="dato-input">Jugador:</label>
-                            <input type="email" class="caja-input"  name="nom01" placeholder="Tu nombre dentro del juego">
+                            <input type="text" class="caja-input" name="nick" placeholder="Tu nombre dentro del juego">
                             <label for="datos01" class="dato-input">Puntaje (sólo números):</label>
-                            <input type="text" class="caja-input" name="datos01" id="puntaje" placeholder="Ej: 20" pattern="^[1-9]\d*$">
+                            <input type="number" class="caja-input" name="puntaje" id="puntaje" placeholder="Ej: 20" pattern="^[1-9]\d*$">
+                            <input type="text" class="no-mostrar" value="$idEvento" name="idEvento">
+                            <input type="text" class="no-mostrar" value="$idUsuario" name="idUsuario">
                         </div>
                         <input type="submit"  name= 'hola' class="boton-popup" value="Enviar">
                     </form>
@@ -100,7 +111,7 @@ function mostrarPagina(){
                     <img class="logo-evento" src="$portada">
                 </div>
                 <div class="box-botones">
-                <button id="bot-participar" class="boton_participar" onclick="abrir('popup-caja')">PARTICIPAR</button>
+                $botParticipar
                 </div>
                 <div class="box-evento-b-2-2" id="cont-cant-jugadores">
                     <div>
@@ -142,6 +153,3 @@ function main(){
 }
 main();
 ?>
-
-
-

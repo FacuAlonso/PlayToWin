@@ -2,7 +2,6 @@
 require_once 'database.php'; 
 require_once 'header.php';
 
-
 function mostrarPagina(){
     
     $infoEvento = buscaEvento($_GET['id']);

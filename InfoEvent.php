@@ -28,7 +28,7 @@ function mostrarPagina(){
     if(buscaParticipante($idEvento,$idUsuario)==NULL){
         // Se usa HEREDOC para poder utilizar "" en onclick
         $botParticipar = <<<TARJETA
-        <button id='bot-participar' class='boton_participar' onclick="abrir('popup-caja')">PARTICIPAR</button> 
+        <button id='bot-participar' class='boton_participar no-mostrar' onclick="abrir('popup-caja')">PARTICIPAR</button> 
         TARJETA; 
     } else{
         $botParticipar = "<button id='bot-participar' class='boton_participar_2'>YA ESTÁS PARTICIPANDO</button>";

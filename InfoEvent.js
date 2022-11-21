@@ -73,6 +73,10 @@ function ValidarSingUp(id, id2, id3, id4){
     return res 
 }
 
+function mostrarBoton(){
+    eliminarClase("bot-participar", "no-mostrar");
+}
+
 function contador(fechaCierre){
     // Establecer la fecha de cierre de evento
     var countDownDate = new Date(fechaCierre).getTime();
@@ -85,6 +89,13 @@ function contador(fechaCierre){
 
     // Hallar la diferencia de tiempo entre la fecha límite y el presente
     var distance = countDownDate - now;
+
+    // Al iniciar el script, verifica si debe o no mostrar el boton de participar, segun la cuenta regresiva
+    var load = 0;
+    if (distance > 0 && load == 0){
+        mostrarBoton();
+        load = 1;
+    }
 
     // Cálculos de tiempo para cada unidad
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));

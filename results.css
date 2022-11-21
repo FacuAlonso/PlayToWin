@@ -12,6 +12,9 @@ html{
     scroll-behavior: smooth;
 }
 
+.box_logo_evento{
+    overflow: hidden;
+}
 .box_contenedor{
     display: flex;
     flex-wrap: wrap;
@@ -40,7 +43,7 @@ html{
     flex-direction: column;
     background-color: rgb(20, 20, 51);
     line-height: 1.08vw;
-    width: 80%;
+    width: auto;
     height: auto;
     text-align: justify;
     padding: 1vw;
@@ -144,7 +147,6 @@ html{
     width: 100%;
     height: auto;
     margin: auto;
-    margin-top: 8vw;
     border-radius: 1vw;
     min-width: 3vw;
 }
@@ -152,10 +154,9 @@ html{
     gap: 1vh;
     align-content: center;
     display: flex;
-    flex-flow: row wrap;
-    min-width: 200px;
-    margin-bottom: 30vw;
-    width: 30vw;
+    flex-wrap: wrap;
+    min-width: 10vw;
+    width: 40vw;
 }
 
 
@@ -182,13 +183,24 @@ html{
     justify-items: right;
 }
 
+#Informacion{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    padding: 1vw;
+    max-width: 50vw;
+}
+
 .box_izq{
     display: flex;
     flex-direction: column;
     width: 50vw;
-    min-width: 600px;
-    margin-bottom: 2vw
+    min-width: 40vw;
+    height: auto;
+    padding: 1vw;
 }
+
 .tabla-titulo{
     color: white;
     font-family:'Lato', sans-serif ;

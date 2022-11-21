@@ -5,6 +5,7 @@
     function mostrarPagina(){
         $head = genHeaderAdmin("Dashboard | Admin Panel","dashboard.css",NULL); //Titulo,CSS,JS
         $tarjetas = genTarjetasAdmin(); // Función de tarjetasAdmin.php
+        $tarjetasFinalizados = genTarjetasAdminFin();
         $body = <<<BODY
         <body>
         <div id="encabezado">
@@ -19,6 +20,8 @@
         </div>
         <div id="cont-eventos">
         $tarjetas
+        <h1 class="titulo">Eventos finalizados:</h1>
+        $tarjetasFinalizados
         </div>
         </body>
         BODY;

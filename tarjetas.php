@@ -2,7 +2,7 @@
 require_once 'database.php'; 
 function genTarjetas($estado){
     $tarjetas="";
-    $eventosActivos = listaEventos(); // Lo busca en database.php 
+    $eventosActivos = listaEventosActivos(); // Lo busca en database.php 
     if ($eventosActivos == NULL){
         $tarjetas="<p class='nombre-evento'> No hay eventos disponibles en este momento.</p>";
     } else{

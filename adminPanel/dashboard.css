@@ -142,6 +142,24 @@ body{
     height: auto;
 }
 
+.box-evento-fin{
+    background-color: rgb(57, 57, 57);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+    width: 80vw;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    min-width: 430px;
+    border-radius: 1vw;
+    height: auto;
+}
+
 .box-evento-a{
     display: flex;
     flex-direction: row;
@@ -208,6 +226,16 @@ body{
     margin-right: 0.5vw;
     font-size: calc(12px + 0.7vw);
 }
+
+.estado-evento{
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    margin-left: 3vw;
+    font-size: calc(12px + 0.7vw);
+}
+
+
 .icono-jugadores{
     width: 2vw;
     min-width: 20px;

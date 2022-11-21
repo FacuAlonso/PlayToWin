@@ -3,6 +3,7 @@ require_once 'config.php';
 define("DBCONF", configDB());
 //http://php.net/manual/es/mysqli-result.fetch-array.php
 //https://cybmeta.com/isset-is_null-y-empty-diferencias-y-ejemplos-de-uso
+date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 function conectarBD(){
     // Crear conexión
@@ -39,9 +40,25 @@ function consultarBD($sql){
 }
 
 // Generar un array que contenga todos los eventos activos
-function listaEventos(){
+function listaEventosActivos(){
     $res=NULL;
     $sql = "SELECT * FROM eventos WHERE estado = 'activo' ORDER BY fechaFinal";
+    $res=consultarBD($sql);
+    return $res;
+}
+
+// Generar un array que contenga todos los eventos finalizados
+function listaEventosFin(){
+    $res=NULL;
+    $sql = "SELECT * FROM eventos WHERE estado = 'finalizado' ORDER BY fechaFinal";
+    $res=consultarBD($sql);
+    return $res;
+}
+
+// Generar un array que contenga todos los eventos, de todos los estados
+function listaEventos(){
+    $res=NULL;
+    $sql = "SELECT * FROM eventos ORDER BY fechaFinal";
     $res=consultarBD($sql);
     return $res;
 }
@@ -126,14 +143,36 @@ function Validarpass($usuario){
 	return  $result;
 }
 function Crearcuenta($usuario, $pass){
-$conn=conectarBD();
-$sql = "INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES (NULL, '$usuario', '$pass', '0')";
-if (mysqli_query($conn,$sql)) {
-    echo '<script language="javascript">alert("Se ha creado correctamente");</script>';
+    $conn=conectarBD();
+    $sql = "INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES (NULL, '$usuario', '$pass', '0')";
+    if (mysqli_query($conn,$sql)) {
+        echo '<script language="javascript">alert("Se ha creado correctamente");</script>';
+    }
+    else {
+    echo '<script language="javascript">alert(""Error: " . $sql . "<br>" . $conn->error;");</script>';
+    }
+    desconectarBD($conn); 
 }
-else {
-  echo '<script language="javascript">alert(""Error: " . $sql . "<br>" . $conn->error;");</script>';
+
+function expirarEvento($id){
+    $sql = "UPDATE `eventos` SET `estado` = 'finalizado' WHERE `eventos`.`id` = $id";
+    $conn  = conectarBD();
+    mysqli_query($conn, $sql);
+    desconectarBD($conn); 
 }
-desconectarBD($conn); 
+
+
+function validarFechaEventosActivos(){
+    $fechaServer = time();
+    foreach(listaEventosActivos() as $evento){
+        $fechaEvento = strtotime($evento["fechaFinal"]);
+        if($fechaServer>=$fechaEvento){
+            expirarEvento($evento["id"]);
+        }
+    }
 }
+
+validarFechaEventosActivos(); //
+
 ?>
+

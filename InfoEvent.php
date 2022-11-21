@@ -38,7 +38,7 @@ function mostrarPagina(){
     function puntajes($lstJugadores){
         $res = "";
         foreach ($lstJugadores as $jugador):
-            $res.= "<p>".$jugador["nickJugador"]." -> ". $jugador["puntaje"]." puntos </p>";
+            $res.= "<p>".$jugador["nickJugador"]." ⮕ ". $jugador["puntaje"]." puntos </p>";
         endforeach;
         return $res;
     }

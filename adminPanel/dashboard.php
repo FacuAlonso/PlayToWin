@@ -6,6 +6,15 @@
         $head = genHeaderAdmin("Dashboard | Admin Panel","dashboard.css",NULL); //Titulo,CSS,JS
         $tarjetas = genTarjetasAdmin(); // Función de tarjetasAdmin.php
         $tarjetasFinalizados = genTarjetasAdminFin();
+
+        if ($tarjetasFinalizados == ""){
+            $tituloFin = "";
+        } else{
+            $tituloFin = <<<TITULO
+            <h1 class="titulo">Eventos finalizados:</h1>
+            TITULO;
+        }
+
         $body = <<<BODY
         <body>
         <div id="encabezado">
@@ -20,7 +29,7 @@
         </div>
         <div id="cont-eventos">
         $tarjetas
-        <h1 class="titulo">Eventos finalizados:</h1>
+        $tituloFin
         $tarjetasFinalizados
         </div>
         </body>

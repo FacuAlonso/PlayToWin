@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2022 a las 02:26:16
+-- Tiempo de generación: 21-11-2022 a las 19:34:48
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -36,7 +36,6 @@ CREATE TABLE `eventos` (
   `descEvento` text COLLATE utf8_bin NOT NULL,
   `reglasEvento` text COLLATE utf8_bin NOT NULL,
   `fechaFinal` datetime NOT NULL DEFAULT current_timestamp(),
-  `cantUsuarios` int(11) NOT NULL DEFAULT 0,
   `estado` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT 'activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -44,10 +43,10 @@ CREATE TABLE `eventos` (
 -- Volcado de datos para la tabla `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `nomEvento`, `preset`, `descEvento`, `reglasEvento`, `fechaFinal`, `cantUsuarios`, `estado`) VALUES
-(1, '¡Logra la mayor cantidad de elixir Quemado!\r\n\r\n', 3, 'Juega una partida normal de Clash Royale intentando quemar la mayor cantidad de elixir.\r\n\r\nCuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados, así como deberás aportar la captura de pantalla.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-11-29 00:00:00', 0, 'activo'),
-(2, '¡Haz la mayor cantidad de kills!\r\n\r\n', 2, 'Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-11-20 00:00:00', 0, 'activo'),
-(3, '¡Camina la mayor distancia en el mapa!\r\n\r\n', 5, 'Descripción del evento de Fortnite, donde los jugadores deben indicar el puntaje en metros recorridos.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-08 11:00:00', 0, 'activo');
+INSERT INTO `eventos` (`id`, `nomEvento`, `preset`, `descEvento`, `reglasEvento`, `fechaFinal`, `estado`) VALUES
+(1, '¡Logra la mayor cantidad de elixir Quemado!\r\n\r\n', 3, 'Juega una partida normal de Clash Royale intentando quemar la mayor cantidad de elixir.\r\n\r\nCuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados, así como deberás aportar la captura de pantalla.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-11-29 00:00:00', 'activo'),
+(2, '¡Haz la mayor cantidad de kills!', 2, 'Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-11-25 16:00:00', 'activo'),
+(3, '¡Camina la mayor distancia en el mapa!\r\n\r\n', 5, 'Descripción del evento de Fortnite, donde los jugadores deben indicar el puntaje en metros recorridos.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-08 11:00:00', 'activo');
 
 -- --------------------------------------------------------
 
@@ -70,7 +69,8 @@ CREATE TABLE `participaciones` (
 --
 
 INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaje`, `fechaParticipa`, `posFinalVerif`) VALUES
-(1, 1, 1, 'XJuancitoGamerX', 15, '2022-10-07 22:14:05', NULL);
+(1, 1, 1, 'XJuancitoGamerX', 15, '2022-10-07 22:14:05', NULL),
+(24, 2, 6, 'Juan', 123, '2022-11-20 02:21:42', NULL);
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `presets` (
 --
 
 INSERT INTO `presets` (`id`, `nomJuego`, `portada`) VALUES
-(1, 'Valorant', 'portadas\\GkIFMci.png'),
+(1, 'Valorant', 'portadas/ValorantPortada1.png'),
 (2, 'CoD: Mobile', 'portadas\\ypC3Y1U.png'),
 (3, 'Clash Royale', 'portadas\\RXwBOXf.png'),
 (4, 'Free Fire', 'portadas\\3mAiEpV.png'),
@@ -114,7 +114,11 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES
 (1, 'user1@mail.com', 'pass@123', 0),
-(2, 'user2@mail.com', 'pass@123', 0);
+(2, 'user2@mail.com', 'pass@123', 0),
+(4, 'testeo@mail.com', '123456789', 0),
+(5, 'admin@admin.com', 'admin', 1),
+(6, 'a@a.com', 'a', 1),
+(7, 'b@b.com', 'b', 0);
 
 --
 -- Índices para tablas volcadas
@@ -157,25 +161,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `participaciones`
 --
 ALTER TABLE `participaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `presets`
 --
 ALTER TABLE `presets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

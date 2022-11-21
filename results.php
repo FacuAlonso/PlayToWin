@@ -2,14 +2,16 @@
 include 'database.php'; 
 require_once 'header.php';
 function mostrarPagina(){
-    $infoEvento=buscaEvento($_GET['id']);
+    $id=$_GET['id'];
+    $infoEvento=buscaEvento($id);
     $infoPreset=buscaPreset($infoEvento[0]["preset"]);
-    $Jugadores= $infoEvento[0]["cantUsuarios"];
     $imagen = $infoPreset[0]["portada"];
     $nomEvento= $infoEvento[0]["nomEvento"];
     $nomJuego = $infoPreset[0]["nomJuego"];
-
-
+    if($infoEvento[0] === NULL){
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.html");
+        die;
+    }
     $head = genHeader("Resultados | Play to Win",'results.css',"InfoEvent");
 
 
@@ -33,7 +35,7 @@ function mostrarPagina(){
 
         <div class="box_contenedor">
             <div id="Info" class="box_izq">
-                <div>
+                <div id= Informacion>
                     <p class="div-titulo">$nomEvento</h1>
                     <p class="div-subtitulo">$nomJuego</h2>
                 </div>
@@ -63,11 +65,7 @@ function mostrarPagina(){
                     <img class="logo-evento" src="$imagen">
                 </div>
                 <div class="box-evento-b-2-2">
-                    <div>
-                        <img class="logo_participantes" src="assets\usuariosIcono.png">
-                    </div>
                     <div class="jugadores-evento">
-                        <p>$Jugadores</p>
                     </div>
                 </div>
 

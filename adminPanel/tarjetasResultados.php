@@ -24,4 +24,6 @@ function genTarjetasResultados($id){
     endforeach;
     return($tarjetas);
 }
+// 🚫🚫🚫 NO SIRVE, HAY QUE REHACERLO 🚫🚫🚫 
 ?>
+

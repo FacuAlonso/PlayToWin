@@ -2,35 +2,10 @@
 include 'database.php'; 
 require_once 'header.php';
 
-session_start();
-if(!$_SESSION['tipo']){
-    header("Location: ../login.php");
-}
+$head = genHeader("Resultados | Play to Win",'results.css',"InfoEvent");
 
-// Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
 
-$buscaEvent = "SELECT * FROM eventos WHERE id = '".$_GET['id']."'";
-$result = mysqli_query($conn, $buscaEvent);
-$infoEvento = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-// Ahora busca las propiedades del preset del evento hallado
-
-$buscaPreset = "SELECT * FROM presets WHERE id = '".$infoEvento[0]["preset"]."' ";
-$result = mysqli_query($conn, $buscaPreset);
-$infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="results.css" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/JoystickFAVICON64.png">
-    <title>Evento | PlayToWin</title>
-</head>
-
+$body = <<<Body
 <body>
 
     <div id="encabezado">
@@ -90,6 +65,34 @@ $infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         
     </div>
+</body>
+Body;
 
-
+$paginaresult= <<<Sitio
+<!DOCTYPE html>
+<html lang="es">
+$head
+$body
 </html>
+Sitio;
+echo($paginaresult);
+
+
+session_start();
+if(!$_SESSION['tipo']){
+    header("Location: ../login.php");
+}
+
+// Generar un array que contenga todos los datos del evento de ID igual al QueryString del URL
+
+$buscaEvent = "SELECT * FROM eventos WHERE id = '".$_GET['id']."'";
+$result = mysqli_query($conn, $buscaEvent);
+$infoEvento = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Ahora busca las propiedades del preset del evento hallado
+
+$buscaPreset = "SELECT * FROM presets WHERE id = '".$infoEvento[0]["preset"]."' ";
+$result = mysqli_query($conn, $buscaPreset);
+$infoPreset = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>

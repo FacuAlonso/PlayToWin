@@ -75,6 +75,7 @@ function ValidarSingUp(id, id2, id3, id4){
 
 function mostrarBoton(){
     eliminarClase("bot-participar", "no-mostrar");
+    eliminarClase("cont-cant-jugadores", "no-mostrar");
 }
 
 function contador(fechaCierre){

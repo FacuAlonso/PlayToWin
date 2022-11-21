@@ -22,6 +22,7 @@ function mostrarPagina(){
     $reglas= $infoEvento[0]["reglasEvento"];
     $portada = $infoPreset[0]["portada"];
     $idUsuario = getUsrID($_SESSION["usuario"]);
+    $estado = $infoEvento[0]["estado"];
 
     $head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");
 
@@ -46,6 +47,17 @@ function mostrarPagina(){
         $lstPuntajes = puntajes($lstJugadores);
     } else{
         $lstPuntajes = "No hay participantes inscritos en este evento";
+    }
+
+    if($estado == "activo"){
+        $contadorTXT = <<<CONTADOR
+        <p class="centrarTXT" id="titulo-contador">El evento finaliza en: </p>
+        <p class="centrarTXT" id="contador-cierre">Cargando...</p>
+        CONTADOR;
+    }elseif($estado == "finalizado"){
+        $contadorTXT = <<<CONTADOR
+        <p class="centrarTXT" id="titulo-contador">Evento finalizado</p>
+        CONTADOR;
     }
     
 
@@ -112,7 +124,7 @@ function mostrarPagina(){
                 <div class="box-botones">
                 $botParticipar
                 </div>
-                <div class="box-evento-b-2-2" id="cont-cant-jugadores">
+                <div class="box-evento-b-2-2 no-mostrar" id="cont-cant-jugadores">
                     <div>
                         <img class="logo_participantes" src="assets\usuariosIcono.png">
                     </div>
@@ -121,12 +133,11 @@ function mostrarPagina(){
                     </div>
                 </div>
                 <div class="box-fecha">
-                    <p class="centrarTXT" id="titulo-contador">El evento finaliza en: </p>
-                    <p class="centrarTXT" id="contador-cierre">Cargando...</p>
+                    $contadorTXT
                 </div>
                 <div>
                     <button class="boton_participantes" onclick="abrir('popup-caja-2')" href="#">Ver participantes</button>
-                    <a href="$idEvento" ><button id="bot-res" class="boton_resultados no-mostrar" href="#">Resultados</button></a>
+                    <a href="results.php?id=$idEvento" ><button id="bot-res" class="boton_resultados no-mostrar" href="#">Resultados</button></a>
                 </div>
             </div>
         </div>

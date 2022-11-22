@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2022 a las 19:34:48
+-- Tiempo de generación: 22-11-2022 a las 04:15:13
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -61,16 +61,17 @@ CREATE TABLE `participaciones` (
   `nickJugador` varchar(30) COLLATE utf8_bin NOT NULL,
   `puntaje` int(11) NOT NULL,
   `fechaParticipa` timestamp NOT NULL DEFAULT current_timestamp(),
-  `posFinalVerif` int(11) DEFAULT NULL COMMENT 'La posición final que el admin declarará como resultado'
+  `descalificado` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Si es 1, está descalificado.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `participaciones`
 --
 
-INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaje`, `fechaParticipa`, `posFinalVerif`) VALUES
-(1, 1, 1, 'XJuancitoGamerX', 15, '2022-10-07 22:14:05', NULL),
-(24, 2, 6, 'Juan', 123, '2022-11-20 02:21:42', NULL);
+INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaje`, `fechaParticipa`, `descalificado`) VALUES
+(1, 1, 1, 'XJuancitoGamerX', 15, '2022-10-07 22:14:05', 0),
+(24, 2, 6, 'Juan', 123, '2022-11-20 02:21:42', 1),
+(25, 2, 7, 'MasterYoda14', 24, '2022-11-22 02:11:37', 0);
 
 -- --------------------------------------------------------
 
@@ -167,7 +168,7 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de la tabla `participaciones`
 --
 ALTER TABLE `participaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `presets`

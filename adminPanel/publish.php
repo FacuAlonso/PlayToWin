@@ -3,39 +3,42 @@
     require_once '../header.php';
     require_once 'tarjetasResultados.php';
 
-    $tarjetas = genTarjetasResultados($_GET['id']);
-    $head = genHeaderAdmin("Publicar resultados | Admin Panel","publish.css",NULL); //Titulo,CSS,JS
+    function mostrarPagina(){
 
-    $body = <<<BODY
-    <body>
-    <div id="encabezado">
-        <a href="../home.php" id="logo"><img id="logo" src="../assets/playtowinICONO.png"></a>
-        <div id="header-div1">
-            <h1 class="titulo">PUBLICAR RESULTADOS</h1>
-            <button id="bot-cancel" onclick="window.location.href = 'dashboard.php';">CANCELAR (REGRESAR)</button>
+        $head = genHeaderAdmin("Revisar resultados | Admin Panel","publish.css",NULL); //Titulo,CSS,JS
+        $tarjetas = genTarjetasResultados($_GET['id']);
+        $nomEvento = buscaEvento($_GET['id'])[0]['nomEvento'];
+
+        $body = <<<BODY
+        <body>
+        <div id="encabezado">
+            <a href="../home.php" id="logo"><img id="logo" src="../assets/playtowinICONO.png"></a>
+            <div id="header-div1">
+                <h1 class="titulo">REVISAR RESULTADOS</h1>
+                <button id="bot-cancel" onclick="window.location.href = 'dashboard.php';">CANCELAR (REGRESAR)</button>
+            </div>
+            <a href="../cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+            <p class="cerrarsesion">CERRAR SESIÓN</p></a>
         </div>
-        <a href="../cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
-        <p class="cerrarsesion">CERRAR SESIÓN</p></a>
-    </div>
-    <div id="cont-eventos">
-        <form action="" method="get" class="box-evento">
-            <h1 class="titulo">SELECCIONA LOS GANADORES DEL EVENTO</h1>
-            <input type="submit" class="boton-publicarRes" value="PUBLICAR RESULTADOS" id="boton-submit">
+        <div id="cont-eventos">
+            <p class="titulo">REVISAR LAS PARTICIPACIONES DEL EVENTO</p>
+            <p class="titulo">$nomEvento</p>
             $tarjetas
-        </form>
-    </div>
-    </body>
-    BODY;
+        </div>
+        </body>
+        BODY;
 
-    $sitio = <<<SITIO
-    <!DOCTYPE html>
-    <html lang="es">
-        $head
-        $body
-    </html>
-    SITIO;
+        $sitio = <<<SITIO
+        <!DOCTYPE html>
+        <html lang="es">
+            $head
+            $body
+        </html>
+        SITIO;
 
-    print($sitio);
+        print($sitio);
+
+    }
 
     function main(){
         session_start();

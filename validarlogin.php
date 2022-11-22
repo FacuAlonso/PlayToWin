@@ -26,16 +26,14 @@ function loguear (){
           iniciarSesion($_REQUEST['usuario'],$tipo);
       }     
       else{
-        echo('<p class="bad">EL USUARIO O CONTRASEÑA SON INCORRECTOS</p>');
+        header("Location: login.php?err=denegado");
       }
     }
     else{
-      ?>
-      <?php
-
-      echo('<p class="bad">EL USUARIO O CONTRASEÑA SON INCORRECTOS</p>');
+      header("Location: login.php?err=denegado");
     }
 }
+
 function main(){
     session_start();
     if (isset($_REQUEST['usuario'])&& isset($_REQUEST['pass']) ) {            

@@ -2,28 +2,29 @@
 require_once '../database.php'; 
 
 function genTarjetasResultados($id){
-    $lstJugadores = listaJugadores($_GET['id']); // Lo busca en database.php 
+    $lstJugadores = listaJugadores($id); // Lo busca en database.php 
     $tarjetas="";
 
-    foreach($lstJugadores as $jugador): 
-        $nombre = $jugador['nickJugador'];
-        $mail = getUsrMail($jugador['usuario']);
-        $puntaje = $jugador['puntaje'];
+    foreach($lstJugadores as $participante): 
+        $nombre = $participante['nickJugador'];
+        $mail = getUsrMail($participante['usuario']);
+        $puntaje = $participante['puntaje'];
+        $idParticipacion = $participante['id']; // Es el ID de la participación; no del usuario. 
         
         $tarjeta = <<<TARJETA
-        <label for="nom01" class="datos-titulo">jugador@email.com</label>
-            <label for="nom01" class="puntaje">43 puntos</label>
-            <select name="select" class="selecPuntaje">
-                <option value="nowin" selected disabled>Seleccionar posición</option>
-                <option value="1">1er lugar</option>
-                <option value="2">2do lugar</option>
-                <option value="3">3er lugar</option>
-            </select>
+        <div class="tarjeta-participante">
+            <p class="datos-titulo">$nombre ($mail)</p>
+            <p class="puntaje">$puntaje puntos<p>
+            <form method="post" action="cargaDatosAdmin/descalificar.php">
+                <input type="text" class="no-mostrar" name="id" value="$idParticipacion">
+                <input type="text" class="no-mostrar" name="idEvento" value="$id">
+                <input type="submit" name="boton" class="boton-eliminar" value="DESCALIFICAR JUGADOR"/>
+            </form>
+        </div>
         TARJETA;
         $tarjetas.=$tarjeta;
     endforeach;
     return($tarjetas);
 }
-// 🚫🚫🚫 NO SIRVE, HAY QUE REHACERLO 🚫🚫🚫 
 ?>
 

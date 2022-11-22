@@ -23,16 +23,20 @@ function mostrarPagina(){
     $portada = $infoPreset[0]["portada"];
     $idUsuario = getUsrID($_SESSION["usuario"]);
     $estado = $infoEvento[0]["estado"];
+    $participacion = buscaParticipante($idEvento,$idUsuario);
 
     $head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");
 
-    if(buscaParticipante($idEvento,$idUsuario)==NULL){
+    if($participacion==NULL){
         // Se usa HEREDOC para poder utilizar "" en onclick
         $botParticipar = <<<TARJETA
         <button id='bot-participar' class='boton_participar no-mostrar' onclick="abrir('popup-caja')">PARTICIPAR</button> 
         TARJETA; 
     } else{
         $botParticipar = "<button id='bot-participar' class='boton_participar_2'>YA ESTÁS PARTICIPANDO</button>";
+        if ($participacion[0]['descalificado'] == 1){
+            $botParticipar = "<button id='bot-participar' class='boton_participar_3'>ESTÁS DESCALIFICADO/A</button>";
+        }
     }
 
     function puntajes($lstJugadores){
@@ -72,8 +76,6 @@ function mostrarPagina(){
                 <a href="#"><img class="navegador_boton" src="assets\Competencias.png"></a>
             </div>
             <div id="perfil-div">
-                <img id="perfil-logo" src="assets\profileCircle.svg">
-                <img id="open-menu-perfil" src="assets\dropDownArrow.svg">
                 <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>

@@ -69,13 +69,6 @@ body{
     justify-content: center;
 }
 
-
-#perfil-logo{
-    margin-right: -0.5vw;
-    width: 3vw;
-    min-width: 30px;
-}
-
 #open-menu-perfil{
     cursor: pointer;
     width: 2.5vw;

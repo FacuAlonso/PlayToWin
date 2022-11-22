@@ -27,8 +27,6 @@ function mostrarPagina(){
                 <a href="#"><img class="navegador_boton" src="assets\Competencias.png"></a>
             </div>
             <div id="perfil-div">
-                <img id="perfil-logo" src="assets\profileCircle.svg">
-                <img id="open-menu-perfil" src="assets\dropDownArrow.svg">
                 <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>

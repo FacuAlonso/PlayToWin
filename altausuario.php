@@ -9,7 +9,7 @@ function validacion(){
         header("Location: login.php");
     }
     else{
-        header("Location: login.php");
+        header("Location: login.php?err=yaexiste");
     }
 }
 function main(){

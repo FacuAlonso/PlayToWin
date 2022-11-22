@@ -96,7 +96,7 @@ function listaPresets(){
 function listaJugadores($id){
     $res=NULL;
     if ($id!=""){
-        $sql = "SELECT * FROM participaciones WHERE evento = '".$id."' ORDER BY puntaje DESC";
+        $sql = "SELECT * FROM participaciones WHERE evento = '".$id."' AND `descalificado` = 0 ORDER BY puntaje DESC";
         $res=consultarBD($sql);
     }
     return $res;

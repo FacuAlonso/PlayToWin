@@ -12,8 +12,8 @@ function main(){
     var_dump($nick);
     var_dump($puntaje);
     
-    $sql = "INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaje`, `fechaParticipa`, `posFinalVerif`)
-    VALUES (NULL, '$idEvento', '$idUsuario', '$nick', '$puntaje', current_timestamp(), NULL)";
+    $sql = "INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaje`, `fechaParticipa`)
+    VALUES (NULL, '$idEvento', '$idUsuario', '$nick', '$puntaje', current_timestamp())";
 
     $conn  = conectarBD();
 

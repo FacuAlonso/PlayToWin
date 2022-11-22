@@ -230,12 +230,6 @@ html{
 }
 
 
-#perfil-logo{
-    margin-right: -0.5vw;
-    width: 3vw;
-    min-width: 30px;
-}
-
 #open-menu-perfil{
     cursor: pointer;
     width: 2.5vw;
@@ -356,6 +350,19 @@ html{
     border-radius: 0.4vw;
     border: none;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
+    width: auto;
+    margin-right: 2vw;
+}
+
+.boton_participar_3{
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: calc(20px + 0.5vw);
+    padding: 1vw;
+    border-radius: 0.4vw;
+    border: none;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
     width: auto;
     margin-right: 2vw;
 }

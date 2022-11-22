@@ -70,8 +70,10 @@ body{
     overflow-y: scroll;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 80vw;
     height: 100%;
+    background-image: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
+    border-radius: 1vw;
 }
 
 .titulo{
@@ -106,25 +108,7 @@ body{
     border: none;
 }
 
-.box-evento{
-    background-image: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% );
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    align-content: center;
-    width: 80vw;
-    align-items: center;
-    font-family: 'Lato', sans-serif;
-    padding-top: 2vh;
-    padding-bottom: 5vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    min-width: 430px;
-    border-radius: 1vw;
-    height: auto;
-}
+
 
 .datos-titulo{
     color: white;
@@ -132,7 +116,7 @@ body{
     font-size: calc(9px + 0.7vw);
     font-weight: 500;
     align-self:center;
-    margin-top: 4vh;
+    margin-right: 2vw;
 }
 
 .puntaje{
@@ -215,6 +199,45 @@ body{
     font-size: calc(9px + 0.7vw);
     font-weight: 400;
     text-align: center;
+}
+
+.boton-eliminar{
+    border: none;
+    border-radius: 1vw;
+    background-image: radial-gradient( circle 860px at 11.8% 33.5%,  rgba(240,30,92,1) 0%, rgba(244,49,74,1) 30.5%, rgba(249,75,37,1) 56.1%, rgba(250,88,19,1) 75.6%, rgba(253,102,2,1) 100.2% );
+    width: auto;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: calc(9px + 0.7vw);
+    margin-left: 2vw;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.tarjeta-participante{
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+    width: 50vw;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    min-width: 430px;
+    border-radius: 1vw;
+    height: auto;
+    gap: 1vw;
+}
+
+.no-mostrar{
+    display: none !important;
 }
 
 

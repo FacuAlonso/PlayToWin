@@ -6,12 +6,12 @@ function main(){
   unset($_SESSION['tipo']);
   unset($_SESSION['instante']);
 
-  // Elimina la sesion.
+  // Elimina la sesion
   session_destroy();
    
-  // Redirecciona a la página de login.principal
+  // Redirecciona a la landing page
   header("HTTP/1.1 302 Moved Temporarily"); 
-  header("Location: login.php");
+  header("Location: index.html");
 }
 main();
   

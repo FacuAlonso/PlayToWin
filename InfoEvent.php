@@ -65,6 +65,12 @@ function mostrarPagina(){
     }
     
 
+    if($_SESSION['tipo']==1){
+        $botonAdmin = "<a href=adminPanel/dashboard.php><p class='participa-boton'>Admin Panel</p></a>";
+    } else{
+        $botonAdmin = "";
+    }
+
     $body = <<<BODY
     <body onload="contador('$fechaFinal');">
         <div id="encabezado">
@@ -76,6 +82,7 @@ function mostrarPagina(){
                 <a href="#"><img class="navegador_boton" src="assets\Resultados.png"></a>
             </div>
             <div id="perfil-div">
+             $botonAdmin
                 <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>

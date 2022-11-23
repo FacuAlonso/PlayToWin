@@ -30,7 +30,7 @@
                         <div class="contenedor-input" name="001" id="nom02">
                             <label for="nom01" class="dato-input">Nombre del juego:</label>
                             <input type="text" class="caja-input"  name="nombre" placeholder="Valorant, Clash Royale...">
-                            <label for="datos01" class="dato-input">Imagen:</label>
+                            <label for="datos01" class="dato-input">Imagen (Hasta 5 MB)</label>
                             <input type="file" class="caja-input" name="fileToUpload" id="fileToUpload">
                         </div>
                         <input type="button" class="boton-popup" value="Enviar" onclick="loadContTextAjaxForm('cargaDatosAdmin/recibirdatos.php','presets-form')">

@@ -8,7 +8,7 @@ function agregarPreset($nombre,$rutaFoto){
     $conn  = conectarBD();
 
     if (mysqli_query($conn, $sql)) {
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/adminPanel/presets.php");
+        echo "✅ Carga/edición de preset exitosa. ✅";
       } else {
         echo "Error: " . $sql . mysqli_error($conn);
       }

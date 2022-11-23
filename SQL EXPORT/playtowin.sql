@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2022 a las 04:15:13
+-- Tiempo de generación: 24-11-2022 a las 00:34:58
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,58 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `playtowin`
 --
-CREATE DATABASE IF NOT EXISTS `playtowin` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `playtowin`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `eventos`
---
-
-CREATE TABLE `eventos` (
-  `id` int(11) NOT NULL,
-  `nomEvento` varchar(300) COLLATE utf8_bin NOT NULL,
-  `preset` int(11) NOT NULL COMMENT 'depende de id en presets',
-  `descEvento` text COLLATE utf8_bin NOT NULL,
-  `reglasEvento` text COLLATE utf8_bin NOT NULL,
-  `fechaFinal` datetime NOT NULL DEFAULT current_timestamp(),
-  `estado` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT 'activo'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Volcado de datos para la tabla `eventos`
---
-
-INSERT INTO `eventos` (`id`, `nomEvento`, `preset`, `descEvento`, `reglasEvento`, `fechaFinal`, `estado`) VALUES
-(1, '¡Logra la mayor cantidad de elixir Quemado!\r\n\r\n', 3, 'Juega una partida normal de Clash Royale intentando quemar la mayor cantidad de elixir.\r\n\r\nCuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados, así como deberás aportar la captura de pantalla.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-11-29 00:00:00', 'activo'),
-(2, '¡Haz la mayor cantidad de kills!', 2, 'Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-11-25 16:00:00', 'activo'),
-(3, '¡Camina la mayor distancia en el mapa!\r\n\r\n', 5, 'Descripción del evento de Fortnite, donde los jugadores deben indicar el puntaje en metros recorridos.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-08 11:00:00', 'activo');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `participaciones`
---
-
-CREATE TABLE `participaciones` (
-  `id` int(11) NOT NULL,
-  `evento` int(11) NOT NULL COMMENT 'FK',
-  `usuario` int(11) NOT NULL COMMENT 'FK',
-  `nickJugador` varchar(30) COLLATE utf8_bin NOT NULL,
-  `puntaje` int(11) NOT NULL,
-  `fechaParticipa` timestamp NOT NULL DEFAULT current_timestamp(),
-  `descalificado` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'Si es 1, está descalificado.'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Volcado de datos para la tabla `participaciones`
---
-
-INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaje`, `fechaParticipa`, `descalificado`) VALUES
-(1, 1, 1, 'XJuancitoGamerX', 15, '2022-10-07 22:14:05', 0),
-(24, 2, 6, 'Juan', 123, '2022-11-20 02:21:42', 1),
-(25, 2, 7, 'MasterYoda14', 24, '2022-11-22 02:11:37', 0);
 
 -- --------------------------------------------------------
 
@@ -82,7 +30,7 @@ INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaj
 CREATE TABLE `presets` (
   `id` int(11) NOT NULL,
   `nomJuego` varchar(30) COLLATE utf8_bin NOT NULL,
-  `portada` varchar(100) COLLATE utf8_bin NOT NULL
+  `portada` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -96,49 +44,9 @@ INSERT INTO `presets` (`id`, `nomJuego`, `portada`) VALUES
 (4, 'Free Fire', 'portadas\\3mAiEpV.png'),
 (5, 'Fortnite', 'portadas\\JXpzXpt.png');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `email` varchar(30) COLLATE utf8_bin NOT NULL,
-  `pass` varchar(30) COLLATE utf8_bin NOT NULL,
-  `isAdmin` tinyint(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES
-(1, 'user1@mail.com', 'pass@123', 0),
-(2, 'user2@mail.com', 'pass@123', 0),
-(4, 'testeo@mail.com', '123456789', 0),
-(5, 'admin@admin.com', 'admin', 1),
-(6, 'a@a.com', 'a', 1),
-(7, 'b@b.com', 'b', 0);
-
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `eventos`
---
-ALTER TABLE `eventos`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `conectarPresets` (`preset`);
-
---
--- Indices de la tabla `participaciones`
---
-ALTER TABLE `participaciones`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `conectarEventos` (`evento`),
-  ADD KEY `conectarUsuarios` (`usuario`);
 
 --
 -- Indices de la tabla `presets`
@@ -148,56 +56,14 @@ ALTER TABLE `presets`
   ADD UNIQUE KEY `nomJuego` (`nomJuego`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
-
---
--- AUTO_INCREMENT de la tabla `eventos`
---
-ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `participaciones`
---
-ALTER TABLE `participaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `presets`
 --
 ALTER TABLE `presets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `eventos`
---
-ALTER TABLE `eventos`
-  ADD CONSTRAINT `conectarPresets` FOREIGN KEY (`preset`) REFERENCES `presets` (`id`);
-
---
--- Filtros para la tabla `participaciones`
---
-ALTER TABLE `participaciones`
-  ADD CONSTRAINT `conectarEventos` FOREIGN KEY (`evento`) REFERENCES `eventos` (`id`),
-  ADD CONSTRAINT `conectarUsuarios` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

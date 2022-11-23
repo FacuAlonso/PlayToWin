@@ -15,7 +15,7 @@ function main(){
             <div class="contenedor-input" name="001" id="nom02">
                 <label for="nom01" class="dato-input">Nombre del juego:</label>
                 <input type="text" class="caja-input"  name="nombre" value="$nombre">
-                <label for="datos01" class="dato-input">Imagen:</label>
+                <label for="datos01" class="dato-input">Imagen (Hasta 5 MB)</label>
                 <img class="portada-evento" src="../$portada">
                 <input type="file" class="caja-input" name="fileToUpload" id="fileToUpload" value="$portada">
                 <input type="text" class="no-mostrar" value="$id" name="id">

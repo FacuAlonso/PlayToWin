@@ -5,9 +5,10 @@ function recibirArchivo(){
 	//
 	// $target_dir Es el nombre del directorio donde se almacena el archivo subido
 	//
+	$idUnico = uniqid();
 	$target_dir = "../../portadas/"; 
     $nomArch = preg_replace('/\s+/', '_', basename($_FILES["fileToUpload"]["name"]));
-	$target_file = $target_dir . uniqid() . "@" . $nomArch; 
+	$target_file = $target_dir . $idUnico . "@" . $nomArch; 
 	$uploadOk = 1;
 	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 	$result=null;
@@ -26,8 +27,8 @@ function recibirArchivo(){
 	}
 
 	// Check file size
-	if ($_FILES["fileToUpload"]["size"] > 500000 && $uploadOk ) {
-		$msj= ", your file is too large.";
+	if ($_FILES["fileToUpload"]["size"] > 5000000 && $uploadOk ) { //Hasta 2 Mb
+		$msj= "el archivo es demasiado grande (Más de 5 MB)";
 		$uploadOk = 0;
 	}
 
@@ -41,7 +42,7 @@ function recibirArchivo(){
 	
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
-		$msj= "Sorry, your file was not uploaded".$msj;
+		$msj= "Ha ocurrido un error: ".$msj;
 		$uploadOk = 0;
 	// if everything is ok, try to upload file
 	} else {
@@ -53,7 +54,7 @@ function recibirArchivo(){
 			}
 	}
 	
-	$result=['filename'=>$nomArch,'message'=>$msj,'uploadOk'=>$uploadOk];
+	$result=['filename'=>$idUnico."@".$nomArch,'message'=>$msj,'uploadOk'=>$uploadOk];
 	return $result;
 }
 

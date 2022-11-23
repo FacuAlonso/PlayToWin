@@ -1,14 +1,25 @@
 <?php
 require_once('upload.php');
 require_once('insertPreset.php');
+require_once('../../database.php');
 
 function recibirDatos(){
+	$duplicado = 0;
 	//Recibe los datos por 'post' o por 'get'
 	$nombre="";
 	$nombreArchivo="portadas/";
 
 	if (isset($_REQUEST['nombre'])){
 		$nombre=$_REQUEST['nombre'];
+	}
+
+	$presets=listaPresets();
+
+	foreach($presets as $preset){
+		if($preset['nomJuego'] == $nombre){
+			echo "⚠ Ya existe un preset con el nombre indicado. Ingrese otro. ⚠";
+			die;
+		}
 	}
 
 	// * * * * A R C H I V O * * * * * *
@@ -21,6 +32,8 @@ function recibirDatos(){
 				if ($res['uploadOk']){// SI SE LOGRÓ SUBIR CON EXITO
 					$nombreArchivo.=$res['filename'];
                     agregarPreset($nombre,$nombreArchivo);
+				} else{
+					echo $res['message'];
 				}
 			}	
 		}

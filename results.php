@@ -1,5 +1,5 @@
 <?php 
-include 'database.php'; 
+require_once 'database.php'; 
 require_once 'header.php';
 function mostrarPagina(){
     $id=$_GET['id'];
@@ -8,12 +8,53 @@ function mostrarPagina(){
     $imagen = $infoPreset[0]["portada"];
     $nomEvento= $infoEvento[0]["nomEvento"];
     $nomJuego = $infoPreset[0]["nomJuego"];
-    if($infoEvento[0] === NULL){
+    if($infoEvento[0] === NULL || $infoEvento[0]['estado']!="finalizado"){
         header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.html");
         die;
     }
     $head = genHeader("Resultados | Play to Win",'results.css',"InfoEvent");
+    $lstJugadores = listaJugadores($_GET['id']);
+    $cantJugadores = count($lstJugadores);
 
+    function puntajes($lstJugadores){
+        $res = "";
+        $i = 1;
+        foreach ($lstJugadores as $jugador):
+            $posicion = $i;
+            $classPodio = "";
+            if($i==1){
+                $classPodio = "primer-lugar";
+            }
+            elseif($i==2){
+                $classPodio = "segundo-lugar";
+            }
+            elseif($i==3){
+                $classPodio = "tercer-lugar";
+            }
+
+            $nickname = $jugador['nickJugador'];
+            $puntaje = $jugador['puntaje'];
+
+            $resultados = <<<ENTRADA
+            <div class ="column-positions $classPodio">
+                <div class="conteiner-info">$posicion</div>
+                <div class="conteiner-info">$nickname </div>
+                <div class="conteiner-info">$puntaje</div>
+            </div>
+            ENTRADA;
+            $res.=$resultados;
+            $i++;
+        endforeach;
+        return $res;
+    }
+
+    if($cantJugadores!=0){
+        $resultados = puntajes($lstJugadores);
+    } else{
+        $resultados = "No hay participantes inscritos en este evento";
+    }
+
+    
 
     $body = <<<Body
     <body>
@@ -38,24 +79,8 @@ function mostrarPagina(){
                     <p class="div-subtitulo">$nomJuego</h2>
                 </div>
                 <div id= Tabla class="box-ranking" >
-                    <p class="tabla-titulo">GANADORES</p>
-                    <div class ="column-positions">
-                        <div class="conteiner-info">1°</div>
-                        <div class="conteiner-info">JUGADOR </div>
-                        <div class="conteiner-info">40</div>
-                    </div>
-                    <div class ="column-positions">
-                        <div class="conteiner-info">2°</div>
-                        <div class="conteiner-info">JUGADOR</div>
-                        <div class="conteiner-info">38</div>
-                    </div>
-                    <div class ="column-positions">
-                        <div class="conteiner-info">3°</div>
-                        <div class="conteiner-info">JUGADOR </div>
-                        <div class="conteiner-info">36</div>
-                    </div>
-                        
-
+                    <p class="tabla-titulo">POSICIONES FINALES</p>
+                    $resultados
                 </div>
             </div>
             <div class="box_derecha">

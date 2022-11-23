@@ -214,8 +214,7 @@ html{
 }
 
 .column-positions{
-    background: rgb(221, 207, 79);
-    background: linear-gradient(180deg, rgb(122, 122, 89) 0%, rgb(229, 228, 128) 35%, rgb(236, 180, 107) 100%);
+    
     display: flex;
     flex-direction: row;
     min-height: none;
@@ -225,6 +224,22 @@ html{
     max-width: 50vw
     ;
 }
+
+.primer-lugar{
+    background: rgb(221, 207, 79);
+    background: linear-gradient(180deg, rgb(122, 122, 89) 0%, rgb(229, 228, 128) 35%, rgb(236, 180, 107) 100%);
+}
+
+.segundo-lugar{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.8127626050420168) 0%, rgba(221,221,221,1) 29%);
+}
+
+.tercer-lugar{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.8127626050420168) 0%, rgba(173,119,0,1) 29%);
+}
+
 .conteiner-info{
     width: 100px;
     margin-top: 10px;

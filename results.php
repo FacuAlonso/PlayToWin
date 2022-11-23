@@ -51,10 +51,8 @@ function mostrarPagina(){
     if($cantJugadores!=0){
         $resultados = puntajes($lstJugadores);
     } else{
-        $resultados = "No hay participantes inscritos en este evento";
+        $resultados = "<p class='div-titulo centrar-txt'>En este evento no hubo participantes</p>";
     }
-
-    
 
     $body = <<<Body
     <body>
@@ -64,8 +62,8 @@ function mostrarPagina(){
                 <a href="home.php"><img id="logo" src="assets\playtowinICONO.png"></a>
             </div>
             <div id="datos">
+                <a href="home.php"><img class="navegador_boton" src="assets\Competencias.png"></a>
                 <a href="#"><img class="navegador_boton" src="assets\Resultados.png"></a>
-                <a href="#"><img class="navegador_boton" src="assets\Competencias.png"></a>
             </div>
             <div id="perfil-div">
                 <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>

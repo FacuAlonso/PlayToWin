@@ -69,12 +69,6 @@ body{
     justify-content: center;
 }
 
-#open-menu-perfil{
-    cursor: pointer;
-    width: 2.5vw;
-    min-width: 30px;
-}
-
 #logout-icono{
     margin-left: 2vw;
     cursor: pointer;

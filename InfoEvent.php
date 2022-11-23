@@ -72,8 +72,8 @@ function mostrarPagina(){
                 <a href="home.php"><img id="logo" src="assets\playtowinICONO.png"></a>
             </div>
             <div id="datos">
+                <a href="home.php"><img class="navegador_boton" src="assets\Competencias.png"></a>
                 <a href="#"><img class="navegador_boton" src="assets\Resultados.png"></a>
-                <a href="#"><img class="navegador_boton" src="assets\Competencias.png"></a>
             </div>
             <div id="perfil-div">
                 <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>

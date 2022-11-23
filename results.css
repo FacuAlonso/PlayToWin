@@ -7,6 +7,10 @@ body{
     
 }
 
+.centrar-txt{
+    text-align: center;
+}
+
 html{
     overflow: hidden;
     scroll-behavior: smooth;
@@ -35,7 +39,7 @@ html{
     color: white;
     font-family:'Lato', sans-serif ;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 1.5vw;
     margin-bottom: 2vw;
 }
 .box-ranking{

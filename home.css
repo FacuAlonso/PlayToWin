@@ -171,6 +171,7 @@ body{
     border-radius: 2vw;
     width: 25vw;
     min-width: 300px;
+    max-height: 25vh;
 }
 
 .back-portada{

@@ -42,7 +42,7 @@ function recibirArchivo(){
 	
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
-		$msj= "Ha ocurrido un error: ".$msj;
+		$msj= "⛔ Ha ocurrido un error: ".$msj;
 		$uploadOk = 0;
 	// if everything is ok, try to upload file
 	} else {

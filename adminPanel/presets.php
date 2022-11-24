@@ -56,6 +56,12 @@
         SITIO;
 
         print($sitio);
+
+        if(isset($_GET['err'])){ // Si desde eliminarPreset.php se devuelve error de un evento dependiendo de un preset eliminado, muestra una alerta.
+            if($_GET['err']=="fk"){
+                echo '<script type="text/javascript">alert("⛔ No se puede eliminar, ya que hay al menos un evento que depende de este preset.")</script>';
+            }
+        }
     }
 
     function main(){

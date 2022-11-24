@@ -34,7 +34,7 @@ function genTarjetas($estado){
                 $nomEvento = $evento["nomEvento"];
                 
                 $tarjeta = <<<TARJETA
-                <div class="tarjeta-evento" id="ev_01" onclick="window.location.href = 'results.php?id=$idEvento';">
+                <div class="tarjeta-evento" id="ev_01" onclick="window.location.href = '../results.php?id=$idEvento';">
                     <div class="info-tarjeta">
                         <p class="nombre-evento">$nomEvento</p>
                         <p class="label-juego">$nomJuego</p>

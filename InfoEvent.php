@@ -1,6 +1,6 @@
 <?php 
-require_once 'database.php'; 
-require_once 'header.php';
+require_once 'auxPHP/database.php'; 
+require_once 'auxPHP/header.php';
 
 function mostrarPagina(){
     
@@ -25,7 +25,7 @@ function mostrarPagina(){
     $estado = $infoEvento[0]["estado"];
     $participacion = buscaParticipante($idEvento,$idUsuario);
 
-    $head = genHeader("$nomEvento | Play to Win","InfoEvent.css","InfoEvent");
+    $head = genHeader("$nomEvento | Play to Win","css/InfoEvent.css","InfoEvent.js");
 
     if($participacion==NULL){
         // Se usa HEREDOC para poder utilizar "" en onclick
@@ -83,7 +83,7 @@ function mostrarPagina(){
             </div>
             <div id="perfil-div">
              $botonAdmin
-                <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
+                <a href="auxPHP/cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>
         <div class="box_contenedor">

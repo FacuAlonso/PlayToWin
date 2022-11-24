@@ -1,7 +1,7 @@
 <?php 
-    require_once '../database.php'; 
-    require_once '../header.php';
-    require_once 'lstPresets.php'; 
+    require_once '../auxPHP/database.php'; 
+    require_once '../auxPHP/header.php';
+    require_once 'auxAPanel/lstPresets.php'; 
 
     function mostrarPagina(){
         $infoEvento = buscaEvento($_GET['id']);
@@ -17,7 +17,7 @@
         $descripcion = $infoEvento[0]["descEvento"];
         $reglas = $infoEvento[0]["reglasEvento"];
         $presets = genlstPresetsEdit($infoEvento[0]["preset"]);
-        $head = genHeaderAdmin("Editar evento | Admin Panel","edit.css",NULL); //Titulo,CSS,JS
+        $head = genHeaderAdmin("Editar evento | Admin Panel","../css/edit.css",NULL); //Titulo,CSS,JS
         $body = <<<BODY
         <body>
         <div id="encabezado">
@@ -26,7 +26,7 @@
                 <h1 class="titulo">EDITAR EVENTO</h1>
                 <button id="bot-cancel" onclick="window.location.href = 'dashboard.php';">CANCELAR EDICIÓN</button>
             </div>
-            <a href="../cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+            <a href="../auxPHP/cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
             <p class="cerrarsesion">CERRAR SESIÓN</p></a>
             </div>
             <div id="cont-eventos">

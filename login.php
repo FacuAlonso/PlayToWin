@@ -1,6 +1,6 @@
 <?php 
-    include 'header.php';
-    $head = genHeader("Login | Play to Win",'login.css',"InfoEvent");
+    include 'auxPHP/header.php';
+    $head = genHeader("Login | Play to Win",'css/login.css',"js/InfoEvent.js");
 
     if (isset($_GET['err'])){
         if ($_GET['err']=='denegado'){
@@ -15,7 +15,7 @@
     $body = <<<BODY
         <body>
             <a id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
-            <form action='validarlogin.php' method="post" onsubmit="return validardatos('box-login','nom01', 'ape01')" name="Datos" id="box-login">
+            <form action='auxPHP/validarlogin.php' method="post" onsubmit="return validardatos('box-login','nom01', 'ape01')" name="Datos" id="box-login">
                 <p class="titulo">Accede a tu cuenta</p>
                 <label for="nom01" class="datos-titulo">Email:</label>
                 <input required type="email" class="datos-caja" name="usuario" id="nom01" placeholder="usuario@email.com"/>

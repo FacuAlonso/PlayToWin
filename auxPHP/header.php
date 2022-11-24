@@ -1,7 +1,7 @@
 <?php
 function genHeader($titulo,$cssFile,$JSScript){
     if(isset($JSScript)){
-        $script = '<script language="javascript" type="text/javascript" src="'.$JSScript.'.js"></script>';
+        $script = '<script language="javascript" type="text/javascript" src="'.$JSScript.'"></script>';
     }
     else{
         $script = '';
@@ -25,7 +25,7 @@ function genHeader($titulo,$cssFile,$JSScript){
 
 function genHeaderAdmin($titulo,$cssFile,$JSScript){ // Sólo cambia el nivel de directorio para el ícono
     if(isset($JSScript)){
-        $script = '<script language="javascript" type="text/javascript" src="'.$JSScript.'.js"></script>';
+        $script = '<script language="javascript" type="text/javascript" src="'.$JSScript.'"></script>';
     }
     else{
         $script = '';

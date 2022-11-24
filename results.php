@@ -1,6 +1,6 @@
 <?php 
-require_once 'database.php'; 
-require_once 'header.php';
+require_once 'auxPHP/database.php'; 
+require_once 'auxPHP/header.php';
 function mostrarPagina(){
     $id=$_GET['id'];
     $infoEvento=buscaEvento($id);
@@ -12,7 +12,7 @@ function mostrarPagina(){
         header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.html");
         die;
     }
-    $head = genHeader("Resultados | Play to Win",'results.css',"InfoEvent");
+    $head = genHeader("Resultados | Play to Win",'css/results.css',"js/InfoEvent.js");
     $lstJugadores = listaJugadores($_GET['id']);
     $cantJugadores = count($lstJugadores);
 
@@ -73,7 +73,7 @@ function mostrarPagina(){
             </div>
             <div id="perfil-div">
                 $botonAdmin
-                <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
+                <a href="auxPHP/cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>
 

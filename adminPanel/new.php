@@ -1,13 +1,13 @@
 <?php 
-    require_once '../database.php'; 
-    require_once '../header.php';
-    require_once 'lstPresets.php';
+    require_once '../auxPHP/database.php'; 
+    require_once '../auxPHP/header.php';
+    require_once 'auxAPanel/lstPresets.php';
 
     function mostrarPagina(){
 
         $presets = genlstPresets();
         
-        $head = genHeaderAdmin("Crear evento | Admin Panel","new.css",NULL); //Titulo,CSS,JS
+        $head = genHeaderAdmin("Crear evento | Admin Panel","../css/new.css",NULL); //Titulo,CSS,JS
         $body = <<<BODY
         <body>
         <div id="encabezado">
@@ -16,7 +16,7 @@
                 <h1 class="titulo">CREAR UN NUEVO EVENTO</h1>
                 <button id="bot-cancel" onclick="window.location.href = 'dashboard.php';">CANCELAR CREACIÓN</button>
             </div>
-            <a href="../cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+            <a href="../auxPHP/cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
             <p class="cerrarsesion">CERRAR SESIÓN</p></a>
             </div>
             <div id="cont-eventos">
@@ -55,11 +55,11 @@
         session_start();
         if(isset($_SESSION['tipo'])){
             if($_SESSION['tipo']==0){
-                header("Location: ../home.php");
+                header("Location: ../../home.php");
             }
         }
         else{
-            header("Location: ../login.php");
+            header("Location: ../../login.php");
         }
         mostrarPagina();
     }

@@ -77,7 +77,7 @@ function ValidarSingUp(id, id2, id3, id4){
 }
 
 function CargaPresetAJAX(idPres,idDiv){
-    htmlCont = loadContTextAjax('cargaDatosAdmin/infoPresetAJAX.php',idPres,idDiv);
+    htmlCont = loadContTextAjax('../adminPanel/cargaDatosAdmin/infoPresetAJAX.php',idPres,idDiv);
     abrir(idDiv);
 }
 

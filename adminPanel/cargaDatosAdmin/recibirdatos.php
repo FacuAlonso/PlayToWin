@@ -1,7 +1,7 @@
 <?php
 require_once('upload.php');
 require_once('insertPreset.php');
-require_once('../../database.php');
+require_once('../../auxPHP/database.php');
 
 function recibirDatos(){
 	$duplicado = 0;

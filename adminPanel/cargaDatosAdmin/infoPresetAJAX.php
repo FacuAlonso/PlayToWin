@@ -1,5 +1,5 @@
 <?php 
-require_once '../../database.php'; 
+require_once '../../auxPHP/database.php'; 
 
 function main(){
     $id = $_GET['id'];
@@ -20,7 +20,7 @@ function main(){
                 <input type="file" class="caja-input" name="fileToUpload" id="fileToUpload" value="$portada">
                 <input type="text" class="no-mostrar" value="$id" name="id">
             </div>
-            <input type="button" class="boton-popup" value="Enviar" onclick="loadContTextAjaxForm('cargaDatosAdmin/editPresetAJAX.php','presets-form-edit')">
+            <input type="button" class="boton-popup" value="Enviar" onclick="loadContTextAjaxForm('editPresetAJAX.php','presets-form-edit')">
         </form>
         <button class="boton-popup" id="cerrar" onclick="cerrarForm('popup-caja-editar','presets-form')">Cerrar</button>
     </div>

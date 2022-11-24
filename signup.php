@@ -1,11 +1,11 @@
 <?php
-include 'header.php';
-$head = genHeader("Login | Play to Win",'signup.css',"InfoEvent");
+include 'auxPHP/header.php';
+$head = genHeader("Login | Play to Win",'css/signup.css',"js/InfoEvent.js");
 
 $body = <<<BODY
         <body>
             <a id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
-            <form  onsubmit="return ValidarSingUp('box-login','nom01', 'ape01', 'clv01')" action='altausuario.php' method="post" id="box-login">
+            <form  onsubmit="return ValidarSingUp('box-login','nom01', 'ape01', 'clv01')" action='auxPHP/altausuario.php' method="post" id="box-login">
                 <p class="titulo">Crea tu cuenta</p>
                 <label for="nom01" class="datos-titulo">Email:</label>
                 <input type="email" class="datos-caja" name="usuario" id="nom01" placeholder="usuario@email.com" required/>

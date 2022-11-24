@@ -1,5 +1,5 @@
 <?php 
-require_once '../../database.php'; 
+require_once '../../auxPHP/database.php'; 
 
 function main(){
     $nomEvento  = $_POST['nombre'];

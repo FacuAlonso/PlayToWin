@@ -1,14 +1,14 @@
 <?php 
-    require_once '../database.php'; 
-    require_once '../header.php';
-    require_once 'lstPresets.php'; 
-    require_once 'tarjetasPresets.php'; 
+    require_once '../auxPHP/database.php'; 
+    require_once '../auxPHP/header.php';
+    require_once 'auxAPanel/lstPresets.php'; 
+    require_once 'auxAPanel/tarjetasPresets.php'; 
 
     function mostrarPagina(){
 
         $tarjetas = genTarjetasPresets();
         
-        $head = genHeaderAdmin("Presets | Admin Panel","presets.css","Javapresets"); //Titulo,CSS,JS
+        $head = genHeaderAdmin("Presets | Admin Panel","../css/presets.css","../js/Javapresets.js"); //Titulo,CSS,JS
         $body = <<<BODY
         <body>
         <div id="encabezado">
@@ -18,7 +18,7 @@
                 <button id="bot-new" onclick="abrir('popup-caja')">+ AÑADIR PRESET</button>
                 <button id="bot-presets" onclick="window.location.href = 'dashboard.php';">REGRESAR AL ADMIN PANEL</button>
             </div>
-            <a href="../cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+            <a href="../auxPHP/cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
             <p class="cerrarsesion">CERRAR SESIÓN</p></a>
         </div>
         
@@ -68,11 +68,11 @@
         session_start();
         if(isset($_SESSION['tipo'])){
             if($_SESSION['tipo']==0){
-                header("Location: ../home.php");
+                header("Location: ../../home.php");
             }
         }
         else{
-            header("Location: ../login.php");
+            header("Location: ../../login.php");
         }
         mostrarPagina();
     }

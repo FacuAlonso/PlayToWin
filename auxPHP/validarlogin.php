@@ -6,13 +6,13 @@ function iniciarSesion($usuario,$tipo){
     $_SESSION['usuario']  = $usuario;
     $_SESSION['tipo'] = $tipo;
     $_SESSION['instante']   = time();
-    header("Location: home.php");
+    header("Location: ../home.php");
   }
   elseif($tipo == 1){
     $_SESSION['usuario']  = $usuario;
     $_SESSION['tipo'] = $tipo;
     $_SESSION['instante']   = time();
-    header("Location: adminPanel/dashboard.php");
+    header("Location: ../adminPanel/dashboard.php");
   }  
     
 }
@@ -26,11 +26,11 @@ function loguear (){
           iniciarSesion($_REQUEST['usuario'],$tipo);
       }     
       else{
-        header("Location: login.php?err=denegado");
+        header("Location: ../login.php?err=denegado");
       }
     }
     else{
-      header("Location: login.php?err=denegado");
+      header("Location: ../login.php?err=denegado");
     }
 }
 

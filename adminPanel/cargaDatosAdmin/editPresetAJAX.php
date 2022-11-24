@@ -1,5 +1,5 @@
 <?php 
-require_once '../../database.php'; 
+require_once '../../auxPHP/database.php'; 
 require_once 'upload.php';
 
 function editarPreset($nombre,$rutaFoto,$id){

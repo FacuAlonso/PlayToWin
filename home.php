@@ -1,10 +1,10 @@
 <?php 
-    require_once 'database.php'; 
-    require_once 'header.php';
-    require_once 'tarjetas.php';
+    require_once 'auxPHP/database.php'; 
+    require_once 'auxPHP/header.php';
+    require_once 'auxPHP/tarjetas.php';
 
 function mostrarPagina(){
-    $head = genHeader("Home | Play to Win","home.css",NULL); //Titulo,CSS,JS
+    $head = genHeader("Home | Play to Win","css/home.css",NULL); //Titulo,CSS,JS
     if (isset($_GET['res']) && $_GET['res']=="1"){
         $tarjetas = genTarjetas("FINALIZADOS"); // Función de tarjetas.php
         $t_principal = "COMPETENCIAS FINALIZADAS";
@@ -31,7 +31,7 @@ function mostrarPagina(){
             </div>
             <div id="perfil-div">
                 $botonAdmin
-                <a href="cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
+                <a href="auxPHP/cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>
         </div>
         <div class="contenedor">

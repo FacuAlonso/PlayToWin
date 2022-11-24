@@ -1,9 +1,9 @@
 <?php 
-    require_once '../database.php'; 
-    require_once '../header.php';
-    require_once 'tarjetasAdmin.php';
+    require_once '../auxPHP/database.php'; 
+    require_once '../auxPHP/header.php';
+    require_once 'auxAPanel/tarjetasAdmin.php';
     function mostrarPagina(){
-        $head = genHeaderAdmin("Dashboard | Admin Panel","dashboard.css",NULL); //Titulo,CSS,JS
+        $head = genHeaderAdmin("Dashboard | Admin Panel","../css/dashboard.css",NULL); //Titulo,CSS,JS
         $tarjetas = genTarjetasAdmin(); // Función de tarjetasAdmin.php
         $tarjetasFinalizados = genTarjetasAdminFin();
 
@@ -26,7 +26,7 @@
                     <button id="bot-presets" onclick="window.location.href = 'presets.php';">MENÚ DE PRESETS</button>
                 </div>
             </div>
-            <a href="../cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
+            <a href="../auxPHP/cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">
             <p class="cerrarsesion">CERRAR SESIÓN</p></a>
         </div>
         <div id="cont-eventos">

@@ -44,13 +44,13 @@ function cerrarForm(id,idForm){
 }
 
 
-function validardatos(id, id2, id3) {
+function validardatos(idF, id1, id2) {
    res = true
-   var num03 = document.forms[id][id2].value;
-   var num01 = document.forms[id][id3].value;
+   var num03 = document.forms[idF][id1].value;
+   var num01 = document.forms[idF][id2].value;
   
 
-   if ((num03 == null || num03 == "") || (num01 == null || num01 == "")) {
+   if ((num01 == null || num01 == "") || (num02 == null || num02 == "")) {
        alert("Falta completar campos");
        res = false;
    }

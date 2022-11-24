@@ -5,7 +5,7 @@
 
     function mostrarPagina(){
 
-        $head = genHeaderAdmin("Revisar resultados | Admin Panel","publish.css",NULL); //Titulo,CSS,JS
+        $head = genHeaderAdmin("Revisar resultados | Admin Panel","revisar.css",NULL); //Titulo,CSS,JS
         $tarjetas = genTarjetasResultados($_GET['id']);
         $nomEvento = buscaEvento($_GET['id'])[0]['nomEvento'];
 

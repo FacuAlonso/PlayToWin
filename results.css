@@ -150,7 +150,8 @@ html{
 }
 .box_derecha{
     gap: 1vh;
-    align-content: center;
+    align-content: flex-start;
+    padding-top: 10vh;
     display: flex;
     flex-wrap: wrap;
     min-width: 10vw;

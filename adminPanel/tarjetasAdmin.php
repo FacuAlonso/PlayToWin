@@ -46,7 +46,7 @@ function genTarjetasAdmin(){
                     </div>
                 </div>
                 <div class="box-evento-c-2">
-                    <button class="boton-publicarRes" onclick="window.location.href = 'publish.php?id=$idEvento';">REVISAR RESULTADOS</button> 
+                    <button class="boton-publicarRes" onclick="window.location.href = 'revisar.php?id=$idEvento';">REVISAR RESULTADOS</button> 
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@ function genTarjetasAdminFin(){
                     </div>
                 </div>
                 <div class="box-evento-c-2">
-                    <button class="boton-publicarRes" onclick="window.location.href = 'publish.php?id=$idEvento';">REVISAR RESULTADOS</button> 
+                    <button class="boton-publicarRes" onclick="window.location.href = 'revisar.php?id=$idEvento';">REVISAR RESULTADOS</button> 
                 </div>
             </div>
         </div>

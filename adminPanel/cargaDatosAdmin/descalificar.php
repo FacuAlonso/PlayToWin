@@ -9,7 +9,7 @@ function main(){
     $sql = "UPDATE `participaciones` SET `descalificado` = '1' WHERE `participaciones`.`id` = $idJugador";
     $conn  = conectarBD();
     if (mysqli_query($conn, $sql)) {
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/adminPanel/publish.php?id=$idEvento");
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/adminPanel/revisar.php?id=$idEvento");
       } else {
         echo "Error: " . $sql . mysqli_error($conn);
       }

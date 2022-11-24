@@ -9,7 +9,7 @@ function genHeader($titulo,$cssFile,$JSScript){
 
     $header = <<<HEAD
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
     <head>
         <meta charset="UTF-8">
         <link href=$cssFile rel="stylesheet">
@@ -33,7 +33,7 @@ function genHeaderAdmin($titulo,$cssFile,$JSScript){ // Sólo cambia el nivel de
 
     $header = <<<HEAD
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
     <head>
         <meta charset="UTF-8">
         <link href=$cssFile rel="stylesheet">

@@ -93,9 +93,9 @@ function mostrarPagina(){
                     <form onsubmit="return validardatos('Datos', 'nom01', 'datos01')" name="Datos" id="Datos-forms" action="adminPanel/cargaDatosAdmin/nuevaParticipacion.php" method="post">
                         <div class="contenedor-input" name="001" id="nom02">
                             <label for="nom01" class="dato-input">Jugador:</label>
-                            <input type="text" class="caja-input" name="nick" placeholder="Tu nombre dentro del juego">
+                            <input type="text" class="caja-input" name="nick" placeholder="Tu nombre dentro del juego" required>
                             <label for="datos01" class="dato-input">Puntaje (sólo números):</label>
-                            <input type="number" class="caja-input" name="puntaje" id="puntaje" placeholder="Ej: 20" pattern="^[1-9]\d*$">
+                            <input type="number" class="caja-input" name="puntaje" id="puntaje" placeholder="Ej: 20" pattern="^[1-9]\d*$" required>
                             <input type="text" class="no-mostrar" value="$idEvento" name="idEvento">
                             <input type="text" class="no-mostrar" value="$idUsuario" name="idUsuario">
                         </div>

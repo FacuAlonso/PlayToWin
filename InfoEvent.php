@@ -25,7 +25,7 @@ function mostrarPagina(){
     $estado = $infoEvento[0]["estado"];
     $participacion = buscaParticipante($idEvento,$idUsuario);
 
-    $head = genHeader("$nomEvento | Play to Win","css/InfoEvent.css","InfoEvent.js");
+    $head = genHeader("$nomEvento | Play to Win","css/InfoEvent.css","js/InfoEvent.js");
 
     if($participacion==NULL){
         // Se usa HEREDOC para poder utilizar "" en onclick

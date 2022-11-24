@@ -116,15 +116,21 @@ body{
     font-size: calc(9px + 0.7vw);
     font-weight: 500;
     align-self:center;
-    margin-right: 2vw;
+    margin-right: 1vw;
+    border-radius: 0.2vw;
+    background-color: rgba(12, 12, 53, 0.466);
+    padding: 10px;
 }
 
-.puntaje{
+.puntaje,.fecha{
     color: white;
     font-family: 'Lato', sans-serif;display: flex;
     font-size: calc(9px + 0.7vw);
     font-weight: 500;
     align-self:center;
+    border-radius: 0.2vw;
+    background-color: rgba(12, 12, 53, 0.466);
+    padding: 10px;
 }
 
 .datos-caja{
@@ -152,55 +158,6 @@ body{
     background: linear-gradient(180deg, rgba(0,141,214,1) 16%, rgba(0,77,134,1) 84%);
 }
 
-
-.boton-editar{
-    border: none;
-    border-radius: 1vw;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );    width: 12vw;
-    padding-top: 1.2vh;
-    padding-bottom: 1.2vh;
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-size: calc(9px + 0.7vw);
-    cursor: pointer;
-    min-width: 150px;
-}
-
-.boton-publicarRes{
-    border: none;
-    border-radius: 1vw;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
-    width: 20vw;
-    padding-top: 1.2vh;
-    padding-bottom: 1.2vh;
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-size: calc(9px + 0.7vw);
-    cursor: pointer;
-    min-width: 150px;
-    margin-top: 3vh;
-}
-
-.selecPuntaje{
-    background-color: aliceblue;
-    border-radius: 1vw;
-    border-color: black;
-    border-width: 0.2vw;
-    width: 20vw;
-    min-width: 200px;
-    height: 5vh;
-    color: rgb(13, 16, 69);
-    cursor: pointer;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    font-family: 'Lato', sans-serif;display: flex;
-    font-size: calc(9px + 0.7vw);
-    font-weight: 400;
-    text-align: center;
-}
-
 .boton-eliminar{
     border: none;
     border-radius: 1vw;
@@ -223,7 +180,7 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content:center;
-    width: 50vw;
+    width: 70vw;
     align-items: center;
     font-family: 'Lato', sans-serif;
     padding-top: 2vh;

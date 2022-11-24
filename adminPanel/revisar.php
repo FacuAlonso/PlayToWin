@@ -9,6 +9,10 @@
         $tarjetas = genTarjetasResultados($_GET['id']);
         $nomEvento = buscaEvento($_GET['id'])[0]['nomEvento'];
 
+        if($tarjetas==""){
+            $tarjetas = "<p class='titulo'>No hay participaciones válidas en este momento</p>";
+        }
+
         $body = <<<BODY
         <body>
         <div id="encabezado">

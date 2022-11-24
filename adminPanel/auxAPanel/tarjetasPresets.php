@@ -29,7 +29,8 @@ function genTarjetasPresets(){
                             <button class="boton-editar" onclick="CargaPresetAJAX($idPreset,'popup-caja-editar')">EDITAR PRESET</button>  
                         </div>
                         <div class="box-evento-c-1-2">
-                            <form method="post" action="cargaDatosAdmin/eliminarPreset.php">
+                            <form method="post" action="cargaDatosAdmin/eliminarPreset.php"
+                            onSubmit="if(!confirm('¿Deseas eliminar este preset? Esta acción es irreversible ⚠')){return false;}">
                                 <input type="text" class="no-mostrar" value="$idPreset" name="id">
                                 <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR"/>
                             </form> 

@@ -388,3 +388,9 @@ body{
     width: 15vw;
 
 }
+
+#presets-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}

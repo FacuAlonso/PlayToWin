@@ -39,7 +39,8 @@ function genTarjetasAdmin(){
                         <button class="boton-editar" onclick="window.location.href = 'edit.php?id=$idEvento';">EDITAR EVENTO</button>  
                     </div>
                     <div class="box-evento-c-1-2">
-                        <form method="post" action="cargaDatosAdmin/eliminarEvento.php">
+                        <form method="post" action="cargaDatosAdmin/eliminarEvento.php"
+                        onSubmit="if(!confirm('¿Deseas eliminar este evento? Las participaciones asociadas se eliminarán. Esta acción es irreversible ⚠')){return false;}">
                             <input type="text" class="no-mostrar" value="$idEvento" name="id">
                             <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR EVENTO"/>
                         </form>

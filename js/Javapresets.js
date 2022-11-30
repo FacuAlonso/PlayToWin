@@ -113,24 +113,19 @@ function conectAjax() {
     return httpRequest;
 }
 
-function loadContTextAjax(url,id,idDest,method="GET") {
+//Rellena el formulario con la info existente
+function loadContTextAjax(url,id,idDest,method="GET") { 
     // url : es la dirección donde se obtiene los datos (el servidor)
     // console.log(url); 
     var xhr = conectAjax();   
                                     // Creo el objeto AJAX     
     if(xhr) {
         if (id!=null){
-            console.log(url+"?id="+id)
-            xhr.open(method, url+"?id="+id, true);; // false = sincro , true = asincro
-        } else{
-            xhr.open(method, url, true);
-        }           
+            xhr.open(method, url+"?id="+id, true);; // false = síncrono , true = asíncrono
+        }         
         xhr.onreadystatechange = function() {
             if (xhr.readyState!=1) {
-                document.body.style.cursor = 'wait';            // SET ESPERA Cursor mouse en espera
-                //Otra opción sería: agregar una imagen de espera
-                //  en el div (o elemento) donde serán cargado los datos
-                //  y así liberar el puntero del mouse
+                document.body.style.cursor = 'wait';            // SET ESPERA Cursor mouse en espera (casi imperceptible)
             }
             if (xhr.readyState==4 && xhr.status==200) {                                                
                 document.body.style.cursor = 'default';        // RESET ESPERA Cursor mouse en normal         
@@ -145,6 +140,7 @@ function loadContTextAjax(url,id,idDest,method="GET") {
     }   
 }
 
+//Recupera la información proporcionada en un formulario
 function loadContTextAjaxForm(url,idForm,method="POST"){
     // Envio de datos desde formulario
     // Apartir de los datos que se encuentran en el formulario 'idForm'
@@ -161,7 +157,10 @@ function loadContTextAjaxForm(url,idForm,method="POST"){
         xhr.open(method, url, true);
         xhr.onreadystatechange = function(){
             if(xhr.readyState == 4 && xhr.status == 200){
-                alert(xhr.response);
+                if(xhr.response.trim()!=''){ // Verifica que la respuesta no sea vacía
+                    console.log(xhr.response);
+                    alert(xhr.response);
+                }
                 location.reload();
             }
         }

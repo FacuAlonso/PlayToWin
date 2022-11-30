@@ -250,6 +250,7 @@ html{
     margin: auto;
     border-radius: 1vw;
     min-width: 3vw;
+    min-height: 30vh;
 }
 .box_derecha{
     gap: 1vh;

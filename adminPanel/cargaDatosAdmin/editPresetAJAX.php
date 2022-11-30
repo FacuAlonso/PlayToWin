@@ -42,6 +42,5 @@ function recibirDatos(){
     }
     editarPreset($nombre,$rutaFoto,$id);	
 }
-
 recibirDatos();
 ?>

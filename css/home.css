@@ -124,7 +124,7 @@ body{
     gap: 10vw;
     justify-content: center;
     column-gap: 10vw;
-    row-gap: 9vh;
+    row-gap: calc(20px + 15vmin);
 }
 
 .tarjeta-evento{

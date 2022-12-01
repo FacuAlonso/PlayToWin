@@ -30,7 +30,7 @@ function mostrarPagina(){
     if($participacion==NULL){
         // Se usa HEREDOC para poder utilizar "" en onclick
         $botParticipar = <<<TARJETA
-        <button id='bot-participar' class='boton_participar no-mostrar' onclick="abrir('popup-caja')">PARTICIPAR</button> 
+        <button id='bot-participar' class='boton_participar no-mostrar' onclick="agregarClase('popup-caja', 'visibilidad')">PARTICIPAR</button> 
         TARJETA; 
     } else{
         $botParticipar = "<button id='bot-participar' class='boton_participar_2'>YA ESTÁS PARTICIPANDO</button>";
@@ -79,7 +79,7 @@ function mostrarPagina(){
             </div>
             <div id="datos">
                 <a href="home.php"><img class="navegador_boton" src="assets\Competencias.png"></a>
-                <a href="#"><img class="navegador_boton" src="assets\Resultados.png"></a>
+                <a href="home.php?res=1"><img class="navegador_boton" src="assets\Resultados.png"></a>
             </div>
             <div id="perfil-div">
              $botonAdmin
@@ -145,7 +145,7 @@ function mostrarPagina(){
                     $contadorTXT
                 </div>
                 <div>
-                    <button class="boton_participantes" onclick="abrir('popup-caja-2')" href="#">Ver participantes</button>
+                    <button class="boton_participantes" onclick="agregarClase('popup-caja-2', 'visibilidad')" href="#">Ver participantes</button>
                     <a href="results.php?id=$idEvento" ><button id="bot-res" class="boton_resultados no-mostrar" href="#">Resultados</button></a>
                 </div>
             </div>

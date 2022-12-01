@@ -8,7 +8,7 @@ function agregarPreset($nombre,$rutaFoto){
     $conn  = conectarBD();
 
     if (mysqli_query($conn, $sql)) {
-        echo "✅ Carga/edición de preset exitosa. ✅";
+        echo "✅ Carga de preset exitosa. ✅";
       } else {
         echo "Error: " . $sql . mysqli_error($conn);
       }

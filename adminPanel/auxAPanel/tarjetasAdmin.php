@@ -94,14 +94,15 @@ function genTarjetasAdminFin(){
                 <div class="box-evento-c-1">
                     
                     <div class="box-evento-c-1-2">
-                        <form method="post" action="../cargaDatosAdmin/eliminarEvento.php">
-                            <input type="text" class="no-mostrar" value="$idEvento" name="id">
-                            <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR EVENTO"/>
-                        </form>
+                    <form method="post" action="cargaDatosAdmin/eliminarEvento.php"
+                    onSubmit="if(!confirm('¿Deseas eliminar este evento? Las participaciones asociadas se eliminarán. Esta acción es irreversible ⚠')){return false;}">
+                        <input type="text" class="no-mostrar" value="$idEvento" name="id">
+                        <input type="submit" name="boton" class="boton-eliminar" value="ELIMINAR EVENTO"/>
+                    </form>
                     </div>
                 </div>
                 <div class="box-evento-c-2">
-                    <button class="boton-publicarRes" onclick="window.location.href = '../revisar.php?id=$idEvento';">REVISAR RESULTADOS</button> 
+                    <button class="boton-publicarRes" onclick="window.location.href = 'revisar.php?id=$idEvento';">REVISAR RESULTADOS</button> 
                 </div>
             </div>
         </div>

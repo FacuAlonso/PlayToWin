@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2022 a las 18:07:45
+-- Tiempo de generación: 01-12-2022 a las 22:32:56
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -44,9 +44,13 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`id`, `nomEvento`, `preset`, `descEvento`, `reglasEvento`, `fechaFinal`, `estado`) VALUES
-(1, '¡Logra la mayor cantidad de elixir Quemado!\r\n\r\n', 3, 'Juega una partida normal de Clash Royale intentando quemar la mayor cantidad de elixir.\r\n\r\nCuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados, así como deberás aportar la captura de pantalla.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-03 00:00:00', 'activo'),
+(1, '¡Logra la mayor cantidad de elixir Quemado!\r\n\r\n', 3, 'Juega una partida normal de Clash Royale intentando quemar la mayor cantidad de elixir.\r\n\r\nCuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-03 00:00:00', 'activo'),
 (2, '¡Haz la mayor cantidad de kills!', 2, 'Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills. Descripción del evento de CoD Mobile, donde los jugadores deben hacer kills.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-12 15:49:00', 'activo'),
-(3, '¡Camina la mayor distancia en el mapa!\r\n\r\n', 5, 'Descripción del evento de Fortnite, donde los jugadores deben indicar el puntaje en metros recorridos.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-08 11:00:00', 'activo');
+(3, '¡Camina la mayor distancia en el mapa!\r\n\r\n', 5, 'Descripción del evento de Fortnite, donde los jugadores deben indicar el puntaje en metros recorridos.', 'No cuentan partidas personalizadas. La partida debe haber sido jugada durante el período del evento.', '2022-12-08 11:00:00', 'activo'),
+(18, '¡Haz la mayor cantidad de goles!', 44, '¡Juega una partida en línea de FIFA 22, e indica cuántos goles has hecho! Cuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados.', '- No valen partidas personalizadas ni locales (no online)', '2022-12-04 17:21:00', 'activo'),
+(20, '¡Logra hacer la mayor cantidad de puntos!', 46, 'Juega una partida de Pac-Man, intentando conseguir el mayor puntaje. Cuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados.', '- No valen partidas modificadas/personalizadas', '2022-12-06 18:01:00', 'activo'),
+(21, 'Gana una partida en el menor tiempo', 47, 'Demuestra tu habilidad en CS:GO e intenta ganar una partida en el menor tiempo posible. Ingresa el tiempo en cantidad de segundos. Cuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados.', '- Deben ser partidas de 30 rondas - Se puede usar cualquier arma - Modo solitario - Partidas oficiales', '2022-12-14 18:04:00', 'activo'),
+(22, 'Realiza la mayor cantidad de bajas con cuchillo', 1, 'En partidas normales, realiza la mayor cantidad de bajas con cuchillo que puedas. Cuando estés conforme con tu puntaje obtenido, haz click en PARTICIPAR y completa los datos solicitados.', 'Sólo puedes usar el cuchillo como arma - Puedes jugar en equipo', '2022-12-01 18:15:00', 'finalizado');
 
 -- --------------------------------------------------------
 
@@ -70,10 +74,10 @@ CREATE TABLE `participaciones` (
 
 INSERT INTO `participaciones` (`id`, `evento`, `usuario`, `nickJugador`, `puntaje`, `fechaParticipa`, `descalificado`) VALUES
 (1, 1, 1, 'XJuancitoGamerX', 15, '2022-10-07 22:14:05', 0),
-(24, 2, 6, 'Juan', 123, '2022-11-20 02:21:42', 0),
-(25, 2, 7, 'MasterYoda14', 24, '2022-11-22 02:11:37', 0),
-(27, 1, 7, 'Pepe', 15, '2022-11-24 02:13:32', 0),
-(32, 1, 6, 'pepito222', 21, '2022-11-30 16:08:52', 0);
+(33, 22, 1, 'Juandesu', 4, '2022-12-01 21:10:01', 0),
+(34, 22, 2, 'JojoManu', 9, '2022-12-01 21:10:34', 0),
+(35, 22, 8, 'Luchokun', 18, '2022-12-01 21:10:57', 0),
+(36, 22, 9, 'Juli2002', 2, '2022-12-01 21:11:39', 0);
 
 -- --------------------------------------------------------
 
@@ -96,7 +100,10 @@ INSERT INTO `presets` (`id`, `nomJuego`, `portada`) VALUES
 (2, 'CoD: Mobile', 'portadas/ypC3Y1U.png'),
 (3, 'Clash Royale', 'portadas\\RXwBOXf.png'),
 (4, 'Free Fire', 'portadas\\3mAiEpV.png'),
-(5, 'Fortnite', 'portadas/JXpzXpt.png');
+(5, 'Fortnite', 'portadas/JXpzXpt.png'),
+(44, 'FIFA 22', 'portadas/63890c531ec1b@0k5s2Iw[1].png'),
+(46, 'Pac-Man', 'portadas/638915a71d7c6@20f6647164d366ad1e05ea76997e393a[1].jpg'),
+(47, 'CS:GO', 'portadas/6389169778b7b@587593[1].png');
 
 -- --------------------------------------------------------
 
@@ -116,12 +123,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES
-(1, 'user1@mail.com', 'pass@123', 0),
-(2, 'user2@mail.com', 'pass@123', 0),
-(4, 'testeo@mail.com', '123456789', 0),
-(5, 'admin@admin.com', 'admin', 1),
-(6, 'a@a.com', 'a', 1),
-(7, 'b@b.com', 'b', 0);
+(1, 'user1@mail.com', 'Pass1234', 0),
+(2, 'user2@mail.com', 'Pass1234', 0),
+(5, 'admin@admin.com', 'AdminPass22', 1),
+(8, 'user3@mail.com', 'Pass1234', 0),
+(9, 'user4@mail.com', 'Pass1234', 0),
+(10, 'user5@mail.com', 'Pass1234', 0),
+(11, 'user6@mail.com', 'Pass1234', 0);
 
 --
 -- Índices para tablas volcadas
@@ -164,25 +172,25 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `participaciones`
 --
 ALTER TABLE `participaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `presets`
 --
 ALTER TABLE `presets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas

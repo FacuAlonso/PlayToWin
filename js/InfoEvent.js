@@ -1,13 +1,3 @@
-/**
-function abrir(id) {
-    var element = document.getElementById(id);
-    element.classList.add("visibilidad");
-}
-function cerrar(id) {
-    var element = document.getElementById(id);
-    element.classList.remove("visibilidad");
-}
- */
 function agregarClase(id, nomClase){   
      nodo = document.getElementById(id)
      if (nodo.classList==""){
@@ -22,10 +12,6 @@ function agregarClase(id, nomClase){
      nodo.classList.remove(nomClase);
  }
  
- function abrir(id){
-     nodo = document.getElementById(id);
-     agregarClase(id, "visibilidad");
- }
 
  function comprobar(param){
     for (let i in param){
@@ -37,7 +23,7 @@ function agregarClase(id, nomClase){
 
  function cerrar(id){
      nodo = document.getElementById(id);
-     eliminarClase(id, "visibilidad");
+     eliminarClase(id, 'visibilidad');
  }
 
 

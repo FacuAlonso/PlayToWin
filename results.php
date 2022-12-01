@@ -22,14 +22,18 @@ function mostrarPagina(){
         foreach ($lstJugadores as $jugador):
             $posicion = $i;
             $classPodio = "";
+            $txtPodio = "conteiner-info";
             if($i==1){
                 $classPodio = "primer-lugar";
+                $txtPodio .= " txt-podio";
             }
             elseif($i==2){
                 $classPodio = "segundo-lugar";
+                $txtPodio .= " txt-podio";
             }
             elseif($i==3){
                 $classPodio = "tercer-lugar";
+                $txtPodio .= " txt-podio";
             }
 
             $nickname = $jugador['nickJugador'];
@@ -37,9 +41,9 @@ function mostrarPagina(){
 
             $resultados = <<<ENTRADA
             <div class ="column-positions $classPodio">
-                <div class="conteiner-info">$posicion</div>
-                <div class="conteiner-info">$nickname </div>
-                <div class="conteiner-info">$puntaje</div>
+                <div class="$txtPodio">$posicion</div>
+                <div class="$txtPodio">$nickname </div>
+                <div class="$txtPodio">$puntaje</div>
             </div>
             ENTRADA;
             $res.=$resultados;

@@ -47,6 +47,10 @@
 
 }
 function main(){
+    session_start(); 
+    if(isset($_SESSION['tipo'])){
+        header("Location: home.php");
+    }
     GenerarPag();
 }
 main();

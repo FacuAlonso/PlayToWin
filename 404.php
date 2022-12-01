@@ -11,7 +11,7 @@
         <title>404 | PlayToWin</title>
     </head>
     <body>
-        <a href="home.php" id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
+        <a href="index.php" id="encabezado"><img id="logo" src="assets\playtowinICONO.png"></a>
         <div id="contenedor">
             <p class="titulo1"><b>404</b></p>
             <p class="titulo2">Oops... No pudimos encontrar lo que estabas buscando 😢</p>

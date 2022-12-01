@@ -11,7 +11,7 @@ function main(){
    
   // Redirecciona a la landing page
   header("HTTP/1.1 302 Moved Temporarily"); 
-  header("Location: ../index.html");
+  header("Location: ../index.php");
 }
 main();
   

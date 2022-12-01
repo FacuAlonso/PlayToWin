@@ -79,7 +79,7 @@ function mostrarPagina(){
             </div>
             <div id="datos">
                 <a href="home.php"><img class="navegador_boton" src="assets\Competencias.png"></a>
-                <a href="#"><img class="navegador_boton" src="assets\Resultados.png"></a>
+                <a href="home.php?res=1"><img class="navegador_boton" src="assets\Resultados.png"></a>
             </div>
             <div id="perfil-div">
              $botonAdmin

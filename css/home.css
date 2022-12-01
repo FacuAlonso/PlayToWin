@@ -124,7 +124,7 @@ body{
     gap: 10vw;
     justify-content: center;
     column-gap: 10vw;
-    row-gap: calc(20px + 20vmin);
+    row-gap: 9vh;
 }
 
 .tarjeta-evento{
@@ -141,7 +141,7 @@ body{
     }
 
     .contenedor_eventos{
-        gap: calc(80px + 3vmin);
+        gap: 4vh;
     }
 }
 
@@ -171,7 +171,7 @@ body{
     border-radius: 2vw;
     width: 25vw;
     min-width: 300px;
-    max-height: 25vh;
+    max-height: 20vh;
 }
 
 .back-portada{

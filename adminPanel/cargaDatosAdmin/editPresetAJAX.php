@@ -21,7 +21,7 @@ function recibirDatos(){
 		$id=$_REQUEST['id'];
 	}
 
-    if ($_REQUEST['fileToUpload'] == "undefined"){ //Si no se carga ninguna imagen nueva, entonces busca la ruta ya existente en la DB
+    if (isset($_REQUEST['fileToUpload'])){ //Si no se carga ninguna imagen nueva, entonces busca la ruta ya existente en la DB
         $rutaFoto = buscaPreset($id)[0]["portada"];
     } 
     else{
@@ -41,6 +41,7 @@ function recibirDatos(){
         }
     }
     editarPreset($nombre,$rutaFoto,$id);	
+    echo "✅ Edición de preset exitosa ✅";
 }
 recibirDatos();
 ?>

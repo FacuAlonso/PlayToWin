@@ -1,13 +1,3 @@
-/**
-function abrir(id) {
-    var element = document.getElementById(id);
-    element.classList.add("visibilidad");
-}
-function cerrar(id) {
-    var element = document.getElementById(id);
-    element.classList.remove("visibilidad");
-}
- */
 function agregarClase(id, nomClase){   
     nodo = document.getElementById(id)
     if (nodo.classList==""){
@@ -22,10 +12,6 @@ function eliminarClase(id, nomClase){
     nodo.classList.remove(nomClase);
 }
 
-function abrir(id){
-    nodo = document.getElementById(id);
-    agregarClase(id, "visibilidad");
-}
 
 function comprobar(param){
    for (let i in param){
@@ -38,7 +24,7 @@ function comprobar(param){
 // Cierra el formulario y borra el contenido, para otro uso.
 function cerrarForm(id,idForm){ 
     nodo = document.getElementById(id);
-    eliminarClase(id, "visibilidad");
+    eliminarClase(id, 'visibilidad');
     nodoForm = document.getElementById(idForm);
     nodoForm.reset();
 }
@@ -78,7 +64,7 @@ function ValidarSingUp(id, id2, id3, id4){
 
 function CargaPresetAJAX(idPres,idDiv){
     loadContTextAjax('../adminPanel/cargaDatosAdmin/infoPresetAJAX.php',idPres,idDiv);
-    abrir(idDiv);
+    agregarClase(idDiv, 'visibilidad');
 }
 
 

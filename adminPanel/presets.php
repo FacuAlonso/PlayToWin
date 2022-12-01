@@ -15,7 +15,7 @@
             <a href="../home.php" id="logo"><img id="logo" src="../assets/playtowinICONO.png"></a>
             <div id="header-div1">
                 <h1 class="titulo">MENÚ DE PRESETS DE EVENTOS</h1>
-                <button id="bot-new" onclick="abrir('popup-caja')">+ AÑADIR PRESET</button>
+                <button id="bot-new" onclick="agregarClase('popup-caja', 'visibilidad')">+ AÑADIR PRESET</button>
                 <button id="bot-presets" onclick="window.location.href = 'dashboard.php';">REGRESAR AL ADMIN PANEL</button>
             </div>
             <a href="../auxPHP/cerrarsesion.php" id="logoutDiv"><img id="logout-icono" src="../assets/logoutIcon.svg">

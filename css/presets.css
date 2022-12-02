@@ -146,7 +146,6 @@ body{
 }
 .portada-evento{
     width: 20vw;
-    min-width: 200px;
     justify-content: center;
     object-fit: cover;
     border-radius: 1vw;
@@ -317,6 +316,7 @@ body{
 }
 
 .popup{
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

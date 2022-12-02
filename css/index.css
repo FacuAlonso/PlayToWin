@@ -21,23 +21,18 @@ body{
     width: 20vw;
     object-fit: contain;
     min-width: 180px;
-    margin-left: 10vh;
-}
-
-
-@media only screen and (max-width: 700px) {
-
 }
 
 #encabezado{
     background-color: #001829;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     object-fit: contain;
     align-items: center;
     padding-top: 2vh;
+    column-gap: 16vw;
 }
 
 .boton-editar{
@@ -116,4 +111,10 @@ body{
 
 a{
     text-decoration: none;
+}
+
+#header-div1{
+    display: flex;
+    justify-self: center;
+    align-self: center;
 }

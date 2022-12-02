@@ -27,7 +27,7 @@
             </div>
 
             <div id="slogan1">
-                <img id="slogan1Img" src="assets\nintendoSwitchCartoon.gif">
+                <img id="slogan1Img" src="assets/nintendoSwitchCartoon.gif">
                 <p class="titulo1">¡Sé parte de Play To Win!</p>
             </div>
 

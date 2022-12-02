@@ -45,7 +45,7 @@ function mostrarPagina(){
             }
 
             $resultados = <<<ENTRADA
-            <div class ="column-positions $classPodio">
+            <div class ="pos-columnas $classPodio">
                 <div class="$txtPodio">$posicion °</div>
                 <div class="$txtPodio">$nickname </div>
                 <div class="$txtPodio">$puntaje</div>
@@ -98,9 +98,7 @@ function mostrarPagina(){
                 </div>
             </div>
             <div class="box_derecha">
-                <div class="box_logo_evento">
-                    <img class="logo-evento" src="$imagen">
-                </div>
+                <img class="logo-evento" src="$imagen">
                 <div class="box-evento-b-2-2">
                     <div class="jugadores-evento">
                     </div>

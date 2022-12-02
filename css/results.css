@@ -137,9 +137,9 @@ html{
 }
 .logo-evento{
     display: flex;
-    margin: auto;
     border-radius: 1vw;
     min-width: 200px;
+    margin-right: 2vw;
 }
 .box_derecha{
     gap: 1vh;
@@ -257,15 +257,13 @@ a{
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 752px) {
     .box_contenedor{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
         height: 100vh;
         width: auto;
-        align-items: center;
-        align-content: center;
+
         margin: none;
     }
     .logo-evento{

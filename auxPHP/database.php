@@ -145,6 +145,7 @@ function Validarpass($usuario){
 function Crearcuenta($usuario, $pass){
     $conn=conectarBD();
     $sql = "INSERT INTO `usuarios` (`id`, `email`, `pass`, `isAdmin`) VALUES (NULL, '$usuario', '$pass', '0')";
+    mysqli_query($conn, $sql);
     desconectarBD($conn); 
 }
 

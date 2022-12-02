@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2022 a las 22:32:56
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 02-12-2022 a las 13:28:19
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -101,7 +101,7 @@ INSERT INTO `presets` (`id`, `nomJuego`, `portada`) VALUES
 (3, 'Clash Royale', 'portadas\\RXwBOXf.png'),
 (4, 'Free Fire', 'portadas\\3mAiEpV.png'),
 (5, 'Fortnite', 'portadas/JXpzXpt.png'),
-(44, 'FIFA 22', 'portadas/63890c531ec1b@0k5s2Iw[1].png'),
+(44, 'FIFA 22', 'portadas/6389d5fd89e83@63890c531ec1b@0k5s2Iw[1].png'),
 (46, 'Pac-Man', 'portadas/638915a71d7c6@20f6647164d366ad1e05ea76997e393a[1].jpg'),
 (47, 'CS:GO', 'portadas/6389169778b7b@587593[1].png');
 

@@ -38,10 +38,15 @@ function mostrarPagina(){
 
             $nickname = $jugador['nickJugador'];
             $puntaje = $jugador['puntaje'];
+            if ($puntaje == 1){
+                $puntaje .= " punto";
+            }else{
+                $puntaje .= " puntos";
+            }
 
             $resultados = <<<ENTRADA
             <div class ="column-positions $classPodio">
-                <div class="$txtPodio">$posicion</div>
+                <div class="$txtPodio">$posicion °</div>
                 <div class="$txtPodio">$nickname </div>
                 <div class="$txtPodio">$puntaje</div>
             </div>

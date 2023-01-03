@@ -27,7 +27,7 @@ function recibirArchivo(){
 	}
 
 	// Check file size
-	if ($_FILES["fileToUpload"]["size"] > 5000000 && $uploadOk ) { //Hasta 2 Mb
+	if ($_FILES["fileToUpload"]["size"] > 5000000 && $uploadOk ) { //Hasta 5 Mb
 		$msj= "el archivo es demasiado grande (Más de 5 MB)";
 		$uploadOk = 0;
 	}

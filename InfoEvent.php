@@ -7,7 +7,7 @@ function mostrarPagina(){
     $infoEvento = buscaEvento($_GET['id']);
 
     if($infoEvento[0] === NULL){
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.html");
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.php");
         die;
     }
 

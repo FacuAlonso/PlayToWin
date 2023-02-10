@@ -1,7 +1,7 @@
 <?php 
     require_once '../auxPHP/database.php'; 
     require_once '../auxPHP/header.php';
-    require_once 'auxAPanel/lstPresets.php';
+    require_once 'auxAPanel/lstPresets.php'; //require once permite usar las funciones de la pagina a la que marcamos
 
     function mostrarPagina(){
 

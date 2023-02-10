@@ -41,7 +41,7 @@ function agregarClase(id, nomClase){
     return res 
 }
 
-function ValidarSingUp(id, id2, id3, id4){
+function ValidarSingUp(id, id2, id3, id4){ // id2 es mail, id3 y id4 son las contraseñas
     res = true
     var num03 = document.forms[id][id2].value;
     var num01 = document.forms[id][id3].value;

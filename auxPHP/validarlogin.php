@@ -8,7 +8,7 @@ function iniciarSesion($usuario,$tipo){
     $_SESSION['instante']   = time();
     header("Location: ../home.php");
   }
-  elseif($tipo == 1){
+  elseif($tipo == 1){                 //1 es admin 
     $_SESSION['usuario']  = $usuario;
     $_SESSION['tipo'] = $tipo;
     $_SESSION['instante']   = time();

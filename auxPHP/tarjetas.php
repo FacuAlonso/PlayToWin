@@ -6,7 +6,7 @@ function genTarjetas($estado){
     $eventosFin = listaEventosFin(); // Lo busca en database.php 
         if ($estado=="ACTIVOS" && $eventosActivos){ // Revisa, además, si existen eventos activos
             foreach($eventosActivos as $evento): 
-                $infoPreset = buscaPreset($evento["preset"]);
+                $infoPreset = buscaPreset($evento["preset"]); //dentro del evento busca el preset al que pertenece
                 $nomJuego = $infoPreset[0]["nomJuego"]; // Es el nombre del preset del evento
                 $portada = $infoPreset[0]["portada"];
                 $idEvento = $evento["id"]; 

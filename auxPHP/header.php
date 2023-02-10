@@ -1,5 +1,5 @@
 <?php
-function genHeader($titulo,$cssFile,$JSScript){
+function genHeader($titulo,$cssFile,$JSScript){ //copia la informacion previa al html/java que siempre se pone dependiendo si es java(agrega una linea) o html
     if(isset($JSScript)){
         $script = '<script language="javascript" type="text/javascript" src="'.$JSScript.'"></script>';
     }
@@ -23,7 +23,7 @@ function genHeader($titulo,$cssFile,$JSScript){
     echo($header);
 }
 
-function genHeaderAdmin($titulo,$cssFile,$JSScript){ // Sólo cambia el nivel de directorio para el ícono
+function genHeaderAdmin($titulo,$cssFile,$JSScript){ // Sólo cambia el nivel de directorio para el ícono (la imagen ../)
     if(isset($JSScript)){
         $script = '<script language="javascript" type="text/javascript" src="'.$JSScript.'"></script>';
     }

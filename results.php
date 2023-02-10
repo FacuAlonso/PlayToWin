@@ -9,7 +9,7 @@ function mostrarPagina(){
     $nomEvento= $infoEvento[0]["nomEvento"];
     $nomJuego = $infoPreset[0]["nomJuego"];
     if($infoEvento[0] === NULL || $infoEvento[0]['estado']!="finalizado"){
-        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.html");
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . "/404.php");
         die;
     }
     $head = genHeader("Resultados | Play to Win",'css/results.css',"js/InfoEvent.js");

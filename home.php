@@ -29,7 +29,7 @@ function mostrarPagina(){
                 <a href="home.php"><img class="navegador_boton" src="assets\Competencias.png"></a>
                 <a href="home.php?res=1"><img class="navegador_boton" src="assets\Resultados.png"></a>
             </div>
-            <div id="perfil-div">
+            <div id="perfil-div">    
                 $botonAdmin
                 <a href="auxPHP/cerrarsesion.php"><img id="logout-icono" src="assets\logoutIcon.svg"></a>
             </div>

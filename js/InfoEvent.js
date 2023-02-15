@@ -65,7 +65,7 @@ function mostrarBoton(){
 }
 
 function contador(fechaCierre){
-    // Establecer la fecha de cierre de evento
+    // Establecer la fecha de cierre de evento, usa la hora del servidor y el usuario no puede cambiar la hora suya a su favor ya que cambia la clase
     var countDownDate = new Date(fechaCierre).getTime();
 
     function cicloContador(countDownDate){

@@ -48,7 +48,7 @@
 }
 function main(){
     session_start(); 
-    if(isset($_SESSION['tipo'])){
+    if(isset($_SESSION['tipo'])){        //SuperVariable (Global) 
         header("Location: home.php");
     }
     GenerarPag();
